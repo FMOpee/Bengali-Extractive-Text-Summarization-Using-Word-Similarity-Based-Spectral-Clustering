@@ -1,0 +1,79 @@
+\begin{tikzpicture}[scale=0.00125\textwidth]
+
+    \def\xleft{2};
+    \def\xright{14};
+    % Draw quarters
+    \draw (\xleft,0) rectangle (\xleft+10,10);
+    \draw (\xright,0) rectangle (\xright+10,10);
+
+    % Add labels
+    \node at (0.95,5.15) {(a)};
+    \node at (12.95,5.15) {(b)};
+
+    %set a
+    \def\aax{0.25};\def\aay{0.35};
+    \def\abx{0.25};\def\aby{5.8};
+    \def\acx{5};\def\acy{0.5};
+    \def\adx{4.5};\def\ady{9.5};
+    \def\aex{5.5};\def\aey{9.6};
+    \def\afx{9.5};\def\afy{0.5};
+    %set b
+    \def\bax{1.5};\def\bay{4};
+    \def\bbx{4.5};\def\bby{8.5};
+    \def\bcx{6.5};\def\bcy{1};
+    \def\bdx{8.2};\def\bdy{7.8};
+    %set c
+    \def\cax{2.8};\def\cay{4};
+    \def\cbx{4.2};\def\cby{6.2};
+    \def\ccx{6.2};\def\ccy{5};
+    \def\cdx{6.5};\def\cdy{4};
+
+
+
+    %set a at a
+    \fill[blue] (\xleft+\aax,\aay) circle(.15);
+    \fill[blue] (\xleft+\abx,\aby) circle(.15);
+    \fill[blue] (\xleft+\acx,\acy) circle(.15);
+    \fill[blue] (\xleft+\adx,\ady) circle(.15);
+    \fill[blue] (\xleft+\aex,\aey) circle(.15);
+    \fill[blue] (\xleft+\afx,\afy) circle(.15);
+    %set a at b
+    \fill[blue] (\xright+\aax,\aay) circle(.15);
+    \fill[blue] (\xright+\abx,\aby) circle(.15);
+    \fill[blue] (\xright+\acx,\acy) circle(.15);
+    \fill[blue] (\xright+\adx,\ady) circle(.15);
+    \fill[blue] (\xright+\aex,\aey) circle(.15);
+    \fill[blue] (\xright+\afx,\afy) circle(.15);
+
+     %set b at a
+    \fill[red] (\xleft+\bax,\bay) circle(.15);
+    \fill[red] (\xleft+\bbx,\bby) circle(.15);
+    \fill[red] (\xleft+\bcx,\bcy) circle(.15);
+    \fill[red] (\xleft+\bdx,\bdy) circle(.15);
+
+     %set c at b
+    \fill[red] (\xright+\cax,\cay) circle(.15);
+    \fill[red] (\xright+\cbx,\cby) circle(.15);
+    \fill[red] (\xright+\ccx,\ccy) circle(.15);
+    \fill[red] (\xright+\cdx,\cdy) circle(.15);
+
+
+    %drawing line a
+    \draw[-{Latex[length=2mm]},dashed] (\xleft+\aax,\aay) -- (\xleft+\bax,\bay);
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]},dashed] (\xleft+\bax,\bay) -- (\xleft+\abx,\aby);
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]},dashed] (\xleft+\bbx,\bby) -- (\xleft+\adx,\ady);
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]},dashed] (\xleft+\bcx,\bcy) -- (\xleft+\acx,\acy);
+    \draw[-{Latex[length=2mm]},dashed] (\xleft+\aex,\aey) -- (\xleft+\bbx,\bby);
+    \draw[-{Latex[length=2mm]},dashed] (\xleft+\bdx,\bdy) -- (\xleft+\aex,\aey);
+    \draw[-{Latex[length=2mm]},dashed] (\xleft+\afx,\afy) -- (\xleft+\bcx,\bcy);
+
+    %drawing line b
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]},dashed] (\xright+\abx,\aby) -- (\xright+\cax,\cay);
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]},dashed] (\xright+\adx,\ady) -- (\xright+\cbx,\cby);
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]},dashed] (\xright+\cdx,\cdy) -- (\xright+\acx,\acy);
+    \draw[-{Latex[length=2mm]},dashed] (\xright+\aax,\aay) -- (\xright+\cax,\cay);
+    \draw[-{Latex[length=2mm]},dashed] (\xright+\aex,\aey) -- (\xright+\cbx,\cby);
+    \draw[-{Latex[length=2mm]},dashed] (\xright+\ccx,\ccy) -- (\xright+\aex,\aey);
+    \draw[-{Latex[length=2mm]},dashed] (\xright+\afx,\afy) -- (\xright+\cdx,\cdy);
+
+\end{tikzpicture}

@@ -1,0 +1,103 @@
+\begin{tikzpicture}[scale=0.001\textwidth]
+    \newcommand{\xleft}{2};
+    \newcommand{\ytop}{11};
+    \newcommand{\xright}{14};
+    \newcommand{\ybot}{0};
+    % Draw quarters
+    \draw (\xleft,\ytop) rectangle (\xleft+10,\ytop+10);
+    \draw (\xright,\ytop) rectangle (\xright+10,\ytop+10);
+    \draw (\xleft,\ybot) rectangle (\xleft+10,\ybot+10);
+    \draw (\xright,\ybot) rectangle (\xright+10,\ybot+10);
+
+    % Add labels
+    \node at (0.95,16.15) {(a)};
+    \node at (12.95,16.15) {(b)};
+    \node at (0.95,5.15) {(c)};
+    \node at (12.95,5.15) {(d)};
+
+    %set a
+    \newcommand{\aax}{0.25};\newcommand{\aay}{0.35};
+    \newcommand{\abx}{0.25};\newcommand{\aby}{5.8};
+    \newcommand{\acx}{5};\newcommand{\acy}{0.5};
+    \newcommand{\adx}{4.5};\newcommand{\ady}{9.5};
+    \newcommand{\aex}{5.5};\newcommand{\aey}{9.6};
+    \newcommand{\afx}{9.5};\newcommand{\afy}{0.5};
+    %set b
+    \newcommand{\bax}{1.5};\newcommand{\bay}{4};
+    \newcommand{\bbx}{4.5};\newcommand{\bby}{8.5};
+    \newcommand{\bcx}{6.5};\newcommand{\bcy}{1};
+    \newcommand{\bdx}{8.2};\newcommand{\bdy}{7.8};
+    %set c
+    \newcommand{\cax}{2.8};\newcommand{\cay}{4};
+    \newcommand{\cbx}{4.2};\newcommand{\cby}{6.2};
+    \newcommand{\ccx}{6.2};\newcommand{\ccy}{5};
+    \newcommand{\cdx}{6.5};\newcommand{\cdy}{4};
+
+    %set a at a
+    \fill[blue] (\xleft+\aax,\ytop+\aay) circle(.15);
+    \fill[blue] (\xleft+\abx,\ytop+\aby) circle(.15);
+    \fill[blue] (\xleft+\acx,\ytop+\acy) circle(.15);
+    \fill[blue] (\xleft+\adx,\ytop+\ady) circle(.15);
+    \fill[blue] (\xleft+\aex,\ytop+\aey) circle(.15);
+    \fill[blue] (\xleft+\afx,\ytop+\afy) circle(.15);
+    %set a at b
+    \fill[blue] (\xright+\aax,\ytop+\aay) circle(.15);
+    \fill[blue] (\xright+\abx,\ytop+\aby) circle(.15);
+    \fill[blue] (\xright+\acx,\ytop+\acy) circle(.15);
+    \fill[blue] (\xright+\adx,\ytop+\ady) circle(.15);
+    \fill[blue] (\xright+\aex,\ytop+\aey) circle(.15);
+    \fill[blue] (\xright+\afx,\ytop+\afy) circle(.15);
+    %set a at c
+    \fill[blue] (\xleft+\aax,\ybot+\aay) circle(.15);
+    \fill[blue] (\xleft+\abx,\ybot+\aby) circle(.15);
+    \fill[blue] (\xleft+\acx,\ybot+\acy) circle(.15);
+    \fill[blue] (\xleft+\adx,\ybot+\ady) circle(.15);
+    \fill[blue] (\xleft+\aex,\ybot+\aey) circle(.15);
+    \fill[blue] (\xleft+\afx,\ybot+\afy) circle(.15);
+
+    \newcommand{\amx}{\aax/6+\abx/6+\acx/6+\adx/6+\aex/6+\afx/6};
+    \newcommand{\amy}{\aay/6+\aby/6+\acy/6+\ady/6+\aey/6+\afy/6};
+    \draw[blue] (\xleft+\amx,\ybot+\amy) circle (0.15);
+    %set a at d
+    \fill[blue] (\xright+\aax,\ybot+\aay) circle(.15);
+    \fill[blue] (\xright+\abx,\ybot+\aby) circle(.15);
+    \fill[blue] (\xright+\acx,\ybot+\acy) circle(.15);
+    \fill[blue] (\xright+\adx,\ybot+\ady) circle(.15);
+    \fill[blue] (\xright+\aex,\ybot+\aey) circle(.15);
+    \fill[blue] (\xright+\afx,\ybot+\afy) circle(.15);
+
+    \draw[blue] (\xright+\amx,\ybot+\amy) circle (0.15);
+    %set b at a
+    \fill[red] (\xleft+\bax,\ytop+\bay) circle(.15);
+    \fill[red] (\xleft+\bbx,\ytop+\bby) circle(.15);
+    \fill[red] (\xleft+\bcx,\ytop+\bcy) circle(.15);
+    \fill[red] (\xleft+\bdx,\ytop+\bdy) circle(.15);
+    %set b at c
+    \fill[red] (\xleft+\bax,\ybot+\bay) circle(.15);
+    \fill[red] (\xleft+\bbx,\ybot+\bby) circle(.15);
+    \fill[red] (\xleft+\bcx,\ybot+\bcy) circle(.15);
+    \fill[red] (\xleft+\bdx,\ybot+\bdy) circle(.15);
+
+    \newcommand{\bmx}{\bax/4+\bbx/4+\bcx/4+\bdx/4};
+    \newcommand{\bmy}{\bay/4+\bby/4+\bcy/4+\bdy/4};
+    \draw[red] (\xleft+\bmx,\ybot+\bmy) circle (0.15);
+    %set c at b
+    \fill[red] (\xright+\cax,\ytop+\cay) circle(.15);
+    \fill[red] (\xright+\cbx,\ytop+\cby) circle(.15);
+    \fill[red] (\xright+\ccx,\ytop+\ccy) circle(.15);
+    \fill[red] (\xright+\cdx,\ytop+\cdy) circle(.15);
+    %set c at d
+    \fill[red] (\xright+\cax,\ybot+\cay) circle(.15);
+    \fill[red] (\xright+\cbx,\ybot+\cby) circle(.15);
+    \fill[red] (\xright+\ccx,\ybot+\ccy) circle(.15);
+    \fill[red] (\xright+\cdx,\ybot+\cdy) circle(.15);
+
+    \newcommand{\cmx}{\cax/4+\cbx/4+\ccx/4+\cdx/4};
+    \newcommand{\cmy}{\cay/4+\cby/4+\ccy/4+\cdy/4};
+    \draw[red] (\xright+\cmx,\ybot+\cmy) circle (0.15);
+
+    %drawing line
+    \draw[green] (\xleft+\amx,\ybot+\amy) --  (\xleft+\bmx,\ybot+\bmy);
+    \draw[green] (\xright+\amx,\ybot+\amy) --  (\xright+\cmx,\ybot+\cmy);
+
+\end{tikzpicture}

@@ -1,0 +1,218 @@
+The summarization process followed here can be boiled down as, grouping together all the close sentences
+together based on their meaning and then picking one sentence from each group to minimize redundancy
+and maximize sentence coverage.
+Often most widely used extractive summarization methods involve scoring the sentences based on some metric and
+then picking the best scoring sentences to generate the summaries~\cite{das-2022-tfidf,sarkar-2012-tfidf}.
+But in a single topic text document it often picks similar sentences creating redundancy due to all of them having the
+central topic terms.
+To mitigate this, firstly grouped the sentences with similar meaning together and then finally picked one
+sentence from each group to generate a summary.
+This will ensure maximum coverage of topics while also reducing redundancy.
+This method has also been tried before by \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base}.
+But the main challenge to reducing the redundancy is to develop a method that can accurately predict how close the
+meaning of the two sentences are.
+In this paper, we propose a method that can do it.
+The summarization process followed here involves total 4 steps.
+These are, in order of their use, Pre-processing, Sentence similarity calculation, Clustering and Summary generation.
+These steps are further discussed in the following subsections.
+
+\subsection{Pre-processing}\label{subsec:pre-processing}
+Pre-processing is a standard step in Natural Language Processing that transforms the raw human language
+inputs into a format that can be used by a computer algorithm.
+Here the input document is transformed into a list of sets of vectors where each word is represented
+with a vector, each sentence as a set of vectors and the whole document as a list of said sets.
+The Pre-processing involves 3 steps.
+These are Tokenization, Stop Word Removal, Word Embedding.
+A very common step in Pre-processing, Word Stemming, isn't used in here as the word embedding dataset
+works best for the whole word instead of the stemmed word.
+These steps are further discussed bellow.
+
+\subsubsection{Tokenization}
+Tokenization is the step of dividing an input document into sentences and words in a usable format.
+Here the input document was firstly divided into sentences by using the NLTK library~\cite{Bird-2009-nltk} of
+python by using regex matching.
+These sentences are then further divided into words using the same library.
+The words from the same sentence are put together in a list of strings representing a sentence.
+Then these lists are further compiled into a list of list for the whole input document.
+An example of performing this step is given bellow.\\
+
+\textbf{Before Tokenization:}\\
+{\bng
+    ra\*sh*iya-IU\*kR*en Jud/dh shuru HOyar por ma\*r/k*in Dola\*r*er \*b*i\*n*imoy Har \*b*e\*rh*e\*ch*e.
+    % রাশিয়া    -ইউক্রেন    যুদ্ধ     শুরু   হওয়ার  পর  মার্কিন       ডলারের      বিনিময়        হার  বেড়েছে।
+    E\*t*e Amda\*n*i\*n*ir/bhor \*d*eshgul \*b*ipa\*k*e po\*rh*e\*ch*e.
+    % এতে  আমদানিনির্ভর            দেশগুল          বিপাকে        পড়েছে।
+    \*b*{oi}\*d*e\*sh*ik mudRar \*r*ijar/bh ba mojut ko\*m*e JaOyay baNNGla\*d*esh\*k*eO Amda\*n*i sii\*m*it
+    % বৈদেশিক             মুদ্রার    রিজার্ভ       বা  মজুত  কমে    যাওয়ায়    বাংলাদেশকেও           আমদানি    সীমিত
+    kor\*t*e Ho\*y*e\*ch*e.
+    % করতে     হয়েছে
+}\\
+
+\textbf{After Tokenization:}\\
+{\bng
+    ((ra\*sh*iya, IU\*kR*en, Jud/dh, shuru, HOyar, por, ma\*r/k*in, Dola\*r*er, \*b*i\*n*imoy, Har, \*b*e\*rh*e\*ch*e),
+    (E\*t*e, Amda\*n*i\*n*ir/bhor, \*d*eshgul, \*b*ipa\*k*e, po\*rh*e\*ch*e),
+    (\*b*{oi}\*d*e\*sh*ik, mudRar, \*r*ijar/bh, ba, mojut, ko\*m*e, JaOyay, baNNGla\*d*esh\*k*eO, Amda\*n*i,
+    sii\*m*it, kor\*t*e, Ho\*y*e\*ch*e))
+}
+
+\subsubsection{Stop Word Removal}
+Stop words are words used in a given language that does not add any significant meaning to the sentence but
+is necessary for sentence fluidity like prepositions, articles, conjunctions etc.
+For Bengali, a commonly used dataset\footnote{\textit{https://www.ranks.nl/stopwords/bengali}} of 363 Bengali stop
+words used to remove the stop words on a matching basis.
+Some example of Bengali stop words are {\bng O\*n*ek, Abar, ko\*r*e, Ho\*b*e, cay, \*T*i} etc.
+After completing this step the input document would look like this:\\
+{\bng
+    ((ra\*sh*iya, IU\*kR*en, Jud/dh, shuru, ma\*r/k*in, Dola\*r*er, \*b*i\*n*imoy, Har, \*b*e\*rh*e\*ch*e),
+    (Amda\*n*i\*n*ir/bhor, \*d*eshgul, \*b*ipa\*k*e, po\*rh*e\*ch*e),
+    (\*b*{oi}\*d*e\*sh*ik, mudRar, \*r*ijar/bh, mojut, ko\*m*e, JaOyay, baNNGla\*d*esh\*k*eO, Amda\*n*i, sii\*m*it))
+}\\
+Here the removed stop words are {\bng HOyar, por, E\*t*e, ba, kor\*t*e, Ho\*y*e\*ch*e}
+
+\subsubsection{Word Embedding}
+Word Embedding is a step that replaces the words in a sentence with a corresponding vector in a vector
+space such that the closer two words are in terms of meaning to one another the smaller the distance
+of those vectors would be.
+%It means that, the Euclidean distance between the points would be smaller.
+To achieve this step, we used a dataset with 1.47 million Bengali words produced by \citeauthor{grave-etal-2018-fasttext}
+\cite{grave-etal-2018-fasttext} crawling Wikipedia and other online resources to make the word embedding vectors.
+Finally, each word that is present in the tokenized and filtered list is replaced with their
+corresponding vectors and the words that isn't found is ignored and considered to be too rare to be relevant.
+
+\subsection{Sentence Similarity Calculation}\label{subsec:sentence-similarity-calculation}
+To perform clustering in a graph, an affinity matrix is needed.
+A similarity calculation technique using individual word distance and
+Gaussian similarity have been proposed here.
+A previous similar method by \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base}
+had averaged all the vectors present in a sentence to get a vector for the sentence.
+But this is not rally a sound strategy as words in a sentence are generally complementary instead of being similar.
+So the word vectors tend to scatter around in the vector space rather than being grouped closed together.
+This leads to the average word vector having a tendency towards the center of the vector space.
+This would lead to the affinity between these vectors not being representative of the actual meaning.\\
+
+To mitigate this, in this study, similarity between individual words in a pair of sentences have been considered.
+For this, firstly, the Most Similar Word Distance ($D_{msw}$) have to be calculated as shown in Equation~\ref{eq:msd}.
+The $D_{msw}$ denotes the distance between a word vector and the word vector that
+is closest to its meaning from the other sentence.
+
+\begin{equation}\label{eq:msd}
+    D_{msw}(x,Y) = min(\{d(x,y_i) : y_i \in Y \})
+\end{equation}
+
+All the $D_{msw}$ for each word in each sentence are then put together in a list like shown in
+Equation~\ref{eq:mswdset}.
+
+\begin{equation}
+    D_{msw} = \{D_{msw}(x,Y) : x \in X\} \cup \{D_{msw}(y,X) : y \in Y\}
+    \label{eq:mswdset}
+\end{equation}
+
+Here, for every word vector $x$ in a sentence $X$, the closest vector, in terms of
+Euclidean distance denoted by $d(x,y)$, is identified from all the word vectors $y$ in the sentence $Y$.
+Secondly, the word similarity is calculated using Gaussian similarity for each of these $D_{msw}$.
+The equation involved is shown in Equation~\ref{eq:wsim}.
+
+\begin{equation}\label{eq:wsim}
+    WSim_i = e^{\frac{-D_{msw_i}^2}{2\sigma^2}}
+\end{equation}
+
+The Sentence similarity between the two sentence or $Sim(X,Y)$ is calculated as the Geometric
+mean of all the word similarities from both sentence so that the similarity between two sentence is symmetric.
+This is explained in the Equation~\ref{eq:sent_sim}
+
+\begin{equation}\label{eq:sent_sim}
+    \begin{split}
+        Sim(X,Y)
+        &=  \left(
+                \prod_{i=1}^nWSim_i
+            \right)^{\frac{1}{n}}\\
+        &=  \left(
+                e^{\frac{-D_{msw_1}^2}{2\sigma^2}}\cdot
+                e^{\frac{-D_{msw_2}^2}{2\sigma^2}}\cdot
+                    \ldots \cdot
+                e^{\frac{-D_{msw_n}^2}{2\sigma^2}}
+            \right)^\frac{1}{n}\\
+        &=  exp\left(
+                -\frac{D_{msw_1}^2+D_{msw_2}^2+\ldots+D_{msw_n}^2}{2n\sigma^2}
+            \right)\\
+        &=  exp\left(
+                -\frac{\sum_{i=1}^nD_{msw_i}^2}{2n\sigma^2}
+            \right)
+    \end{split}
+\end{equation}
+
+Here, by taking geometric mean of the similarity between the closest words together in two sentence,
+an effective word to word comparison has been created between those sentences.
+This reduces any misleading distance that would have come from the word averaging method due to
+the tendency towards center.
+An example of this can be seen at Figure~\ref{fig:msd}.
+Here, a more representative word association can be seen for both scenarios from Figure~\ref{fig:sarkar-problem}.
+Red and Blue dots in the figure represent two set of word vectors in a sentence pair.
+Black dashed lines show the Most Similar Distance $(D_{msw}(x,Y))$ for a word vector $x$ and the other sentence $Y$.
+The arrowheads point from $x$.
+The Figure~\ref{fig:msd}(a) shows the $D_{msw}$ for Scenario A in Figure~\ref{fig:sarkar-problem}(a).
+The Figure~\ref{fig:msd}(b) Shows the $D_{msw}$ for Scenario B in Figure~\ref{fig:sarkar-problem}(b).
+We can see that problem caused by the averaging method have been mitigated here.\\
+
+\begin{figure}
+    \centering
+    \input{figs/msd}
+    \caption{Process of obtaining $D_{msw}$}
+    \label{fig:msd}
+\end{figure}
+
+The similarity equation (equation-\ref{eq:sent_sim}) has a standard deviation $\sigma$ which works
+as a control variable and was fine-tuned to be $5 \times 10^{-11}$ where it gave the best results.
+
+\subsubsection{Viability of this strategy}
+To get the similarity between two sentence, we needed a strategy that can match two sets of vectors.
+Other popular methods for the same functionality are also available.
+For example, Earth Mover's Distance (EMD)~\cite{Rubner-19998-emd}, Hausdorff distance, Procrustes Analysis etc.
+EMD tries to find the lowest amount of ``work'' needed to transform one set into the other one.
+This is very computationally expensive.
+And also it focuses on scaling and rotating which are not relevant in word vector space.
+Hausdorff distance takes the worst case scenario and is easily influenced by outliers.
+So, it was avoided.
+Procrustes Analysis tries to find the lowest amount of misalignment after scaling and rotating.
+Both of them are irrelevant in word vector space.\\
+
+On the other hand, our method focuses on Local Point Correspondence between two sets which is more
+important for words.
+The Gaussian similarity function captures the proximity of points smoothly,
+providing continuous feedback on how similar two points are in a normalized way.
+It is also robust against small perturbations because of the use of a soft similarity measure (Gaussian)
+and geometric mean which helps smooth over small differences in point locations.
+
+\subsection{Clustering}\label{subsec:clustering}
+The clustering is the most integral part of this summarization technique, aiming to group all the
+sentences with similar meanings together.
+Here, spectral clustering is used to cluster the sentences using sentence similarity calculated in the step above.
+Spectral clustering was chosen here because \citeauthor{roychowdhury-etal-2022-spectral-base}
+\cite{roychowdhury-etal-2022-spectral-base} found it to be better performing than DBSCAN method.
+The spectral clustering steps were followed according to the tutorial given by
+\cite{vonLuxburg-2007-spectral-tutorial}. \\
+
+To perform spectral clustering on a data, firstly, an affinity matrix is required that shows
+the weight of edges between the vertexes in the graph.
+Here the affinity $A$ is prepared using the following Equation~\ref{eq:affinity}.
+
+\begin{equation}\label{eq:affinity}
+    A_{ij}=A_{ji}=Sim(S_i,S_j)
+\end{equation}
+
+Here, $S_i, S_j$ are sentences from the input document.
+The affinity matrix, $A$, is used in the spectral clustering implementation in the SciKit-learn
+tool~\cite{Pedregosa-2011-scikit-learn} in python.
+Here, to use the function, we also need to provide the number of clusters to achieve.
+The number of clusters are fixed at $k=ceiling\left(\frac{N}{5}\right)$ due to it being a
+reasonable size to contain all necessary sentences as well as being short enough to be an effective summary.
+
+\subsection{Summary Generation}\label{subsec:summary-generation}
+After clustering, we pick one sentence from each cluster.
+The sentences inside a cluster are ranked among themselves using TF-IDF .
+The best ranked sentence of the clusters by their order of TF-IDF score is
+selected from each cluster.
+We then rearranged these picked sentences are in their order of appearance to retain the normal flow of
+information in the input.
+These sentences are then concatenated together to produce the final output summary.

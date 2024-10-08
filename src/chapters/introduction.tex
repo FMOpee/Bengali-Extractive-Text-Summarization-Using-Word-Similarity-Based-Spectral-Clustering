@@ -1,0 +1,83 @@
+Automatic Text Summarization (ATS) is a major area of natural language processing (NLP) that aims
+to automatically shorten a document or a set of documents into a shorter version, while keeping all
+the key information~\cite{Widyassari-2022-rev-ats-tech-met}.
+This task has become more and more important in the current digital age, where the amount of textual
+data grows exponentially in many fields, such as news, legal documents, health reports, research papers,
+and social media content.
+ATS techniques allow users to quickly get the essential information without needing to read through large
+amounts of text~\cite{wafaa-2021-summary-comprehensive-review}.\\
+
+There are two main types of text summarization: extractive and abstractive~\cite{tas-2017-rev-text-sum-2}.
+Extractive summarization, which is the focus of this paper, works by selecting best sentences or phrases directly
+from the source document, maintaining the original wording and sentence structure~\cite{moratanch-2017-extractive-review}.
+This is in contrast to abstractive summarization, which involves generating new sentences to capture the meaning of the
+text, similar we may summarize~\cite{Moratanch-2016-abstractive-rev}.
+Extractive summarization is widely used because of its simplicity and effectiveness, especially for languages with
+limited NLP resources~\cite{gupta-2010-extractive-rev}.\\
+
+Text summarization is used in many fields, from automatic news summarization, content filtering, and recommendation
+systems to assisting legal professionals in going through long documents and researchers in reviewing academic papers.
+It can also play a critical role in personal assistants and chatbots, providing condensed information to users quickly
+and efficiently~\cite{tas-2017-rev-text-sum-2}.\\
+
+A commonly used method for extractive text summarization is graph-based summarization.
+This method represents the sentences of a document as nodes of a graph, and the edges between them are weighted by the
+similarity between the sentences~\cite{wafaa-2021-summary-comprehensive-review}.
+Popular algorithms like LexRank~\cite{Erkan-lexRank-2004} and TextRank~\cite{mihalcea-2004-textrank} build graphs based
+on cosine similarity between sentence embeddings and apply ranking algorithms such as PageRank~\cite{page-PageRank-1999} in
+case of LexRank~\cite{Erkan-lexRank-2004} or Random Walk in case of TextRank~\cite{mihalcea-2004-textrank} to
+determine which sentences are the most important.
+These sentences are then selected to make the summary.
+Graph-based methods offer a more robust way to capture sentence importance and relationship, ensuring that the
+extracted summary covers the key information while minimizing redundancy~\cite{wafaa-2021-summary-comprehensive-review}.\\
+
+A subset of graph-based approach to extractive summarization is clustering-based summarization.
+Here, sentences are grouped into clusters based on their semantic similarity, and one representative sentence from each
+cluster is chosen to form the summary~\cite{Mohan-2022-topic-modeling-rev-clustering}.
+Clustering reduces redundancy by ensuring that similar sentences are grouped together and that only the most
+representative sentence is selected.
+This method is effective in documents that cover multiple topics or subtopics, as it allows the summary to touch on
+each area without being repetitive.\\
+
+For Bengali, a low-resource language, early attempts at text summarization relied on traditional methods like TF-IDF
+(Term Frequency-Inverse Document Frequency) scoring~\cite{das-2022-tfidf,sarkar-2012-tfidf}.
+These approaches, while simple, faced challenges in capturing the true meaning of sentences, as they treated words as
+isolated terms~\cite{tas-2017-rev-text-sum-2}.
+Graph-based methods introduced improvements by incorporating sentence similarity, but they were still limited by the
+quality of the embeddings used for the Bengali language.
+With the advent of word embedding models like FastText~\cite{grave-etal-2018-fasttext}, which supports over 157
+languages, including Bengali, it became possible to represent words in a Vector Space Model, thus enabling
+more accurate sentence similarity calculations.\\
+
+However, existing models that use word embeddings, such as \citeauthor{roychowdhury-etal-2022-spectral-base}’s
+\cite{roychowdhury-etal-2022-spectral-base} Sentence Average Similarity-based Spectral Clustering (SASbSC) method,
+encountered issues when averaging word vectors to represent sentence meaning.
+This method failed in most cases because words in a sentence are often complementary rather than being similar, leading
+to inaccurate sentence representations when averaging their vectors.
+As a result, important word-to-word relationships between sentences were lost, reducing the effectiveness of the method.\\
+
+In this paper, we propose a new approach to address these challenges.
+Our method improves upon previous attempts by focusing on the individual similarity between words in sentences rather
+than averaging word vectors.
+Here the gaussian similarities between each word and the Most Similar Word from the other sentence for that word are
+used to get the similarity between the two sentence.
+This method captures the true semantic relationships between sentences more effectively.
+By applying Gaussian similarity to the Most Similar Word Distance ($D_{msw}$) values, we build an affinity matrix that
+better reflects sentence closeness.
+We then apply spectral clustering on this matrix to group similar sentences together and use TF-IDF to select the
+most representative sentences from each cluster.
+This approach reduces redundancy and improves the quality of the summary by selecting sentences that are not only
+relevant but also diverse.
+This method works really well for Bengali on four different diverse datasets consistently.
+It consistently outperforms other graph based methods like BenSumm~\cite{chowdhury-etal-2021-tfidf-clustering},
+SASbSC~\cite{roychowdhury-etal-2022-spectral-base}, LexRank~\cite{Erkan-lexRank-2004}.
+It also performs similarly well on every other low resource languages we tried it on.
+These languages are Hindi, Marathi and Turkish.
+These are the languages where reliable evaluation datasets could be found to test the effectiveness.\\
+
+In summary, this paper contributes a novel methodology for extractive text summarization for the Bengali language by
+improving sentence similarity calculations and enhancing clustering techniques.
+It addresses the limitations of previous models, such as misleading word vector averages~\cite{roychowdhury-etal-2022-spectral-base},
+and offers a better solution for creating less redundant and information rich summaries.
+Through this work, we aim to improve the performance of Bengali text summarization systems and contribute to the
+growing field of NLP for low-resource languages.

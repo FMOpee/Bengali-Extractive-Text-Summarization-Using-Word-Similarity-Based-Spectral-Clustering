@@ -1,0 +1,58 @@
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{graphicx} % Required for inserting images
+\usepackage{xcolor,colortbl}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+\usepackage[english]{babel}
+\input{helping_files/bangla_commands}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage[numbers]{natbib}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+
+
+\title{Bengali Extractive Text Summarization Using Word Similarity Based Spectral Clustering}
+\author{Fahim Morshed, Md. Abdur Rahman, Sumon Ahmed}
+
+
+% Document
+\begin{document}
+
+    \maketitle
+    \setlength{\parindent}{0pt}
+    \begin{abstract}
+        \blindtext\\
+    \end{abstract}
+
+    \section{Introduction}\label{sec:introduction}
+        \input{chapters/introduction}
+
+    \section{Literature Review}\label{sec:literature-review}
+        \input{chapters/literature-review}
+
+    \section{Methodology}\label{sec:methodology}
+        \input{chapters/methodology}
+
+    \section{Result}\label{sec:result}
+        \input{chapters/result}
+
+%    \printbibliography
+
+    \bibliography{bib/main}
+    \bibliographystyle{plainnat}
+
+
+
+\end{document}
