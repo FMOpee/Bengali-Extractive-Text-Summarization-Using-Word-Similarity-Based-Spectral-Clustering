@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.8)  8 OCT 2024 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.8)  9 OCT 2024 22:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -733,43 +733,80 @@ File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+))) (C:\Users\User\AppData\Roaming\MiKTeX\tex/latex/algorithms\algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks50
+\c@algorithm=\count351
+)
+(C:\Users\User\AppData\Roaming\MiKTeX\tex/latex/algorithmicx\algpseudocode.sty
+Package: algpseudocode 
+
+(C:\Users\User\AppData\Roaming\MiKTeX\tex/latex/algorithmicx\algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count352
+\c@ALG@rem=\count353
+\c@ALG@nested=\count354
+\ALG@tlm=\skip68
+\ALG@thistlm=\skip69
+\c@ALG@Lnr=\count355
+\c@ALG@blocknr=\count356
+\c@ALG@storecount=\count357
+\c@ALG@tmpcounter=\count358
+\ALG@tmplength=\skip70
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count351
+\l__color_backend_stack_int=\count359
 \l__pdf_internal_box=\box118
 )
 (E:/Latex Projects\Bengali Extractive Text Summarization Using Word Similarity 
 Based Spectral Clustering\auxil\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count352
+\scratchcounter=\count360
 \scratchdimen=\dimen309
 \scratchbox=\box119
-\nofMPsegments=\count353
-\nofMParguments=\count354
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count355
+\nofMPsegments=\count361
+\nofMParguments=\count362
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count363
 \MPscratchDim=\dimen310
-\MPnumerator=\count356
-\makeMPintoPDFobject=\count357
-\everyMPtoPDFconversion=\toks51
+\MPnumerator=\count364
+\makeMPintoPDFobject=\count365
+\everyMPtoPDFconversion=\toks52
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -816,10 +853,20 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 31.
+ on input line 34.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
@@ -933,7 +980,7 @@ Missing character: There is no ; in font nullfont!
 [3] (chapters/methodology.tex
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 31--38
+Underfull \hbox (badness 10000) in paragraph at lines 32--38
 
  []
 
@@ -950,20 +997,20 @@ dshgul, o[]ibpao[]ek, poo[]erho[]ech),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--93
+Underfull \hbox (badness 10000) in paragraph at lines 107--117
 
  []
 
 
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 145--157
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 169--181
 
  []
 
-
-
-[6] (figs/msd.tex
+(figs/msd.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -995,20 +1042,17 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 )
-Underfull \hbox (badness 10000) in paragraph at lines 169--179
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--195
+Underfull \hbox (badness 10000) in paragraph at lines 247--254
 
  []
 
 
 
-[7]) (chapters/result.tex
+[7]
 
-[8]
+[8]) (chapters/result.tex
+
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
  []
@@ -1030,7 +1074,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--66
 
 
 
-[9]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
@@ -1045,47 +1089,93 @@ Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--137
  []
 
 
+
+[11]
+
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 163--171
 
  []
 
 
-
-[10]
-
-[11]
 Underfull \hbox (badness 10000) in paragraph at lines 197--197
 [][]\OT1/cmr/m/it/9 https://github.com/xtinge/turkish-extractive-summarization-
 dataset/blob/main/dataset/XTINGE-
+ []
+
+
+
+[13]) (chapters/discussion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--40
+
+ []
+
+
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 41--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--93
+
  []
 
 )
 (E:/Latex Projects\Bengali Extractive Text Summarization Using Word Similarity 
 Based Spectral Clustering\auxil\main.bbl
 
-[12]
-Underfull \hbox (badness 1231) in paragraph at lines 110--116
+[15]
+
+[16]
+Underfull \hbox (badness 1231) in paragraph at lines 123--129
 \OT1/cmr/m/it/10.95 ing\OT1/cmr/m/n/10.95 , pages 404--411. As-so-ci-a-tion for
  Com-pu-ta-tional Lin-guis-tics, July 2004.  URL
  []
 
 
-
-[13]
-Underfull \hbox (badness 3354) in paragraph at lines 157--164
+Underfull \hbox (badness 3354) in paragraph at lines 170--177
 \OT1/cmr/m/n/10.95 sum-ma-riza-tion us-ing sen-tence em-bed-ding and spec-tral 
 clus-ter-ing.  In \OT1/cmr/m/it/10.95 Pro-ceed-
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 157--164
+Underfull \hbox (badness 1210) in paragraph at lines 170--177
 \OT1/cmr/m/n/10.95 pages 337--346. As-so-ci-a-tion for Com-pu-ta-tional Lin-gui
 s-tics, De-cem-ber 2022.  URL
  []
 
-)
 
-[14]
+
+[17])
+
+[18]
 (E:/Latex Projects\Bengali Extractive Text Summarization Using Word Similarity 
 Based Spectral Clustering\auxil\main.aux)
  ***********
@@ -1094,13 +1184,13 @@ L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 27690 strings out of 473898
- 692603 string characters out of 5736297
+ 28455 strings out of 473898
+ 705024 string characters out of 5736297
  1259347 words of memory out of 5000000
- 50096 multiletter control sequences out of 15000+600000
- 586832 words of font info for 105 fonts, out of 8000000 for 9000
+ 50828 multiletter control sequences out of 15000+600000
+ 589301 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,18n,87p,702b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,18n,87p,724b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/User/AppData/Roaming/MiKTeX/fonts/type1/public/indic/bang10.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fo
@@ -1111,17 +1201,18 @@ b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
  Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program
- Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmtt10.pfb>
+s/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
+pfb>
 Output written on "E:/Latex Projects\Bengali Extractive Text Summarization Usin
-g Word Similarity Based Spectral Clustering\out\main.pdf" (14 pages, 310392 byt
+g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 339139 byt
 es).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
+ 158 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

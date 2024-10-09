@@ -1,0 +1,100 @@
+The results presented in the previous sections highlight the effectiveness of the
+proposed Word Similarity-based Spectral Clustering (WSbSC) model for extractive text summarization
+in Bengali, as well as its adaptability to other low-resource languages.
+This section delves into an analysis of the comparative results, the strengths and limitations of the proposed method,
+and potential areas for further research.\\
+
+As evidenced by the results, the WSbSC model consistently outperforms the baseline models,
+namely BenSumm~\cite{das-2022-tfidf}, LexRank~\cite{Erkan-lexRank-2004}, and Sentence Average Similarity-based
+Spectral Clustering (SASbSC)~\cite{roychowdhury-etal-2022-spectral-base}, across multiple datasets.
+This performance improvement is largely for the novel approach of calculating
+sentence similarity based on the geometric mean of individual word similarities, which overcomes
+the problems of averaging methods that tend to pull sentence vectors into the center of the vector space.
+The Gaussian similarity-based approach used in WSbSC provides a more novel and precise method for
+capturing the semantic relationships between sentences.\\
+
+The superior performance of WSbSC is especially noticeable in terms of ROUGE scores,
+where it consistently achieves higher F-1 scores across all datasets (Table~\ref{tab:result_comparison-1}).
+This suggests that the proposed method generates summaries that are more faithful to the
+human written reference summaries.
+Additionally, the clustering approach makes sure that sentences with similar information
+are grouped together, allowing the model to pick the most representative sentence from each group.
+This reduces redundancy and increases topic coverage, key components of a good summary.\\
+
+The sentence similarity method proposed in this paper is a novel algorithm.
+Our proposed strategy is more suited for the job than other strategies can compare two sets of vectors
+such as Earth Movers Distance (EMD), Hausdorff Distance, Procrustes Analysis etc..
+EMD~\cite{Rubner-19998-emd} tries to find the lowest amount of ``work'' needed to transform one set into the other one.
+It considers adding a new point, removing a point, scaling the whole set, moving a point,
+rotating the set etc.\ as ``work''.
+This is very computationally expensive.
+And it also focuses on scaling and rotating which are not relevant in word vector space.
+Hausdorff distance~\cite{hausdorff-1914-hausdorff-distance} takes the worst case scenario
+and calculates the farthest distance between two points in the two set.
+It is easily influenced by outliers.
+It was avoided because words tend to spread out over the whole word space and this would suffer
+from the same problem as the averaging method.
+Procrustes Analysis~\cite{Gower-1975-procrustes-distance} tries to find the lowest
+amount of misalignment after scaling and rotating the two sets.
+Both of these processes are irrelevant in the context of word vector.\\
+
+On the other hand, the proposed method focuses on Local Point Correspondence between
+two sets which is more important for words.
+The Gaussian similarity function captures the proximity of points smoothly,
+providing continuous feedback on how similar two points are in a normalized way.
+It is also robust against small outliers because of the use of a soft similarity measure (Gaussian)
+and geometric mean which helps smooth over small differences in point locations.\\
+
+One of the key strength of this proposed method is the reduction of redundancy
+which is a common issue in extractive summarization methods.
+By grouping sentences with similar meanings and selecting a representative
+sentence from each group, the model ensures that the summary covers
+a broad range of topics without repeating itself.
+Our proposed model also has an improved sentence similarity calculation technique.
+Using the geometric mean of individual word similarities offers a more precise measure
+of how closely two sentences are related.
+This is a marked improvement over traditional methods that
+rely on word averaging, which often dilute the semantic meaning of a sentence.
+Another key strength is that it is found to be scalable across languages.
+By requiring only a language-specific tokenizer, stop-word list, and word embedding dataset,
+WSbSC can be easily adapted to other languages, as demonstrated in the experiments with
+Hindi, Marathi, and Turkish datasets (Table~\ref{tab:other_language}).
+This makes the model highly versatile and valuable for extractive summarization in low-resource languages.\\
+
+
+Despite its advantages, the WSbSC model does face some challenges.
+The model heavily relies on pre-trained word embeddings, which may not always capture the full details
+of certain domains or newly coined terms.
+The FastText~\cite{grave-etal-2018-fasttext} dataset used here is heavily reliant on wikipedia for training.
+Which could introduce some small inherent unforeseen biases.
+In cases where the word embeddings do not fully have some word of a given document,
+the model’s performance could degrade as it leaves those words out.
+The model also does not take into account the order in which words appear in a sentence
+or when the form special noun or verb groups.
+So it can be a little naive in some highly specialized fields.
+The calculation of word-to-word similarities and the subsequent
+clustering process can be computationally expensive,
+particularly for longer documents or datasets with a large number of sentences.
+While this issue is mitigated by the scalability of modern computing resources,
+it could still pose a limitation in resource-constrained environments.
+The decision to set the number of clusters to $\lceil N/5 \rceil$ (where N is
+the number of sentences) might not always yield optimal results for every document.
+In some cases, documents may contain many subtopics, needing more
+clusters to fully represent the diversity of content.
+Similarly, documents with a narrow focus may benefit from fewer clusters.\\
+
+The WSbSC model has demonstrated its ability to perform well in low-resource languages
+such as Hindi, Marathi, and Turkish.
+Despite differences in language structure, the model’s core methodology remained effective,
+yielding results that were consistent with the Bengali dataset evaluations.
+This underscores the potential of WSbSC as a generalizable approach
+for extractive summarization across different languages, provided that
+appropriate pre-processing tools and word embedding datasets are available.\\
+
+The proposed Word Similarity-based Spectral Clustering model represents a
+significant advancement in Bengali extractive text summarization.
+Its ability to accurately capture sentence similarity, reduce redundancy, and generalize
+across languages makes it a valuable tool for summarizing text in low-resource languages.
+While there are still challenges to be addressed, the results of this study demonstrate the
+robustness and adaptability of the WSbSC model, offering a promising direction for future research
+in multilingual extractive summarization.

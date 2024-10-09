@@ -26,13 +26,13 @@ These are Tokenization, Stop Word Removal, Word Embedding.
 A very common step in Pre-processing, Word Stemming, isn't used in here as the word embedding dataset
 works best for the whole word instead of the stemmed word.
 These steps are further discussed bellow.
+This whole process is shown in Algorithm~\ref{alg:preprocessing}.
 
 \subsubsection{Tokenization}
 Tokenization is the step of dividing an input document into sentences and words in a usable format.
 Here the input document was firstly divided into sentences by using the NLTK library~\cite{Bird-2009-nltk} of
 python by using regex matching.
-These sentences are then further divided into words using the same library.
-The words from the same sentence are put together in a list of strings representing a sentence.
+These sentences are then further divided into words and are put together in a list.
 Then these lists are further compiled into a list of list for the whole input document.
 An example of performing this step is given bellow.\\
 
@@ -57,11 +57,10 @@ An example of performing this step is given bellow.\\
 }
 
 \subsubsection{Stop Word Removal}
-Stop words are words used in a given language that does not add any significant meaning to the sentence but
-is necessary for sentence fluidity like prepositions, articles, conjunctions etc.
+
+Stop words, such as prepositions and conjunctions, add sentence fluidity but don’t carry significant meaning.
 For Bengali, a commonly used dataset\footnote{\textit{https://www.ranks.nl/stopwords/bengali}} of 363 Bengali stop
 words used to remove the stop words on a matching basis.
-Some example of Bengali stop words are {\bng O\*n*ek, Abar, ko\*r*e, Ho\*b*e, cay, \*T*i} etc.
 After completing this step the input document would look like this:\\
 {\bng
     ((ra\*sh*iya, IU\*kR*en, Jud/dh, shuru, ma\*r/k*in, Dola\*r*er, \*b*i\*n*imoy, Har, \*b*e\*rh*e\*ch*e),
@@ -80,10 +79,35 @@ To achieve this step, we used a dataset with 1.47 million Bengali words produced
 Finally, each word that is present in the tokenized and filtered list is replaced with their
 corresponding vectors and the words that isn't found is ignored and considered to be too rare to be relevant.
 
+\begin{algorithm} \caption{Preprocessing} \label{alg:preprocessing}
+\begin{algorithmic}[1]
+    \State SentenceList $\gets$ tokenize($D$)
+    \For{each sentence $i$ in SentenceList}
+        \State WordList.append(tokenize(sentence$_i$))
+    \EndFor
+    \State VectorList $\gets \{\}$
+    \For{each WordList$_i$ in WordList}
+        \State VectorList$_i \gets \{\}$
+        \For{each Word in WordList$_i$}
+            \If{Word $\in$ StopWordList}
+                \State WordList$_i$.remove(Word)
+            \ElsIf{Word $\in$ VectorEmbedding.keys()}
+                \State VectorList$_i$.append(VectorEmbedding.get(Word))
+            \Else
+                \State WordList$_i$.remove(Word)
+            \EndIf
+        \EndFor
+        \State VectorList.append(VectorList$_i$)
+    \EndFor
+    \State \textbf{Return} VectorList
+\end{algorithmic}
+\end{algorithm}
+
 \subsection{Sentence Similarity Calculation}\label{subsec:sentence-similarity-calculation}
 To perform clustering in a graph, an affinity matrix is needed.
 A similarity calculation technique using individual word distance and
 Gaussian similarity have been proposed here.
+The process is shown in Algorithm~\ref{alg:similarity}.
 A previous similar method by \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base}
 had averaged all the vectors present in a sentence to get a vector for the sentence.
 But this is not rally a sound strategy as words in a sentence are generally complementary instead of being similar.
@@ -165,24 +189,59 @@ We can see that problem caused by the averaging method have been mitigated here.
 The similarity equation (equation-\ref{eq:sent_sim}) has a standard deviation $\sigma$ which works
 as a control variable and was fine-tuned to be $5 \times 10^{-11}$ where it gave the best results.
 
-\subsubsection{Viability of this strategy}
-To get the similarity between two sentence, we needed a strategy that can match two sets of vectors.
-Other popular methods for the same functionality are also available.
-For example, Earth Mover's Distance (EMD)~\cite{Rubner-19998-emd}, Hausdorff distance, Procrustes Analysis etc.
-EMD tries to find the lowest amount of ``work'' needed to transform one set into the other one.
-This is very computationally expensive.
-And also it focuses on scaling and rotating which are not relevant in word vector space.
-Hausdorff distance takes the worst case scenario and is easily influenced by outliers.
-So, it was avoided.
-Procrustes Analysis tries to find the lowest amount of misalignment after scaling and rotating.
-Both of them are irrelevant in word vector space.\\
-
-On the other hand, our method focuses on Local Point Correspondence between two sets which is more
-important for words.
-The Gaussian similarity function captures the proximity of points smoothly,
-providing continuous feedback on how similar two points are in a normalized way.
-It is also robust against small perturbations because of the use of a soft similarity measure (Gaussian)
-and geometric mean which helps smooth over small differences in point locations.
+\begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similarity}
+\begin{algorithmic}[1]
+    \State $n \gets$ length($VL$)
+    \State $A \gets \{ \{0\} \times n \} \times n$
+    \For{each sentence$_i$ in $VL$}
+        \State $D_{\text{Square}} \gets 0$
+        \State count $\gets 0$
+        \For{each sentence$_j$ in $VL$}
+            \For{each word$_i$ in sentence$_i$}
+                \State $D_{\text{msw}} \gets \infty$
+                \For{each word$_j$ in sentence$_j$}
+                    \If{Distance(word$_i$, word$_j$) $< D_{\text{msw}}$}
+                        \State $D_{\text{msw}} \gets$ Distance(word$_i$, word$_j$)
+                    \EndIf
+                \EndFor
+                \State $D_{\text{Square}} \gets D_{\text{Square}} + D_{\text{msw}}^2$
+                \State count++
+            \EndFor
+            \For{each word$_j$ in sentence$_j$}
+                \State $D_{\text{msw}} \gets \infty$
+                \For{each word$_i$ in sentence$_i$}
+                    \If{Distance(word$_i$, word$_j$) $< D_{\text{msw}}$}
+                        \State $D_{\text{msw}} \gets$ Distance(word$_i$, word$_j$)
+                    \EndIf
+                \EndFor
+                \State $D_{\text{Square}} \gets D_{\text{Square}} + D_{\text{msw}}^2$
+                \State count++
+            \EndFor
+            \State similarity $\gets \exp \left( \frac{- D_{\text{Square}}}{2 \times \text{count} \times \sigma^2} \right)$
+            \State $A[i][j] \gets A[j][i] \gets$ similarity
+        \EndFor
+    \EndFor
+    \State \textbf{Return} $A$
+\end{algorithmic}
+\end{algorithm}
+%\subsubsection{Viability of this strategy}
+%To get the similarity between two sentence, we needed a strategy that can match two sets of vectors.
+%Other popular methods for the same functionality are also available.
+%For example, Earth Mover's Distance (EMD)~\cite{Rubner-19998-emd}, Hausdorff distance, Procrustes Analysis etc.
+%EMD tries to find the lowest amount of ``work'' needed to transform one set into the other one.
+%This is very computationally expensive.
+%And also it focuses on scaling and rotating which are not relevant in word vector space.
+%Hausdorff distance takes the worst case scenario and is easily influenced by outliers.
+%So, it was avoided.
+%Procrustes Analysis tries to find the lowest amount of misalignment after scaling and rotating.
+%Both of them are irrelevant in word vector space.\\
+%
+%On the other hand, our method focuses on Local Point Correspondence between two sets which is more
+%important for words.
+%The Gaussian similarity function captures the proximity of points smoothly,
+%providing continuous feedback on how similar two points are in a normalized way.
+%It is also robust against small perturbations because of the use of a soft similarity measure (Gaussian)
+%and geometric mean which helps smooth over small differences in point locations.
 
 \subsection{Clustering}\label{subsec:clustering}
 The clustering is the most integral part of this summarization technique, aiming to group all the
@@ -216,3 +275,25 @@ selected from each cluster.
 We then rearranged these picked sentences are in their order of appearance to retain the normal flow of
 information in the input.
 These sentences are then concatenated together to produce the final output summary.
+This is shown in Algorithm~\ref{alg:summary}
+
+\begin{algorithm} \caption{Summary Generation} \label{alg:summary}
+\begin{algorithmic}[1]
+    \State $k \gets \lceil$ length($A$) / 5 $\rceil$
+    \State clusters $\gets$ spectral\_clustering(adjacency = $A$, $k$)
+    \State indexes $\gets \{\}$
+    \For{each cluster$_i$ in clusters}
+        \State TFIDF $\gets \{\}$
+        \For{each index in cluster$_i$}
+            \State TFIDF.append(tfidf\_sum(sentences[index]))
+        \EndFor
+        \State indexes.append(indexof(max(TFIDF)))
+    \EndFor
+    \State sort(indexes)
+    \State $S \gets ""$
+    \For{each $i$ in indexes}
+        \State $S \gets S +$ sentences[$i$]
+    \EndFor
+    \State \textbf{Return} $S$
+\end{algorithmic}
+\end{algorithm}
