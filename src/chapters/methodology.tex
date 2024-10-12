@@ -1,11 +1,9 @@
-The summarization process followed here can be boiled down as, grouping together all the close sentences
+The summarization process followed here can be boiled down as, grouping all the close sentences
 together based on their meaning and then picking one sentence from each group to minimize redundancy
 and maximize sentence coverage.
-Often most widely used extractive summarization methods involve scoring the sentences based on some metric and
+Often the most widely used extractive summarization methods involve scoring the sentences based on a metric and
 then picking the best scoring sentences to generate the summaries~\cite{das-2022-tfidf,sarkar-2012-tfidf}.
-But in a single topic text document it often picks similar sentences creating redundancy due to all of them having the
-central topic terms.
-To mitigate this, firstly grouped the sentences with similar meaning together and then finally picked one
+But our method, firstly, grouped the sentences with similar meaning together and then picked one
 sentence from each group to generate a summary.
 This will ensure maximum coverage of topics while also reducing redundancy.
 This method has also been tried before by \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base}.
@@ -25,8 +23,7 @@ The Pre-processing involves 3 steps.
 These are Tokenization, Stop Word Removal, Word Embedding.
 A very common step in Pre-processing, Word Stemming, isn't used in here as the word embedding dataset
 works best for the whole word instead of the stemmed word.
-These steps are further discussed bellow.
-This whole process is shown in Algorithm~\ref{alg:preprocessing}.
+These steps are further discussed below.
 
 \subsubsection{Tokenization}
 Tokenization is the step of dividing an input document into sentences and words in a usable format.
@@ -71,54 +68,33 @@ Here the removed stop words are {\bng HOyar, por, E\*t*e, ba, kor\*t*e, Ho\*y*e\
 
 \subsubsection{Word Embedding}
 Word Embedding is a step that replaces the words in a sentence with a corresponding vector in a vector
-space such that the closer two words are in terms of meaning to one another the smaller the distance
-of those vectors would be.
+space such that similar words in terms of meaning are placed closer together.
 %It means that, the Euclidean distance between the points would be smaller.
 To achieve this step, we used a dataset with 1.47 million Bengali words produced by \citeauthor{grave-etal-2018-fasttext}
-\cite{grave-etal-2018-fasttext} crawling Wikipedia and other online resources to make the word embedding vectors.
+\cite{grave-etal-2018-fasttext}crawling Wikipedia and other online resources.
 Finally, each word that is present in the tokenized and filtered list is replaced with their
-corresponding vectors and the words that isn't found is ignored and considered to be too rare to be relevant.
+corresponding vectors, and the words that aren't found are ignored and considered to be too rare to be relevant.
 
-\begin{algorithm} \caption{Preprocessing} \label{alg:preprocessing}
-\begin{algorithmic}[1]
-    \State SentenceList $\gets$ tokenize($D$)
-    \For{each sentence $i$ in SentenceList}
-        \State WordList.append(tokenize(sentence$_i$))
-    \EndFor
-    \State VectorList $\gets \{\}$
-    \For{each WordList$_i$ in WordList}
-        \State VectorList$_i \gets \{\}$
-        \For{each Word in WordList$_i$}
-            \If{Word $\in$ StopWordList}
-                \State WordList$_i$.remove(Word)
-            \ElsIf{Word $\in$ VectorEmbedding.keys()}
-                \State VectorList$_i$.append(VectorEmbedding.get(Word))
-            \Else
-                \State WordList$_i$.remove(Word)
-            \EndIf
-        \EndFor
-        \State VectorList.append(VectorList$_i$)
-    \EndFor
-    \State \textbf{Return} VectorList
-\end{algorithmic}
-\end{algorithm}
+
 
 \subsection{Sentence Similarity Calculation}\label{subsec:sentence-similarity-calculation}
+An affinity matrix, $A$ is a way to represent a graph such that $A_{ij}$ is the edge
+between $i$th and $j$th nodes.
 To perform clustering in a graph, an affinity matrix is needed.
 A similarity calculation technique using individual word distance and
-Gaussian similarity have been proposed here.
+Gaussian similarity has been proposed here.
 The process is shown in Algorithm~\ref{alg:similarity}.
 A previous similar method by \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base}
 had averaged all the vectors present in a sentence to get a vector for the sentence.
-But this is not rally a sound strategy as words in a sentence are generally complementary instead of being similar.
+But this is not really a sound strategy as words in a sentence are generally complementary instead of being similar.
 So the word vectors tend to scatter around in the vector space rather than being grouped closed together.
 This leads to the average word vector having a tendency towards the center of the vector space.
-This would lead to the affinity between these vectors not being representative of the actual meaning.\\
+This leads to the affinity between these sentences not being representative of the actual similarity.\\
 
-To mitigate this, in this study, similarity between individual words in a pair of sentences have been considered.
+To mitigate this, in this study, similarity between individual words in a pair of sentences has been considered.
 For this, firstly, the Most Similar Word Distance ($D_{msw}$) have to be calculated as shown in Equation~\ref{eq:msd}.
-The $D_{msw}$ denotes the distance between a word vector and the word vector that
-is closest to its meaning from the other sentence.
+$D_{msw}$ denotes the distance between a word vector and the word vector that
+is closest to its meaning to the other sentence.
 
 \begin{equation}\label{eq:msd}
     D_{msw}(x,Y) = min(\{d(x,y_i) : y_i \in Y \})
@@ -135,7 +111,7 @@ Equation~\ref{eq:mswdset}.
 Here, for every word vector $x$ in a sentence $X$, the closest vector, in terms of
 Euclidean distance denoted by $d(x,y)$, is identified from all the word vectors $y$ in the sentence $Y$.
 Secondly, the word similarity is calculated using Gaussian similarity for each of these $D_{msw}$.
-The equation involved is shown in Equation~\ref{eq:wsim}.
+The equation for word similarity is shown in Equation~\ref{eq:wsim}.
 
 \begin{equation}\label{eq:wsim}
     WSim_i = e^{\frac{-D_{msw_i}^2}{2\sigma^2}}
@@ -166,18 +142,20 @@ This is explained in the Equation~\ref{eq:sent_sim}
     \end{split}
 \end{equation}
 
-Here, by taking geometric mean of the similarity between the closest words together in two sentence,
+Here, by taking geometric means of the similarity between the closest words together in two sentences,
 an effective word to word comparison has been created between those sentences.
 This reduces any misleading distance that would have come from the word averaging method due to
 the tendency towards center.
-An example of this can be seen at Figure~\ref{fig:msd}.
+An example of this solution is depicted through Figure~\ref{fig:msd}.
 Here, a more representative word association can be seen for both scenarios from Figure~\ref{fig:sarkar-problem}.
-Red and Blue dots in the figure represent two set of word vectors in a sentence pair.
-Black dashed lines show the Most Similar Distance $(D_{msw}(x,Y))$ for a word vector $x$ and the other sentence $Y$.
+Red and Blue dots in the figure represent two sets of word vectors in a sentence pair.
+Black-dashed lines show the Most Similar Word Distance, $(D_{msw}(x,Y))$, for a word vector $x$ and the other sentence $Y$.
 The arrowheads point from $x$.
 The Figure~\ref{fig:msd}(a) shows the $D_{msw}$ for Scenario A in Figure~\ref{fig:sarkar-problem}(a).
 The Figure~\ref{fig:msd}(b) Shows the $D_{msw}$ for Scenario B in Figure~\ref{fig:sarkar-problem}(b).
-We can see that problem caused by the averaging method have been mitigated here.\\
+We can see that the sentences with closer words have smaller $D_{msw}$s and would have smaller geometric mean
+than the sentences with words that are farther apart.
+So the problem caused by the averaging method has been mitigated here.\\
 
 \begin{figure}
     \centering
@@ -261,21 +239,23 @@ Here the affinity $A$ is prepared using the following Equation~\ref{eq:affinity}
 \end{equation}
 
 Here, $S_i, S_j$ are sentences from the input document.
-The affinity matrix, $A$, is used in the spectral clustering implementation in the SciKit-learn
-tool~\cite{Pedregosa-2011-scikit-learn} in python.
-Here, to use the function, we also need to provide the number of clusters to achieve.
-The number of clusters are fixed at $k=ceiling\left(\frac{N}{5}\right)$ due to it being a
+The affinity matrix, $A$, is used in the spectral clustering which is implemented using
+SciKit-learn library~\cite{Pedregosa-2011-scikit-learn} of python.
+It is also necessary to provide the number of clusters to achieve.
+The number of clusters is fixed at $k=ceiling\left(\frac{N}{5}\right)$ due to it being a
 reasonable size to contain all necessary sentences as well as being short enough to be an effective summary.
 
 \subsection{Summary Generation}\label{subsec:summary-generation}
 After clustering, we pick one sentence from each cluster.
-The sentences inside a cluster are ranked among themselves using TF-IDF .
-The best ranked sentence of the clusters by their order of TF-IDF score is
-selected from each cluster.
+The sentences inside a cluster are ranked among themselves using TF-IDF.
+From each cluster, the sentence with the most TF-IDF score is selected.
 We then rearranged these picked sentences are in their order of appearance to retain the normal flow of
 information in the input.
 These sentences are then concatenated together to produce the final output summary.
-This is shown in Algorithm~\ref{alg:summary}
+This is shown in Algorithm~\ref{alg:summary}.
+After clustering in the lines 1 and 2, We ranked the sentences in the lines 3--8.
+The best sentence indexes are picked in the lines 9--11.
+The summary is generated in the lines 12--16.
 
 \begin{algorithm} \caption{Summary Generation} \label{alg:summary}
 \begin{algorithmic}[1]

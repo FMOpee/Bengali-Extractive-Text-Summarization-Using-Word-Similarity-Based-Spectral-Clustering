@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  12 OCT 2024 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  13 OCT 2024 00:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -779,20 +779,20 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 Based Spectral Clustering\auxil\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -853,20 +853,20 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 35.
+ on input line 34.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
@@ -980,17 +980,17 @@ Missing character: There is no ; in font nullfont!
 )) (chapters/methodology.tex
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 32--38
+Underfull \hbox (badness 10000) in paragraph at lines 29--35
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--50
+Underfull \hbox (badness 10000) in paragraph at lines 36--47
 
  []
 
 
-Overfull \hbox (1.19333pt too wide) in paragraph at lines 51--58
+Overfull \hbox (1.19333pt too wide) in paragraph at lines 48--55
 \bngx ((rao[]ishya, IUo[]ekRn, Jud/dh, shuru, HO-yar, por, mao[]ir/kn, Dolao[]e
 rr, o[]ibo[]inmoy, Har, o[]ebo[]erho[]ech), (Eo[]et, Amdao[]ino[]inr/bhor, o[]e
 dshgul, o[]ibpao[]ek, poo[]erho[]ech),
@@ -999,14 +999,14 @@ dshgul, o[]ibpao[]ek, poo[]erho[]ech),
 
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 107--117
+Underfull \hbox (badness 10000) in paragraph at lines 81--93
 
  []
 
 
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 169--181
+Underfull \hbox (badness 10000) in paragraph at lines 145--159
 
  []
 
@@ -1042,7 +1042,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 )
-Underfull \hbox (badness 10000) in paragraph at lines 247--254
+Underfull \hbox (badness 10000) in paragraph at lines 225--232
 
  []
 
@@ -1053,38 +1053,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--254
 [8]) (chapters/result.tex
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--49
+Underfull \hbox (badness 10000) in paragraph at lines 48--52
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--58
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--66
+Underfull \hbox (badness 10000) in paragraph at lines 53--62
 
  []
 
 
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 63--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 102.
+               Default added (so using `tbp') on input line 107.
 
 (figs/radarchart.tex)
-Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--137
+Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--142
  [][] 
  []
 
@@ -1093,12 +1093,12 @@ Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--137
 [11]
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 163--171
+Underfull \hbox (badness 10000) in paragraph at lines 168--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--197
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 [][]\OT1/cmr/m/it/9 https://github.com/xtinge/turkish-extractive-summarization-
 dataset/blob/main/dataset/XTINGE-
  []
@@ -1148,37 +1148,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--93
  []
 
 )
-(E:/Latex Projects\Bengali Extractive Text Summarization Using Word Similarity 
-Based Spectral Clustering\auxil\main.bbl
 
 [15]
+(E:/Latex Projects\Bengali Extractive Text Summarization Using Word Similarity 
+Based Spectral Clustering\auxil\main.bbl
+Overfull \hbox (84.21535pt too wide) in paragraph at lines 70--75
+\OT1/cmtt/m/n/10.95 https://www.kaggle.com/datasets/towhidahmedfoysal/bangla-su
+mmarization-datasetprothom-alo\OT1/cmr/m/n/10.95 .
+ []
+
+
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 123--129
+Underfull \hbox (badness 10000) in paragraph at lines 130--136
 []\OT1/cmr/m/n/10.95 Bernard Marr.  Big data: 20 mind-boggling facts ev-ery-one
  must read.
  []
 
 
-Overfull \hbox (164.69698pt too wide) in paragraph at lines 123--129
+Overfull \hbox (164.69698pt too wide) in paragraph at lines 130--136
 \OT1/cmtt/m/n/10.95 https://www.forbes.com/sites/bernardmarr/2015/09/30/big-dat
 a-20-mind-boggling-facts-everyone-must-read/\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 131--137
+Underfull \hbox (badness 1231) in paragraph at lines 138--144
 \OT1/cmr/m/it/10.95 ing\OT1/cmr/m/n/10.95 , pages 404--411. As-so-ci-a-tion for
  Com-pu-ta-tional Lin-guis-tics, July 2004.  URL
  []
 
 
-Underfull \hbox (badness 3354) in paragraph at lines 178--185
+Underfull \hbox (badness 3354) in paragraph at lines 185--192
 \OT1/cmr/m/n/10.95 sum-ma-riza-tion us-ing sen-tence em-bed-ding and spec-tral 
 clus-ter-ing.  In \OT1/cmr/m/it/10.95 Pro-ceed-
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 178--185
+Underfull \hbox (badness 1210) in paragraph at lines 185--192
 \OT1/cmr/m/n/10.95 pages 337--346. As-so-ci-a-tion for Com-pu-ta-tional Lin-gui
 s-tics, De-cem-ber 2022.  URL
  []
@@ -1196,10 +1202,10 @@ L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 28458 strings out of 473898
- 705153 string characters out of 5736296
- 1259347 words of memory out of 5000000
- 50831 multiletter control sequences out of 15000+600000
+ 28455 strings out of 473898
+ 705151 string characters out of 5736296
+ 1258345 words of memory out of 5000000
+ 50828 multiletter control sequences out of 15000+600000
  589301 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,18n,87p,724b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1221,7 +1227,7 @@ ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb>
 Output written on "E:/Latex Projects\Bengali Extractive Text Summarization Usin
-g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 341336 byt
+g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 341986 byt
 es).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
