@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  13 OCT 2024 00:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  13 OCT 2024 03:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1075,16 +1075,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--71
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+Underfull \hbox (badness 10000) in paragraph at lines 105--114
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 107.
+               Default added (so using `tbp') on input line 115.
 
 (figs/radarchart.tex)
-Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--142
+Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--150
  [][] 
  []
 
@@ -1093,19 +1093,19 @@ Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--142
 [11]
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 168--176
+Underfull \hbox (badness 10000) in paragraph at lines 181--189
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 [][]\OT1/cmr/m/it/9 https://github.com/xtinge/turkish-extractive-summarization-
 dataset/blob/main/dataset/XTINGE-
  []
 
-
-
-[13]) (chapters/discussion.tex
+) (chapters/discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--6
 
  []
@@ -1147,9 +1147,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--93
 
  []
 
-)
 
-[15]
+
+[15])
 (E:/Latex Projects\Bengali Extractive Text Summarization Using Word Similarity 
 Based Spectral Clustering\auxil\main.bbl
 Overfull \hbox (84.21535pt too wide) in paragraph at lines 70--75
@@ -1204,7 +1204,7 @@ L3 programming layer <2024-08-30>
 Here is how much of TeX's memory you used:
  28455 strings out of 473898
  705151 string characters out of 5736296
- 1258345 words of memory out of 5000000
+ 1258346 words of memory out of 5000000
  50828 multiletter control sequences out of 15000+600000
  589301 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1227,7 +1227,7 @@ ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb>
 Output written on "E:/Latex Projects\Bengali Extractive Text Summarization Usin
-g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 341986 byt
+g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 342620 byt
 es).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
