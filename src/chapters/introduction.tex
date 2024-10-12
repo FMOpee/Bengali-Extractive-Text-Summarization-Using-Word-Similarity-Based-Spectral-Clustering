@@ -1,25 +1,26 @@
-Automatic Text Summarization (ATS) is a major area of natural language processing (NLP) that aims
-to automatically shorten a document or a set of documents into a shorter version, while keeping all
-the key information~\cite{Widyassari-2022-rev-ats-tech-met}.
+Text Summarization is the process of shortening a larger text without losing any key information.
+Automatic Text Summarization (ATS) is the process of summarizing a document
+automatically~\cite{Widyassari-2022-rev-ats-tech-met}.
+This is a major area of natural language processing (NLP) research which is progressing very rapidly.
 This task has become more and more important in the current digital age, where the amount of textual
-data grows exponentially in many fields, such as news, legal documents, health reports, research papers,
-and social media content.
+data grows exponentially in many fields~\cite{2015-Forbes-80-created-last-2-years},
+such as news, legal documents, health reports, research papers, and social media content.
 ATS techniques allow users to quickly get the essential information without needing to read through large
-amounts of text~\cite{wafaa-2021-summary-comprehensive-review}.\\
-
-There are two main types of text summarization: extractive and abstractive~\cite{tas-2017-rev-text-sum-2}.
-Extractive summarization, which is the focus of this paper, works by selecting best sentences or phrases directly
-from the source document, maintaining the original wording and sentence structure~\cite{moratanch-2017-extractive-review}.
-This is in contrast to abstractive summarization, which involves generating new sentences to capture the meaning of the
-text, similar we may summarize~\cite{Moratanch-2016-abstractive-rev}.
-Extractive summarization is widely used because of its simplicity and effectiveness, especially for languages with
-limited NLP resources~\cite{gupta-2010-extractive-rev}.\\
-
-Text summarization is used in many fields, from automatic news summarization, content filtering, and recommendation
+amounts of text~\cite{wafaa-2021-summary-comprehensive-review}.
+Automatic Text summarization is used in many fields, from automatic news summarization, content filtering, and recommendation
 systems to assisting legal professionals in going through long documents and researchers in reviewing academic papers.
 It can also play a critical role in personal assistants and chatbots, providing condensed information to users quickly
 and efficiently~\cite{tas-2017-rev-text-sum-2}.\\
 
+There are two main types of automatic text summarization: extractive and abstractive~\cite{tas-2017-rev-text-sum-2}.
+Extractive summarization, which is the focus of this paper, works by selecting best sentences or phrases directly
+from the source document, maintaining the original wording and sentence structure~\cite{moratanch-2017-extractive-review}.
+In contrast, abstractive summarization involves generating new sentences to capture the meaning of the
+text, Similar to human made summarization~\cite{Moratanch-2016-abstractive-rev}.
+Extractive summarization is widely used because of its simplicity and effectiveness, especially for languages with
+limited NLP resources~\cite{gupta-2010-extractive-rev}.\\
+
+There are a lot of different ways to achieve extractive summarization.
 A commonly used method for extractive text summarization is graph-based summarization.
 This method represents the sentences of a document as nodes of a graph, and the edges between them are weighted by the
 similarity between the sentences~\cite{wafaa-2021-summary-comprehensive-review}.
@@ -57,27 +58,34 @@ to inaccurate sentence representations when averaging their vectors.
 As a result, important word-to-word relationships between sentences were lost, reducing the effectiveness of the method.\\
 
 In this paper, we propose a new approach to address these challenges.
-Our method improves upon previous attempts by focusing on the individual similarity between words in sentences rather
-than averaging word vectors.
+Our method improves upon previous attempts~\cite{roychowdhury-etal-2022-spectral-base}
+by focusing on the individual similarity between words in sentences rather than averaging word vectors.
 Here the gaussian similarities between each word and the Most Similar Word from the other sentence for that word are
 used to get the similarity between the two sentence.
-This method captures the true semantic relationships between sentences more effectively.
+This method captures the similarity of meaning between two sentences more accurately.
 By applying Gaussian similarity to the Most Similar Word Distance ($D_{msw}$) values, we build an affinity matrix that
-better reflects sentence closeness.
+better reflects sentence closeness which can be proved by the effectiveness of the model (Table~\ref{tab:result_comparison-1}).
 We then apply spectral clustering on this matrix to group similar sentences together and use TF-IDF to select the
 most representative sentences from each cluster.
 This approach reduces redundancy and improves the quality of the summary by selecting sentences that are not only
 relevant but also diverse.
-This method works really well for Bengali on four different diverse datasets consistently.
+This method works really well for Bengali on four diverse datasets consistently (Figure~\ref{fig:radarchart}).
 It consistently outperforms other graph based methods like BenSumm~\cite{chowdhury-etal-2021-tfidf-clustering},
 SASbSC~\cite{roychowdhury-etal-2022-spectral-base}, LexRank~\cite{Erkan-lexRank-2004}.
-It also performs similarly well on every other low resource languages we tried it on.
-These languages are Hindi, Marathi and Turkish.
-These are the languages where reliable evaluation datasets could be found to test the effectiveness.\\
+It also performs similarly well on other low resource languages we tried it on.
+These languages are Hindi, Marathi and Turkish (Table~\ref{tab:other_language}).
+These are the only other low resource languages where we found reliable evaluation datasets and tested our model on them.
+The search process was not exhaustive due to our language barrier.\\
 
-In summary, this paper contributes a novel methodology for extractive text summarization for the Bengali language by
-improving sentence similarity calculations and enhancing clustering techniques.
-It addresses the limitations of previous models, such as misleading word vector averages~\cite{roychowdhury-etal-2022-spectral-base},
-and offers a better solution for creating less redundant and information rich summaries.
-Through this work, we aim to improve the performance of Bengali text summarization systems and contribute to the
-growing field of NLP for low-resource languages.
+The main contributions of this paper are:
+(I) Creating a new way to calculate similarity between two sentences.
+(II) Contributes a novel methodology for extractive text summarization for the Bengali language.
+By improving sentence similarity calculations and enhancing clustering techniques.
+(III) It addresses the limitations of previous models, such as misleading word vector averages~\cite{roychowdhury-etal-2022-spectral-base},
+(IV) It offers a generalizable solution for creating less redundant and information rich summaries across languages.
+(V) It provides a publicly available high quality dataset of 500 human generated summaries.\\
+
+The rest of the paper is organized as follows:
+The Literature review and Methodology are described in section 2 and 3 respectively.
+The section 4 illustrates the findings of this work.
+The section 5 discusses the findings of the paper in more depth.

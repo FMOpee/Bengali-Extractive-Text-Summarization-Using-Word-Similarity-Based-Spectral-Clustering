@@ -1,55 +1,63 @@
-Automatic Text Summarization have been a problem people are trying to solve for a long time.
-Attempts at automatic text summarization started with indexing based methods~\cite{Baxendale_1958_firstsummarization}.
+Text Summarization has been an important necessity for textual data consumption for a long time.
+But manually summarizing is really time-consuming and counter-productive.
+So automating the Text Summarization process has been a research problem for a long time.
+Attempts at automatic text summarization started with indexing-based methods~\cite{Baxendale_1958_firstsummarization}.
 In this attempt \citeauthor{Baxendale_1958_firstsummarization}~\cite{Baxendale_1958_firstsummarization} attempted to
-summarize by using a sentence scoring system where if sentences had some certain words, they would be scored higher.
-But methods like this failed to capture the topic and essence of the input text.
+summarize text by scoring sentences higher based on a certain word list.
+But this type of method failed to capture the topic and essence of the input text.
 To solve this, Text Summarization with statistical methods like TF-IDF became very popular.
-\citeauthor{edmundson_1969_earlysum}~\cite{edmundson_1969_earlysum} proposed their method which is also called
-Topic-based approach because it can focus on the central topic of a document.
-It uses two metric, Term Frequency (how many times a term appear in the input) and Inverse Document Frequency
+\citeauthor{edmundson_1969_earlysum}~\cite{edmundson_1969_earlysum} proposed a method which can focus on the central topic of a document.
+It uses two metrics, Term Frequency (how many times a term appears in the input) and Inverse Document Frequency
 (inverse of how many documents the term appears in a corpus) to calculate the importance of a term in a document.
 This method identifies the words that are common in the input text but not as common in the language and identifying
 them as the central topic.
-But it was too prone to error due to it thinking every word as a unique isolated term and not having
+But it was too error-prone due to it thinking every word as a unique isolated term and not having
 any semantic relation with other words.
 Some words may be a central topic of a document but not identified as such because they got divided into too many
 synonyms. \\
 
 Modern breakthroughs into the extractive text summarization began with the usage of Graph-based Extractive
-Text Summarization methods~\cite{Erkan-lexRank-2004, mihalcea-2004-textrank}.
-LexRank~\cite{Erkan-lexRank-2004} calculates the similarity between two sentences using cosine similarity and builds a graph
-of all the similarity of every pair of sentence in the input.
+Text Summarization methods like LexRank~\cite{Erkan-lexRank-2004} or TextRank~\cite{mihalcea-2004-textrank}.
+LexRank~\cite{Erkan-lexRank-2004} calculates the similarity between two sentences using cosine similarity
+and builds a graph
+containing similarity between every pair of sentences in the input.
 The most important sentences are then identified using the PageRank~\cite{page-PageRank-1999} algorithm on the graph.
 This algorithm ranked the sentences, who are most similar with other high ranked sentences, higher.
-TextRank~\cite{mihalcea-2004-textrank} also uses a similar approach.
-But for every sentence, the method distributed its scores to its neighbours using random walk.
+TextRank~\cite{mihalcea-2004-textrank} also uses a similar approach,
+but for every sentence, the method distributed its scores to its neighbours using a random walk.
 The process was done over and over until the scores converge.
 Although these models are very novel compared to their time, they still lacked fundamental understanding of the
 words involved in a sentence.\\
 
-Word Vector Embedding have been a novel concept for document abstraction for some time now.
-The seminal work of \citeauthor{salton-1975-word-vector}~\cite{salton-1975-word-vector} have been pivotal in
-conceptualising Word Vector Space where the closer two word are in the vector space, the closer they are semantically.
-Using word vector for summarization have only been attempted recently~\cite{Jain-2017-word-vector-embedding-summary}.\\
+To solve this problem by better expressing the similarity between words,
+a mathematical abstraction called Word Vector Embedding was conceptualized by the seminal
+work of \citeauthor{salton-1975-word-vector}~\cite{salton-1975-word-vector}.
+Word Vector Space is a mathematical abstraction of a vocabulary where the closer two words
+are meaning-wise, the closer they are in the vector space.
+Using word vector for summarization has only been started
+to be attempted recently~\cite{Jain-2017-word-vector-embedding-summary}.\\
 
-Text Summarization attempts in Bengali is a more recent development than in other high resource languages.
+But Text Summarization attempts in Bengali are a more recent development than in other high resource languages.
+So, a lot of sophisticated approaches from other languages haven't been attempted yet.
 Earlier Extractive methods have been focused on some derivative of TF-IDF based text
-summarization~\cite{chowdhury-etal-2021-tfidf-clustering,das-2022-tfidf,sarkar-2012-tfidf}.
+summarization such as \citeauthor{chowdhury-etal-2021-tfidf-clustering}~\cite{chowdhury-etal-2021-tfidf-clustering},
+\citeauthor{das-2022-tfidf}~\cite{das-2022-tfidf}, \citeauthor{sarkar-2012-tfidf}~\cite{sarkar-2012-tfidf}.
 \citeauthor{sarkar-2012-tfidf}~\cite{sarkar-2012-tfidf} used simple TF-IDF score of each sentence to rank them and
 pick the best sentences.
-\citeauthor{das-2022-tfidf}~\cite{das-2022-tfidf} used weighted TF-IDF along with some other feature like sentence position
+\citeauthor{das-2022-tfidf}~\cite{das-2022-tfidf} used weighted TF-IDF along with some other features like sentence position
 to rank the sentences.
-\citeauthor{chowdhury-etal-2021-tfidf-clustering}~\cite{chowdhury-etal-2021-tfidf-clustering} however used TF-IDF
+\citeauthor{chowdhury-etal-2021-tfidf-clustering}~\cite{chowdhury-etal-2021-tfidf-clustering} however, used TF-IDF
 matrix of a document to build a graph and perform Hierarchical Clustering to group sentences together and pick one
 sentence from each group.
-However, this model faced the problem of TF-IDF matrix not being semantically equivalent to the actual sentences.
+One shortcoming of this model is that TF-IDF matrix is not semantically equivalent to the actual sentences.
 So it didn't perfectly represent the sentences' semantic closeness in the graph.
-Using Word Vector Embedding for Bengali solved this problem after The FastText~\cite{grave-etal-2018-fasttext} dataset
-came out that had word vector embedding for 157 languages including Bengali.
+Using Word Vector Embedding for Bengali has solved this problem.
+FastText~\cite{grave-etal-2018-fasttext} released a dataset\footnote{\textit{https://fasttext.cc/docs/en/crawl-vectors.html}}
+that had word vector embedding in 157 languages, including Bengali.
 Using this dataset, \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base}
 proposed a model where they replaced all the words with their respective vector, then averaged the vectors in a
 sentence to get the vector for a sentence.
-The Gaussian Similarity between the vectors are used to build the graph.
+The Gaussian Similarity between the vectors is used to build the graph.
 On the graph, spectral clustering was used to group them together and pick one sentence from each cluster using cosine
 similarity to get the summary.\\
 
@@ -61,16 +69,19 @@ similarity to get the summary.\\
 \end{figure}
 
 But this model also had a critical weakness.
-Words in a sentence are not semantically related instead they are complementary.
-So word averages always tend to be in the center and doesn't represent the semantic similarity anymore because the word
-vectors get scattered throughout the vector space.
+Words in a sentence do not have similar meaning, instead they express different parts of one whole meaning of a sentence.
+Which means they are complementary instead of being similar.
+So word averages always tend to be in the center and don't represent the semantic similarity anymore because the word
+vectors get scattered throughout the vector space due to this complementary nature.
 An example is shown in Figure~\ref{fig:sarkar-problem} where the distance between the average word vectors is being
 misleading.
 In the figure, each point represents a word vector.
 The words from the same sentence are grouped together by being colored the same.
-In Figure~\ref{fig:sarkar-problem}(a), a scenario is shown in which the words of the two sentences are closer together.
+In Figure~\ref{fig:sarkar-problem}(a), a scenario is shown in which the words of the two sentences are closer
+together in a vector space.
 The average distance between these two sentences can be seen in the Figure~\ref{fig:sarkar-problem}(c).
-In Figure~\ref{fig:sarkar-problem}(b), a different scenario is shown where the word vectors are farther apart.
-The Figure~\ref{fig:sarkar-problem}(d) shows the average vector for these two sentences.
-Although the words in the latter scenario are farther apart, their average is shown to be closer than in the first
+We can see that averaging the words made both of the average clusters in the center.
+In Figure~\ref{fig:sarkar-problem}(b), we can see a different scenario where the word vectors are farther apart meaning wise.
+But the Figure~\ref{fig:sarkar-problem}(d) shows the average vector for these two sentences is closer than in the first
 scenario, thus making this metric misleading.
+This shortcoming has been one of the key motivations for this research.

@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -118,6 +118,14 @@ Chin-Yew Lin.
 \newblock In \emph{Text Summarization Branches Out}, pages 74--81. Association
   for Computational Linguistics, July 2004.
 \newblock URL \url{https://aclanthology.org/W04-1013}.
+
+\bibitem[Marr(2015)]{2015-Forbes-80-created-last-2-years}
+Bernard Marr.
+\newblock Big data: 20 mind-boggling facts everyone must read.
+\newblock
+  \url{https://www.forbes.com/sites/bernardmarr/2015/09/30/big-data-20-mind-boggling-facts-everyone-must-read/},
+  2015.
+\newblock Accessed: 2024-10-12.
 
 \bibitem[Mihalcea and Tarau(2004)]{mihalcea-2004-textrank}
 Rada Mihalcea and Paul Tarau.
