@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  13 OCT 2024 03:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  13 OCT 2024 06:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -865,12 +865,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
-
- []
-
-(chapters/introduction.tex
+) (chapters/introduction.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--14
 
  []
@@ -881,15 +876,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--22
  []
 
 
+
+[1
+
+{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 23--34
 
  []
 
 
-
-[1
-
-{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 35--42
 
  []
@@ -910,13 +905,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--79
  []
 
 
+
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 80--87
 
  []
 
-
-
-[2]) (chapters/literature-review.tex
+) (chapters/literature-review.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--18
 
  []
@@ -977,9 +972,9 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-)) (chapters/methodology.tex
+))
 
-[4]
+[4] (chapters/methodology.tex
 Underfull \hbox (badness 10000) in paragraph at lines 29--35
 
  []
@@ -1083,24 +1078,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--114
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 115.
 
-(figs/radarchart.tex)
+
+
+[11] (figs/radarchart.tex)
 Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--150
  [][] 
  []
 
 
-
-[11]
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 181--189
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 
  []
 
 
 
+[12]
+
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 215--215
+Underfull \hbox (badness 10000) in paragraph at lines 213--213
 [][]\OT1/cmr/m/it/9 https://github.com/xtinge/turkish-extractive-summarization-
 dataset/blob/main/dataset/XTINGE-
  []
@@ -1111,55 +1106,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--6
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--15
+Underfull \hbox (badness 10000) in paragraph at lines 7--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--23
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--40
+Underfull \hbox (badness 10000) in paragraph at lines 23--42
 
  []
 
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 41--47
+Underfull \hbox (badness 10000) in paragraph at lines 43--49
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--63
+Underfull \hbox (badness 10000) in paragraph at lines 50--68
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--85
+Underfull \hbox (badness 10000) in paragraph at lines 69--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--93
+Underfull \hbox (badness 10000) in paragraph at lines 81--88
+
+ []
+
+)
+
+[15] (chapters/Conclusion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--11
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 12--22
 
-[15])
+ []
+
+)
 (E:/Latex Projects\Bengali Extractive Text Summarization Using Word Similarity 
 Based Spectral Clustering\auxil\main.bbl
+
+[16]
 Overfull \hbox (84.21535pt too wide) in paragraph at lines 70--75
 \OT1/cmtt/m/n/10.95 https://www.kaggle.com/datasets/towhidahmedfoysal/bangla-su
 mmarization-datasetprothom-alo\OT1/cmr/m/n/10.95 .
  []
 
 
-
-[16]
 Underfull \hbox (badness 10000) in paragraph at lines 130--136
 []\OT1/cmr/m/n/10.95 Bernard Marr.  Big data: 20 mind-boggling facts ev-ery-one
  must read.
@@ -1178,6 +1178,8 @@ Underfull \hbox (badness 1231) in paragraph at lines 138--144
  []
 
 
+
+[17]
 Underfull \hbox (badness 3354) in paragraph at lines 185--192
 \OT1/cmr/m/n/10.95 sum-ma-riza-tion us-ing sen-tence em-bed-ding and spec-tral 
 clus-ter-ing.  In \OT1/cmr/m/it/10.95 Pro-ceed-
@@ -1189,9 +1191,7 @@ Underfull \hbox (badness 1210) in paragraph at lines 185--192
 s-tics, De-cem-ber 2022.  URL
  []
 
-
-
-[17])
+)
 
 [18]
 (E:/Latex Projects\Bengali Extractive Text Summarization Using Word Similarity 
@@ -1202,10 +1202,10 @@ L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 28455 strings out of 473898
- 705151 string characters out of 5736296
- 1258346 words of memory out of 5000000
- 50828 multiletter control sequences out of 15000+600000
+ 28464 strings out of 473898
+ 705488 string characters out of 5736296
+ 1260346 words of memory out of 5000000
+ 50834 multiletter control sequences out of 15000+600000
  589301 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,18n,87p,724b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1227,7 +1227,7 @@ ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb>
 Output written on "E:/Latex Projects\Bengali Extractive Text Summarization Usin
-g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 342620 byt
+g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 342980 byt
 es).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)

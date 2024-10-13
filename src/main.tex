@@ -36,7 +36,27 @@
     \maketitle
     \setlength{\parindent}{0pt}
     \begin{abstract}
-        \blindtext\\
+        Extractive Text Summarization is the process of picking the best parts of
+        a larger text without losing any key information.
+        This is really necessary in this day and age to get concise information
+        faster due to digital information overflow.
+        But research in this field, specially in Bengali, has been inadequate.
+        This papers objective is to develop an extractive text summarization
+        method for Bengali language, that uses the latest NLP techniques
+        and can be extended to other low resource languages.
+        We developed a word Similarity-based Spectral Clustering (WSbSC) method
+        for Bengali extractive text summarization.
+        It extracts key sentences by grouping semantically similar sentences into clusters
+        with a novel sentence similarity calculating algorithm.
+        We took the geometric means of individual Gaussian similarity of Word embedding vectors.
+        Then used TF-IDF ranking to pick the best sentence from each cluster.
+        We tested this method on four different Bengali text summarization datasets,
+        and it outperformed other recent models on every ROUGE metric on average by 43.2\%.
+        We also experimented the method on Turkish, Marathi and Hindi language and found that the
+        performance on those languages often exceeded the performance of Bengali.
+        We also provide a new high quality dataset for text summarization evaluation.
+        We believe this research is a crucial addition to Bengali Natural Language Processing,
+        that can easily be extended into other languages.
     \end{abstract}
 
     \section{Introduction}\label{sec:introduction}
@@ -54,7 +74,9 @@
     \section{Discussion}\label{sec:discussion}
     \input{chapters/discussion}
 
-%    \printbibliography
+    \section{Conclusion}\label{sec:conclusion}
+    \input{chapters/Conclusion}
+
 
     \bibliography{bib/main}
     \bibliographystyle{plainnat}
