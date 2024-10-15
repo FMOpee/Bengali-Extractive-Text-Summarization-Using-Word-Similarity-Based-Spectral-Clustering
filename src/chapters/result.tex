@@ -187,6 +187,21 @@ better on a high quality dataset like our Self-curated one.\\
     \label{tab:ranking}
 \end{table}
 
+
+\subsubsection{Fine-tuning Standard Deviation ($\sigma$)}\label{subsubsec:sigma}
+We checked for different Standard Deviation ($\sigma$) on Equation~\ref{eq:sent_sim}.
+We checked for sixty-three different values for $\sigma$ from $10^{-12}$ to $10$ on regular intervals
+and found that $5\times10^{-11}$ works best as the value for $\sigma$ on our self-curated dataset (dataset-1).
+The result for the fine-tuning process is shown in the following line chart (Figure~\ref{fig:sigma-fine-tuning}).\\
+
+\begin{figure}
+    \centering
+    \input{figs/msd}
+    \caption{Fine-tuning for different standard deviation~($\sigma$)~values}
+    \label{fig:sigma-fine-tuning}
+\end{figure}
+
+
 \subsection{Implementation Into Other Languages}\label{subsec:implementation-into-other-languages}
 The proposed model is not language-dependent, thus it can be extended into other languages.
 To perform this method into a language, we only need a language-specific tokenizer, a list of stop-words and
