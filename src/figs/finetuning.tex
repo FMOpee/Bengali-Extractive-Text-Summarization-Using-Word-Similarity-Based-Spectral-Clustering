@@ -6,12 +6,15 @@
         ylabel={F-1 scores for Rouge},
         ymin=0.2, ymax=0.5,
         xtick={1,2,...,63}, % Original 63 ticks
-        xticklabels={ $10^{-12}$, , , , $10^{-11}$, , , , $10^{-10}$, , , , $10^{-9}$, , , , $10^{-8}$, , , ,
+        xticklabels={ $10^{-12}$, , , , $10^{-11}$, ,$5\times10^{-11}$, , $10^{-10}$, , , , $10^{-9}$, , , , $10^{-8}$, , , ,
                      $10^{-7}$, , , , $10^{-6}$, , , , $10^{-5}$, , , , $10^{-4}$, , , ,
                      $10^{-3}$, , , , $0.01$, , , , $0.1$, , , , $0.5$, , , ,
                       , $1.0$, , , , $5.0$, , , , ,$10.0$}, % Show 1 in every 4 labels
         xticklabel style={rotate=90, anchor=east, font=\scriptsize}, % Rotate labels 90 degrees
         legend style={at={(1.05,0.5)}, anchor=west, draw=none}, % Move legend outside, remove border
+        extra x ticks={7}, % Add extra tick for 7th position
+        extra x tick style={grid=major, major grid style={red, thick}}, % Style for the highlighted tic
+        extra x tick labels={},
         grid=major,
         grid style={dashed,gray!30},
         ytick={0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5}, % Y-axis ticks
