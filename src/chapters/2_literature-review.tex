@@ -1,5 +1,4 @@
 Text Summarization has been an important necessity for textual data consumption for a long time.
-But manually summarizing is really time-consuming and counter-productive.
 So automating the Text Summarization process has been a research problem for a long time.
 Attempts at automatic text summarization started with indexing-based methods~\cite{Baxendale_1958_firstsummarization}.
 In this attempt \citeauthor{Baxendale_1958_firstsummarization}~\cite{Baxendale_1958_firstsummarization} attempted to
@@ -33,7 +32,7 @@ To solve this problem by better expressing the similarity between words,
 a mathematical abstraction called Word Vector Embedding was conceptualized by the seminal
 work of \citeauthor{salton-1975-word-vector}~\cite{salton-1975-word-vector}.
 Word Vector Space is a mathematical abstraction of a vocabulary where the closer two words
-are meaning-wise, the closer they are in the vector space.
+are semantically, the closer they are in the vector space.
 Using word vector for summarization has only been started
 to be attempted recently~\cite{Jain-2017-word-vector-embedding-summary}.\\
 
@@ -68,7 +67,7 @@ similarity to get the summary.\\
     \label{fig:sarkar-problem}
 \end{figure}
 
-But this model also had a critical weakness.
+But this model suffers critically from sentence similarity calculation.
 Words in a sentence do not have similar meaning, instead they express different parts of one whole meaning of a sentence.
 Which means they are complementary instead of being similar.
 So word averages always tend to be in the center and don't represent the semantic similarity anymore because the word

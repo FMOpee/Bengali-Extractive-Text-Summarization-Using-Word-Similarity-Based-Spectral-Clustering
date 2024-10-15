@@ -1,9 +1,19 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Akter et~al.(2017)Akter, Asa, Uddin, Hossain, Roy, and
+  Afjal]{Akter-2017-tfidf-3}
+Sumya Akter, Aysa~Siddika Asa, Md.~Palash Uddin, Md.~Delowar Hossain,
+  Shikhor~Kumer Roy, and Masud~Ibn Afjal.
+\newblock An extractive text summarization technique for bengali document(s)
+  using k-means clustering algorithm.
+\newblock In \emph{2017 IEEE International Conference on Imaging, Vision \&
+  Pattern Recognition (icIVPR)}, 2017.
+\newblock \doi{10.1109/ICIVPR.2017.7890883}.
 
 \bibitem[Baxendale(1958)]{Baxendale_1958_firstsummarization}
 P.~B. Baxendale.
@@ -204,14 +214,20 @@ G.~Salton, A.~Wong, and C.~S. Yang.
 \newblock \doi{10.1145/361219.361220}.
 \newblock URL \url{https://doi.org/10.1145/361219.361220}.
 
-\bibitem[Sarkar(2012)]{sarkar-2012-tfidf}
+\bibitem[Sarkar(2012{\natexlab{a}})]{sarkar-2012-tfidf}
 Kamal Sarkar.
 \newblock An approach to summarizing bengali news documents.
 \newblock In \emph{Proceedings of the International Conference on Advances in
   Computing, Communications and Informatics}, ICACCI '12, page 857–862.
-  Association for Computing Machinery, 2012.
+  Association for Computing Machinery, 2012{\natexlab{a}}.
 \newblock ISBN 9781450311960.
 \newblock \doi{10.1145/2345396.2345535}.
+
+\bibitem[Sarkar(2012{\natexlab{b}})]{sarkar-2012-tfidf-2}
+Kamal Sarkar.
+\newblock Bengali text summarization by sentence extraction.
+\newblock \emph{CoRR}, abs/1201.2240, 2012{\natexlab{b}}.
+\newblock URL \url{http://arxiv.org/abs/1201.2240}.
 
 \bibitem[Tas and Kiyani(2017)]{tas-2017-rev-text-sum-2}
 Oguzhan Tas and Farzad Kiyani.

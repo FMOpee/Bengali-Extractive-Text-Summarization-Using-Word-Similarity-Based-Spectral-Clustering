@@ -28,7 +28,7 @@
 
 
 
-\title{Extractive Text Summarization Using Word Similarity Based Spectral Clustering}
+\title{Extractive Text Summarization Using Word Similarity-Based Spectral Clustering}
 \author{Fahim Morshed, Md. Abdur Rahman, Sumon Ahmed}
 
 
@@ -42,7 +42,10 @@
         a larger text without losing any key information.
         This is really necessary in this day and age to get concise information
         faster due to digital information overflow.
-        But research in this field, specially in Bengali, has been inadequate.
+        Previous attempts at extractive text summarization, specially in
+        Bengali, either relied on
+        TF-IDF based method that had no understanding of inter-sentence relationship
+        or used similarity measures that didn't express that relation correctly.
         This papers objective is to develop an extractive text summarization
         method for Bengali language, that uses the latest NLP techniques
         and can be extended to other low resource languages.
@@ -50,10 +53,12 @@
         for Bengali extractive text summarization.
         It extracts key sentences by grouping semantically similar sentences into clusters
         with a novel sentence similarity calculating algorithm.
-        We took the geometric means of individual Gaussian similarity of Word embedding vectors.
+        We took the geometric means of individual Gaussian similarity
+        of Word embedding vectors to get the similarity between two sentences.
         Then used TF-IDF ranking to pick the best sentence from each cluster.
-        We tested this method on four different Bengali text summarization datasets,
-        and it outperformed other recent models on every ROUGE metric on average by 43.2\%.
+        We tested this method on four datasets,
+        and it outperformed other recent models on average by 43.2\%
+        (ranging from 2.5\% to 95.4\%).
         We also experimented the method on Turkish, Marathi and Hindi language and found that the
         performance on those languages often exceeded the performance of Bengali.
         We also provide a new high quality dataset for text summarization evaluation.
