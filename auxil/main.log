@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  16 OCT 2024 02:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  16 OCT 2024 02:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1243,7 +1243,7 @@ L3 programming layer <2024-08-30>
 Here is how much of TeX's memory you used:
  29484 strings out of 473898
  738478 string characters out of 5736296
- 1342326 words of memory out of 5000000
+ 1342354 words of memory out of 5000000
  51840 multiletter control sequences out of 15000+600000
  589301 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1266,7 +1266,7 @@ ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb>
 Output written on "E:/Latex Projects\Bengali Extractive Text Summarization Usin
-g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 350070 byt
+g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 350130 byt
 es).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)

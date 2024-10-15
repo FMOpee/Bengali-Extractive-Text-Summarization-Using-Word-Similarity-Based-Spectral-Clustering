@@ -99,7 +99,7 @@ There are three different metrics in the package for comparison of the summaries
     It can calculate the similarity in flow of the sentences between two summaries.
 \end{enumerate}
 
-In this study, we compared the F-1 scores from each of these metrics for the 4 models.
+In this study, we compared the F-1 scores from each of these metrics for the four models.
 
 \subsection{Comparison}\label{subsec:comparison}
 Average F-1 scores for the three Rouge metrics (Rouge-1, Rouge-2, Rouge-LCS) of the four models (Proposed (WSbSC),
@@ -156,8 +156,8 @@ the performances fall sharply on Dataset-2 and Dataset-4.
 \subsection{Experimentation}\label{subsec:experimentation}
 We experimented on our model with different ranking techniques and different values for standard deviation ($\sigma$)
 on Equation~\ref{eq:sent_sim} to get the best rouge values for a summary.
-The standard deviation ($\sigma$) for the Gaussian Similarity represents a control variable
-that can be fine-tuned for the best result.
+The standard deviation ($\sigma$) for the Gaussian Similarity represents a smoothing factor
+that can be used as a control variable to be fine-tuned for the best result.
 On the other hand, ranking methods pick the most representative sentence from a cluster after the clustering step.
 We checked First Rank and TF-IDF Rank methods for ranking.
 These experimentations are discussed with more detail below.
