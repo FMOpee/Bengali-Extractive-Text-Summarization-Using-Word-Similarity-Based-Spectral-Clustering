@@ -69,8 +69,8 @@ G\"{u}nes Erkan and Dragomir~R. Radev.
 \bibitem[Foysal(2023)]{ahmed_2023_TAF_dataset}
 Towhid~Ahmed Foysal.
 \newblock Bangla summarization dataset (prothom alo), 2023.
-\newblock URL
-  \url{https://www.kaggle.com/datasets/towhidahmedfoysal/bangla-summarization-datasetprothom-alo}.
+\newblock URL \url{https://www.kaggle.com/datasets/towhidahmedfoysal/
+  bangla-summarization-datasetprothom-alo}.
 \newblock Accessed: 2024-10-13.
 
 \bibitem[Gower(1975)]{Gower-1975-procrustes-distance}
@@ -129,9 +129,8 @@ Chin-Yew Lin.
 \bibitem[Marr(2015)]{2015-Forbes-80-created-last-2-years}
 Bernard Marr.
 \newblock Big data: 20 mind-boggling facts everyone must read.
-\newblock
-  \url{https://www.forbes.com/sites/bernardmarr/2015/09/30/big-data-20-mind-boggling-facts-everyone-must-read/},
-  2015.
+\newblock \url{https://www.forbes.com/sites/bernardmarr/2015/09/
+  30/big-data-20-mind-boggling-facts-everyone-must-read/}, 2015.
 \newblock Accessed: 2024-10-12.
 
 \bibitem[Mihalcea and Tarau(2004)]{mihalcea-2004-textrank}
