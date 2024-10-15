@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  13 OCT 2024 06:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  15 OCT 2024 11:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -733,7 +733,15 @@ File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (C:\Users\User\AppData\Roaming\MiKTeX\tex/latex/algorithms\algorithm.sty
+))) (C:\Program Files\MiKTeX\tex/latex/pgfplots\pgfplotstable.sty
+(C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
+Package: pgfplotstable 2021/05/15 v1.18.1 Table typesetting and Pretty-printing
+ (1.18.1)
+
+(C:\Program Files\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstable.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstable.coltype.co
+de.tex)))
+(C:\Users\User\AppData\Roaming\MiKTeX\tex/latex/algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
@@ -779,20 +787,20 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 Based Spectral Clustering\auxil\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -849,18 +857,15 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package pgfplots notification 'compat/show suggested version=true': you might b
+enefit from \pgfplotsset{compat=1.18} (current compat level: 1.7).
 
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
-ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
-your preamble.
- on input line 34.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1202,13 +1207,13 @@ L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 28464 strings out of 473898
- 705488 string characters out of 5736296
- 1260346 words of memory out of 5000000
- 50834 multiletter control sequences out of 15000+600000
+ 29006 strings out of 473898
+ 724977 string characters out of 5736296
+ 1259347 words of memory out of 5000000
+ 51365 multiletter control sequences out of 15000+600000
  589301 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,18n,87p,724b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,18n,87p,728b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/User/AppData/Roaming/MiKTeX/fonts/type1/public/indic/bang10.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fo
@@ -1227,7 +1232,7 @@ ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb>
 Output written on "E:/Latex Projects\Bengali Extractive Text Summarization Usin
-g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 342980 byt
+g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 342999 byt
 es).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
