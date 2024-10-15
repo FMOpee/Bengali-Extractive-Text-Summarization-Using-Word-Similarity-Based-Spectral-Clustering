@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  15 OCT 2024 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  15 OCT 2024 11:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1091,7 +1091,12 @@ Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--150
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--187
+Underfull \hbox (badness 10000) in paragraph at lines 163--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--178
 
  []
 
@@ -1100,7 +1105,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--187
 [12]
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
+Underfull \hbox (badness 10000) in paragraph at lines 191--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--223
 [][]\OT1/cmr/m/it/9 https://github.com/xtinge/turkish-extractive-summarization-
 dataset/blob/main/dataset/XTINGE-
  []
@@ -1116,13 +1126,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--22
  []
 
 
+
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 23--42
 
  []
 
 
-
-[14]
 Underfull \hbox (badness 10000) in paragraph at lines 43--49
 
  []
@@ -1138,13 +1148,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--80
  []
 
 
+
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 81--88
 
  []
 
-)
-
-[15] (chapters/Conclusion.tex
+) (chapters/Conclusion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--11
 
  []
@@ -1207,10 +1217,10 @@ L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29006 strings out of 473898
- 724977 string characters out of 5736296
- 1259347 words of memory out of 5000000
- 51365 multiletter control sequences out of 15000+600000
+ 29007 strings out of 473898
+ 725004 string characters out of 5736296
+ 1260347 words of memory out of 5000000
+ 51366 multiletter control sequences out of 15000+600000
  589301 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,18n,87p,728b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1232,7 +1242,7 @@ ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb>
 Output written on "E:/Latex Projects\Bengali Extractive Text Summarization Usin
-g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 342999 byt
+g Word Similarity Based Spectral Clustering\out\main.pdf" (18 pages, 343329 byt
 es).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)

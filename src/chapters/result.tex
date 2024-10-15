@@ -158,13 +158,23 @@ Other models, although perform good on certain datasets, fail to show consistenc
 For example, Both BenSumm and SASbSC perform well on Dataset-1 and Dataset-3, but
 the performances fall sharply on Dataset-2 and Dataset-4.
 
-\subsection{Different Ranking Techniques Inside Clusters}\label{subsec:different-ranking-techniques-inside-clusters}
+
+\subsection{Experimentation}\label{subsec:experimentation}
+We experimented on our model with different ranking techniques and different values for standard deviation ($\sigma$)
+on Equation~\ref{eq:sent_sim} to get the best rouge values for a summary.
+The ranking methods pick the most representative sentence from a cluster after the clustering step.
+We checked First Rank and TF-IDF Rank methods for ranking.
+On the other hand, standard deviation ($\sigma$) for the Gaussian Similarity represents a control variable
+that can be fine-tuned for the best result.
+These experimentations are discussed with more detail below.\\
+
+\subsubsection{Different Ranking Techniques Inside Clusters}\label{subsubsec:different-ranking-techniques-inside-clusters}
 We implemented two ranking methods to pick the best sentence from each cluster.
 The first one is the First Rank method where we just pick the sentence that is first in terms of their order of
 appearance inside the input document.
 The second one is the TF-IDF ranking, where we ranked the sentences by their TF-IDF scores and pick the best one.
 We can see in the table~\ref{tab:ranking} that the TF-IDF performs
-better on a high quality dataset like our Self-curated one.
+better on a high quality dataset like our Self-curated one.\\
 
 \begin{table}
     \centering
