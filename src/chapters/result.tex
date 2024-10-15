@@ -158,15 +158,27 @@ Other models, although perform good on certain datasets, fail to show consistenc
 For example, Both BenSumm and SASbSC perform well on Dataset-1 and Dataset-3, but
 the performances fall sharply on Dataset-2 and Dataset-4.
 
-
 \subsection{Experimentation}\label{subsec:experimentation}
 We experimented on our model with different ranking techniques and different values for standard deviation ($\sigma$)
 on Equation~\ref{eq:sent_sim} to get the best rouge values for a summary.
-The ranking methods pick the most representative sentence from a cluster after the clustering step.
-We checked First Rank and TF-IDF Rank methods for ranking.
-On the other hand, standard deviation ($\sigma$) for the Gaussian Similarity represents a control variable
+The standard deviation ($\sigma$) for the Gaussian Similarity represents a control variable
 that can be fine-tuned for the best result.
-These experimentations are discussed with more detail below.\\
+On the other hand, ranking methods pick the most representative sentence from a cluster after the clustering step.
+We checked First Rank and TF-IDF Rank methods for ranking.
+These experimentations are discussed with more detail below.
+
+\subsubsection{Fine-tuning Standard Deviation ($\sigma$)}\label{subsubsec:sigma}
+We checked for different Standard Deviation ($\sigma$) on Equation~\ref{eq:sent_sim}.
+We checked for sixty-three different values for $\sigma$ from $10^{-12}$ to $10$ on regular intervals
+and found that $5\times10^{-11}$ works best as the value for $\sigma$ on our self-curated dataset (dataset-1).
+The result for the fine-tuning process is shown in the following line chart (Figure~\ref{fig:sigma-fine-tuning}).
+
+\begin{figure}
+    \centering
+    \input{figs/finetuning}
+    \caption{Fine-tuning for different standard deviation~($\sigma$)~values}
+    \label{fig:sigma-fine-tuning}
+\end{figure}
 
 \subsubsection{Different Ranking Techniques Inside Clusters}\label{subsubsec:different-ranking-techniques-inside-clusters}
 We implemented two ranking methods to pick the best sentence from each cluster.
@@ -174,9 +186,9 @@ The first one is the First Rank method where we just pick the sentence that is f
 appearance inside the input document.
 The second one is the TF-IDF ranking, where we ranked the sentences by their TF-IDF scores and pick the best one.
 We can see in the table~\ref{tab:ranking} that the TF-IDF performs
-better on a high quality dataset like our Self-curated one.\\
+better on a high quality dataset like our Self-curated one.
 
-\begin{table}
+\begin{table}[H]
     \centering
     \begin{tabular}{cccc}\hline
         Method      & Rouge-1       & Rouge-2       & Rouge-LCS     \\\hline
@@ -187,21 +199,6 @@ better on a high quality dataset like our Self-curated one.\\
     \label{tab:ranking}
 \end{table}
 
-
-\subsubsection{Fine-tuning Standard Deviation ($\sigma$)}\label{subsubsec:sigma}
-We checked for different Standard Deviation ($\sigma$) on Equation~\ref{eq:sent_sim}.
-We checked for sixty-three different values for $\sigma$ from $10^{-12}$ to $10$ on regular intervals
-and found that $5\times10^{-11}$ works best as the value for $\sigma$ on our self-curated dataset (dataset-1).
-The result for the fine-tuning process is shown in the following line chart (Figure~\ref{fig:sigma-fine-tuning}).\\
-
-\begin{figure}
-    \centering
-    \input{figs/finetuning}
-    \caption{Fine-tuning for different standard deviation~($\sigma$)~values}
-    \label{fig:sigma-fine-tuning}
-\end{figure}
-
-
 \subsection{Implementation Into Other Languages}\label{subsec:implementation-into-other-languages}
 The proposed model is not language-dependent, thus it can be extended into other languages.
 To perform this method into a language, we only need a language-specific tokenizer, a list of stop-words and
@@ -210,7 +207,7 @@ We tried to find quality extractive text summarization dataset for evaluating th
 find relevant datasets in three other languages i.e., Hindi, Marathi and Turkish.
 We adopted this Model into these three low resource languages to check this hypothesis.\\
 
-\begin{table}
+\begin{table}[H]
     \centering
     \begin{tabular}{cccc}\hline
         Language                & Rouge-1   & Rouge-2   & Rouge-LCS \\\hline
