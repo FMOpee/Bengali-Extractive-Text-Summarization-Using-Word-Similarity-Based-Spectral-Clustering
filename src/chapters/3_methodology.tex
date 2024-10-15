@@ -1,39 +1,41 @@
 The summarization process followed here can be boiled down as, grouping all the close sentences
 together based on their meaning and then picking one sentence from each group to minimize redundancy
 and maximize sentence coverage.
-Often the most widely used extractive summarization methods involve scoring the sentences based on a metric and
-then picking the best scoring sentences to generate the summaries~\cite{das-2022-tfidf,sarkar-2012-tfidf}.
+Often the most widely used extractive summarization methods involve scoring the sentences
+based on a sentence scoring metric (generally a version of TF-IDF) and
+then picking the best scoring sentences to generate the
+summaries~\cite{Akter-2017-tfidf-3,das-2022-tfidf,sarkar-2012-tfidf,sarkar-2012-tfidf-2}.
 But our method, firstly, grouped the sentences with similar meaning together and then picked one
 sentence from each group to generate a summary.
 This will ensure maximum coverage of topics while also reducing redundancy.
-This method has also been tried before by \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base}.
+This method has also been tried before by \citeauthor{roychowdhury-etal-2022-spectral-base}
+~\cite{roychowdhury-etal-2022-spectral-base}.
 But the main challenge to reducing the redundancy is to develop a method that can accurately predict how close the
-meaning of the two sentences are.
+meaning of the two sentences is.
 In this paper, we propose a method that can do it.
 The summarization process followed here involves total 4 steps.
 These are, in order of their use, Pre-processing, Sentence similarity calculation, Clustering and Summary generation.
 These steps are further discussed in the following subsections.
 
 \subsection{Pre-processing}\label{subsec:pre-processing}
-Pre-processing is a standard step in Natural Language Processing that transforms the raw human language
+Pre-processing is a standard step in NLP that transforms the raw human language
 inputs into a format that can be used by a computer algorithm.
 Here the input document is transformed into a list of sets of vectors where each word is represented
 with a vector, each sentence as a set of vectors and the whole document as a list of said sets.
 The Pre-processing involves 3 steps.
-These are Tokenization, Stop Word Removal, Word Embedding.
+These are Tokenization, Stop Word Removal, and Word Embedding.
 A very common step in Pre-processing, Word Stemming, isn't used in here as the word embedding dataset
 works best for the whole word instead of the stemmed word.
-These steps are further discussed below.
+These steps are further discussed below.\\
 
-\subsubsection{Tokenization}
-Tokenization is the step of dividing an input document into sentences and words in a usable format.
-Here the input document was firstly divided into sentences by using the NLTK library~\cite{Bird-2009-nltk} of
-python by using regex matching.
+\textbf{Tokenization}: Tokenization is the step of dividing an
+input document into sentences and words in a usable format.
+%Here the input document was firstly divided into sentences by using the NLTK library~\cite{Bird-2009-nltk} of
+%python by using regex matching.
 These sentences are then further divided into words and are put together in a list.
-Then these lists are further compiled into a list of list for the whole input document.
+%Then these lists are further compiled into a list of list for the whole input document.
 An example of performing this step is given bellow.\\
-
-\textbf{Before Tokenization:}\\
+Before Tokenization:\\
 {\bng
     ra\*sh*iya-IU\*kR*en Jud/dh shuru HOyar por ma\*r/k*in Dola\*r*er \*b*i\*n*imoy Har \*b*e\*rh*e\*ch*e.
     % রাশিয়া    -ইউক্রেন    যুদ্ধ     শুরু   হওয়ার  পর  মার্কিন       ডলারের      বিনিময়        হার  বেড়েছে।
@@ -43,58 +45,55 @@ An example of performing this step is given bellow.\\
     % বৈদেশিক             মুদ্রার    রিজার্ভ       বা  মজুত  কমে    যাওয়ায়    বাংলাদেশকেও           আমদানি    সীমিত
     kor\*t*e Ho\*y*e\*ch*e.
     % করতে     হয়েছে
-}\\
+}
 
-\textbf{After Tokenization:}\\
+After Tokenization:\\
 {\bng
     ((ra\*sh*iya, IU\*kR*en, Jud/dh, shuru, HOyar, por, ma\*r/k*in, Dola\*r*er, \*b*i\*n*imoy, Har, \*b*e\*rh*e\*ch*e),
     (E\*t*e, Amda\*n*i\*n*ir/bhor, \*d*eshgul, \*b*ipa\*k*e, po\*rh*e\*ch*e),
     (\*b*{oi}\*d*e\*sh*ik, mudRar, \*r*ijar/bh, ba, mojut, ko\*m*e, JaOyay, baNNGla\*d*esh\*k*eO, Amda\*n*i,
     sii\*m*it, kor\*t*e, Ho\*y*e\*ch*e))
-}
+}\\
 
-\subsubsection{Stop Word Removal}
-
-Stop words, such as prepositions and conjunctions, add sentence fluidity but don’t carry significant meaning.
+\textbf{Stop Word Removal}: Stop words, such as prepositions and conjunctions,
+add sentence fluidity but don’t carry significant meaning.
 For Bengali, a commonly used dataset\footnote{\textit{https://www.ranks.nl/stopwords/bengali}} of 363 Bengali stop
 words used to remove the stop words on a matching basis.
-After completing this step the input document would look like this:\\
+After completing this step, the input document would look like this:\\
 {\bng
     ((ra\*sh*iya, IU\*kR*en, Jud/dh, shuru, ma\*r/k*in, Dola\*r*er, \*b*i\*n*imoy, Har, \*b*e\*rh*e\*ch*e),
     (Amda\*n*i\*n*ir/bhor, \*d*eshgul, \*b*ipa\*k*e, po\*rh*e\*ch*e),
     (\*b*{oi}\*d*e\*sh*ik, mudRar, \*r*ijar/bh, mojut, ko\*m*e, JaOyay, baNNGla\*d*esh\*k*eO, Amda\*n*i, sii\*m*it))
 }\\
-Here the removed stop words are {\bng HOyar, por, E\*t*e, ba, kor\*t*e, Ho\*y*e\*ch*e}
+Here the removed stop words are {\bng HOyar, por, E\*t*e, ba, kor\*t*e, Ho\*y*e\*ch*e}\\
 
-\subsubsection{Word Embedding}
-Word Embedding is a step that replaces the words in a sentence with a corresponding vector in a vector
-space such that similar words in terms of meaning are placed closer together.
+\textbf{Word Embedding}: Word Embedding is a step that replaces the words
+in a sentence with a corresponding vector in a vector space such that semantically similar words
+are placed closer together.
 %It means that, the Euclidean distance between the points would be smaller.
-To achieve this step, we used a dataset with 1.47 million Bengali words produced by \citeauthor{grave-etal-2018-fasttext}
+To achieve this step,
+we used a dataset with 1.47 million Bengali words produced by \citeauthor{grave-etal-2018-fasttext}
 \cite{grave-etal-2018-fasttext}crawling Wikipedia and other online resources.
 Finally, each word that is present in the tokenized and filtered list is replaced with their
 corresponding vectors, and the words that aren't found are ignored and considered to be too rare to be relevant.
 
-
-
 \subsection{Sentence Similarity Calculation}\label{subsec:sentence-similarity-calculation}
-An affinity matrix, $A$ is a way to represent a graph such that $A_{ij}$ is the edge
-between $i$th and $j$th nodes.
-To perform clustering in a graph, an affinity matrix is needed.
-A similarity calculation technique using individual word distance and
-Gaussian similarity has been proposed here.
-The process is shown in Algorithm~\ref{alg:similarity}.
+Sentence-similarity is a key aspect of building a graphical representation
+of the input document.
+By building an affinity matrix $A$ in such a way that each sentence is represented
+as a node in the graph and each edge is the similarity between the nodes,
+we can represent the input document in a abstract manner.
+This affinity matrix can be used to perform clustering in the graph.
+So to achieve better clustering, a novel similarity calculation technique
+using individual word distance and Gaussian similarity has been proposed here.
 A previous similar method by \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base}
 had averaged all the vectors present in a sentence to get a vector for the sentence.
-But this is not really a sound strategy as words in a sentence are generally complementary instead of being similar.
-So the word vectors tend to scatter around in the vector space rather than being grouped closed together.
-This leads to the average word vector having a tendency towards the center of the vector space.
-This leads to the affinity between these sentences not being representative of the actual similarity.\\
+The shortcomings of this method that have been discussed in the previous section
+lead to the affinity between these sentences not being representative of the actual similarity.\\
 
 To mitigate this, in this study, similarity between individual words in a pair of sentences has been considered.
 For this, firstly, the Most Similar Word Distance ($D_{msw}$) have to be calculated as shown in Equation~\ref{eq:msd}.
-$D_{msw}$ denotes the distance between a word vector and the word vector that
-is closest to its meaning to the other sentence.
+$D_{msw}$ Denotes the distance between a word vector and its closest counterpart from the other sentence.
 
 \begin{equation}\label{eq:msd}
     D_{msw}(x,Y) = min(\{d(x,y_i) : y_i \in Y \})
@@ -149,7 +148,8 @@ the tendency towards center.
 An example of this solution is depicted through Figure~\ref{fig:msd}.
 Here, a more representative word association can be seen for both scenarios from Figure~\ref{fig:sarkar-problem}.
 Red and Blue dots in the figure represent two sets of word vectors in a sentence pair.
-Black-dashed lines show the Most Similar Word Distance, $(D_{msw}(x,Y))$, for a word vector $x$ and the other sentence $Y$.
+Black-dashed lines show the Most Similar Word Distance, $(D_{msw}(x,Y))$,
+for a word vector $x$ and the other sentence $Y$.
 The arrowheads point from $x$.
 The Figure~\ref{fig:msd}(a) shows the $D_{msw}$ for Scenario A in Figure~\ref{fig:sarkar-problem}(a).
 The Figure~\ref{fig:msd}(b) Shows the $D_{msw}$ for Scenario B in Figure~\ref{fig:sarkar-problem}(b).
@@ -165,7 +165,13 @@ So the problem caused by the averaging method has been mitigated here.\\
 \end{figure}
 
 The similarity equation (equation-\ref{eq:sent_sim}) has a standard deviation $\sigma$ which works
-as a control variable and was fine-tuned to be $5 \times 10^{-11}$ where it gave the best results.
+as a control variable and was fine-tuned to be $5\times10^{-11}$ where
+it gave the best results (Figure~\ref{fig:sigma-fine-tuning}).
+This whole process is described in the Algorithm~\ref{alg:similarity}.
+Here, line 9--13 and 19--23 are the process of getting $D_{msw}$.
+Line 7--26 describes the process of getting $\sum^n_{i=1}D_{msw}^2$.
+Line 4--29 describes the process of getting $Sim(Sentence_i,Sentence_j)$.
+Line 1--31 describes the process of getting the affinity matrix, $A$.
 
 \begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similarity}
 \begin{algorithmic}[1]
@@ -246,13 +252,14 @@ The number of clusters is fixed at $k=ceiling\left(\frac{N}{5}\right)$ due to it
 reasonable size to contain all necessary sentences as well as being short enough to be an effective summary.
 
 \subsection{Summary Generation}\label{subsec:summary-generation}
+Summarized text is the collection of selected sentences from different clusters.
 After clustering, we pick one sentence from each cluster.
-The sentences inside a cluster are ranked among themselves using TF-IDF.
+The sentences inside a cluster are ranked among themselves using TF-IDF techniques.
 From each cluster, the sentence with the most TF-IDF score is selected.
 We then rearranged these picked sentences are in their order of appearance to retain the normal flow of
 information in the input.
 These sentences are then concatenated together to produce the final output summary.
-This is shown in Algorithm~\ref{alg:summary}.
+The clustering and summary generation process is shown in Algorithm~\ref{alg:summary}.
 After clustering in the lines 1 and 2, We ranked the sentences in the lines 3--8.
 The best sentence indexes are picked in the lines 9--11.
 The summary is generated in the lines 12--16.

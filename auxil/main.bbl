@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{31}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,12 +21,6 @@ P.~B. Baxendale.
 \newblock \emph{IBM Journal of Research and Development}, 2\penalty0
   (4):\penalty0 354--361, 1958.
 \newblock \doi{10.1147/rd.24.0354}.
-
-\bibitem[Bird et~al.(2009)Bird, Klein, and Loper]{Bird-2009-nltk}
-Steven Bird, Ewan Klein, and Edward Loper.
-\newblock \emph{Natural language processing with Python: analyzing text with
-  the natural language toolkit}.
-\newblock "O'Reilly Media, Inc.", 2009.
 
 \bibitem[Chowdhury et~al.(2021)Chowdhury, Nayeem, Mim, Chowdhury, and
   Jannat]{chowdhury-etal-2021-tfidf-clustering}
