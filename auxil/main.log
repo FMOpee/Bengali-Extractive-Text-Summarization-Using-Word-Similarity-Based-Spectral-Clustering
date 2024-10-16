@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  16 OCT 2024 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.12)  16 OCT 2024 23:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -635,7 +635,10 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 rypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Program Files\MiKTeX\tex/latex/pgfplots\pgfplots.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibra
+ryfit.code.tex
+File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/latex/pgfplots\pgfplots.sty
 (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 
@@ -913,6 +916,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--129
 
 
 [2] (figs/0101_process_flow_diagram.tex)
+Overfull \hbox (16.46404pt too wide) in paragraph at lines 39--133
+ [][] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 137--148
 
  []
@@ -1247,10 +1255,10 @@ L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29665 strings out of 473898
- 742846 string characters out of 5736296
- 1347013 words of memory out of 5000000
- 52015 multiletter control sequences out of 15000+600000
+ 29640 strings out of 473898
+ 742481 string characters out of 5736296
+ 1347086 words of memory out of 5000000
+ 51987 multiletter control sequences out of 15000+600000
  589301 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,19n,87p,728b,2205s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1272,7 +1280,7 @@ ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb>
 Output written on "E:/Latex Projects\Bengali Extractive Text Summarization Usin
-g Word Similarity Based Spectral Clustering\out\main.pdf" (19 pages, 352167 byt
+g Word Similarity Based Spectral Clustering\out\main.pdf" (19 pages, 353190 byt
 es).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)

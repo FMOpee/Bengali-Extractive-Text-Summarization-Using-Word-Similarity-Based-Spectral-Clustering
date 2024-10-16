@@ -1,30 +1,38 @@
+
 \begin{tikzpicture}[node distance=1.5cm]
+
     % Input
-    \node (input) [io] {Input Document};
+    \node (input) [process] {Input Document};
+
     % Preprocessing
-    \node (preprocess) [process, below of=input] {Preprocessing};
-    \node (tokenization) [subprocess, below of=preprocess] {Tokenization};
+    \node (tokenization) [subprocess, right of=input, yshift=1.5cm, xshift=3.5cm] {Tokenization};
     \node (stopword) [subprocess, below of=tokenization] {Stopword Removal};
     \node (embedding) [subprocess, below of=stopword] {Word Embedding};
-    % Similarity Graph
-    \node (similaritygraph) [process, right of=preprocess, xshift=4cm] {Building Similarity Graph};
-    \node (summarycalc) [subprocess, below of=similaritygraph] {Sentence Similarity Calculation};
-    \node (affinitymatrix) [subprocess, below of=summarycalc] {Building Affinity Matrix};
-    % Clustering
-    \node (clustering) [process, below of=affinitymatrix] {Clustering};
-    % Picking best sentence
-    \node (picksentence) [process, below of=clustering] {Picking the Best Sentence from Each Cluster};
-    % Output
-    \node (output) [io, below of=picksentence] {Output Summary};
 
-    \draw [arrow] (input) -- (preprocess);
-    \draw [arrow] (preprocess) -- (tokenization);
+    \node (preprocessbox) [process, fit=(tokenization) (embedding), label=above:Preprocessing] {};
+
+    % Similarity Graph
+    \node (summarycalc) [subprocess, right of=stopword, xshift=4.5cm, yshift=.75cm] {Sentence Similarity Calculation};
+    \node (affinitymatrix) [subprocess, below of=summarycalc] {Building Affinity Matrix};
+
+    \node (similaritygraphbox) [process, fit=(summarycalc) (affinitymatrix), label=above:Building Similarity Graph] {};
+
+    % Clustering
+    \node (clustering) [process, below of=affinitymatrix, anchor=north, yshift=-1.2cm] {Clustering};
+
+    % Picking best sentence
+    \node (picksentence) [process, below of=embedding, anchor=north] {Picking the Best Sentence from Each Cluster};
+
+    % Output
+    \node (output) [process, below of=input, yshift=-2.5cm] {Output Summary};
+
+    % Draw arrows
+    \draw [arrow] (input) -- (preprocessbox);
     \draw [arrow] (tokenization) -- (stopword);
     \draw [arrow] (stopword) -- (embedding);
-    \draw [arrow] (embedding.east) -- ++(0.5,0) |- (similaritygraph.west);
-    \draw [arrow] (similaritygraph) -- (summarycalc);
+    \draw [arrow] (preprocessbox) -- (similaritygraphbox);
     \draw [arrow] (summarycalc) -- (affinitymatrix);
-    \draw [arrow] (affinitymatrix) -- (clustering);
+    \draw [arrow] (similaritygraphbox) -- (clustering);
     \draw [arrow] (clustering) -- (picksentence);
     \draw [arrow] (picksentence) -- (output);
 
