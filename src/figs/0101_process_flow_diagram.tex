@@ -1,0 +1,31 @@
+\begin{tikzpicture}[node distance=1.5cm]
+    % Input
+    \node (input) [io] {Input Document};
+    % Preprocessing
+    \node (preprocess) [process, below of=input] {Preprocessing};
+    \node (tokenization) [subprocess, below of=preprocess] {Tokenization};
+    \node (stopword) [subprocess, below of=tokenization] {Stopword Removal};
+    \node (embedding) [subprocess, below of=stopword] {Word Embedding};
+    % Similarity Graph
+    \node (similaritygraph) [process, right of=preprocess, xshift=4cm] {Building Similarity Graph};
+    \node (summarycalc) [subprocess, below of=similaritygraph] {Sentence Similarity Calculation};
+    \node (affinitymatrix) [subprocess, below of=summarycalc] {Building Affinity Matrix};
+    % Clustering
+    \node (clustering) [process, below of=affinitymatrix] {Clustering};
+    % Picking best sentence
+    \node (picksentence) [process, below of=clustering] {Picking the Best Sentence from Each Cluster};
+    % Output
+    \node (output) [io, below of=picksentence] {Output Summary};
+
+    \draw [arrow] (input) -- (preprocess);
+    \draw [arrow] (preprocess) -- (tokenization);
+    \draw [arrow] (tokenization) -- (stopword);
+    \draw [arrow] (stopword) -- (embedding);
+    \draw [arrow] (embedding.east) -- ++(0.5,0) |- (similaritygraph.west);
+    \draw [arrow] (similaritygraph) -- (summarycalc);
+    \draw [arrow] (summarycalc) -- (affinitymatrix);
+    \draw [arrow] (affinitymatrix) -- (clustering);
+    \draw [arrow] (clustering) -- (picksentence);
+    \draw [arrow] (picksentence) -- (output);
+
+\end{tikzpicture}

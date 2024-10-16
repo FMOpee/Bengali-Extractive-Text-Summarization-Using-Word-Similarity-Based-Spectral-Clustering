@@ -157,13 +157,6 @@ We can see that the sentences with closer words have smaller $D_{msw}$s and woul
 than the sentences with words that are farther apart.
 So the problem caused by the averaging method has been mitigated here.\\
 
-\begin{figure}
-    \centering
-    \input{figs/0301_msd}
-    \caption{Process of obtaining $D_{msw}$}
-    \label{fig:msd}
-\end{figure}
-
 The similarity equation (equation-\ref{eq:sent_sim}) has a standard deviation $\sigma$ which works
 as a control variable and was fine-tuned to be $5\times10^{-11}$ where
 it gave the best results (Figure~\ref{fig:sigma-fine-tuning}).
@@ -173,6 +166,12 @@ Line 7--26 describes the process of getting $\sum^n_{i=1}D_{msw}^2$.
 Line 4--29 describes the process of getting $Sim(Sentence_i,Sentence_j)$.
 Line 1--31 describes the process of getting the affinity matrix, $A$.
 
+\begin{figure}
+    \centering
+    \input{figs/0301_msd}
+    \caption{Process of obtaining $D_{msw}$}
+    \label{fig:msd}
+\end{figure}
 \begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similarity}
 \begin{algorithmic}[1]
     \State $n \gets$ length($VL$)
