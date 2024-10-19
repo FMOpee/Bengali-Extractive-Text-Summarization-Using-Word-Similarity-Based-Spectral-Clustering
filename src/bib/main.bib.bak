@@ -1,0 +1,318 @@
+% 1
+@ARTICLE{Baxendale_1958_firstsummarization,
+  author={Baxendale, P. B.},
+  journal={IBM Journal of Research and Development},
+  title={Machine-Made Index for Technical Literature—An Experiment},
+  year={1958},volume={2},number={4},pages={354-361},doi={10.1147/rd.24.0354} }
+
+% 2
+@book{Bird-2009-nltk,
+  title={Natural language processing with Python: analyzing text with the natural language toolkit},
+  author={Bird, Steven and Klein, Ewan and Loper, Edward},
+  year={2009},publisher={"O'Reilly Media, Inc."}}
+
+% 3
+@inproceedings{chowdhury-etal-2021-tfidf-clustering,
+    title = "Unsupervised Abstractive Summarization of {B}engali Text Documents",
+    author = "Chowdhury, Radia Rayan  and
+      Nayeem, Mir Tafseer  and
+      Mim, Tahsin Tasnim  and
+      Chowdhury, Md. Saifur Rahman  and
+      Jannat, Taufiqul",
+    booktitle = "Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume",
+    month = apr,year = "2021",
+    publisher = "Association for Computational Linguistics",
+    doi = "10.18653/v1/2021.eacl-main.224",
+    pages = "2612--2619"}
+
+% 4
+@InProceedings{das-2022-tfidf,
+    author="Dash, Satya Ranjan
+    and Guha, Pubali
+    and Mallick, Debasish Kumar
+    and Parida, Shantipriya",
+    title="Summarizing Bengali Text: An Extractive Approach",
+    booktitle="Intelligent Data Engineering and Analytics",
+    year="2022",publisher="Springer Nature Singapore",pages="133--140",
+    isbn="978-981-16-6624-7" }
+
+% 5
+@inproceedings{Demir-2024-xtinge_turkish_extractive,
+  title = {Extractive Summarization Data Sets Generated with Measurable Analyses},
+  author = {Demir, İrem and Küpçü, Emel and Küpçü, Alptekin},
+  booktitle = {Proceedings of the 32nd IEEE Conference on Signal Processing and Communications Applications},
+  year = {2024} }
+
+% 6
+@Article{edmundson_1969_earlysum,
+    author = {Edmundson, H. P.},
+    title = {New Methods in Automatic Extracting},
+    year = {1969},publisher = {Association for Computing Machinery},
+    volume = {16},number = {2},issn = {0004-5411},
+    doi = {10.1145/321510.321519},
+    journal = {J. ACM},month = {apr},pages = {264–285},numpages = {22} }
+
+% 7
+@article{wafaa-2021-summary-comprehensive-review,
+    title = {Automatic text summarization: A comprehensive survey},
+    journal = {Expert Systems with Applications},
+    volume = {165},
+    pages = {113679},
+    year = {2021},
+    issn = {0957-4174},
+    doi = {https://doi.org/10.1016/j.eswa.2020.113679},
+    author = {Wafaa S. El-Kassas and Cherif R. Salama and Ahmed A. Rafea and Hoda K. Mohamed}}
+
+% 8
+@article{Erkan-lexRank-2004,
+    author = {Erkan, G\"{u}nes and Radev, Dragomir R.},
+    title = {LexRank: graph-based lexical centrality as salience in text summarization},
+    year = {2004},publisher = {AI Access Foundation},
+    volume = {22},number = {1},issn = {1076-9757},
+    journal = {J. Artif. Int. Res.},month = {dec},
+    pages = {457–479},numpages = {23} }
+
+% 9
+@inproceedings{grave-etal-2018-fasttext,
+    title = "Learning Word Vectors for 157 Languages",
+    author = "Grave, Edouard  and
+      Bojanowski, Piotr  and
+      Gupta, Prakhar  and
+      Joulin, Armand  and
+      Mikolov, Tomas",
+    booktitle = "Proceedings of the Eleventh International Conference on Language Resources and Evaluation ({LREC} 2018)",
+    month = may,
+    year = "2018",
+    publisher = "European Language Resources Association (ELRA)",
+    url = "https://aclanthology.org/L18-1550", }
+
+% 10
+@article{gupta-2010-extractive-rev,
+author = {Gupta, Vishal and Lehal, Gurpreet},
+year = {2010},month = {08},
+title = {A Survey of Text Summarization Extractive Techniques},
+volume = {2},
+journal = {Journal of Emerging Technologies in Web Intelligence},
+doi = {10.4304/jetwi.2.3.258-268}
+}
+
+% 11
+@INPROCEEDINGS{Hque-2015-BNLPC-Dataset,
+  author={Haque, Md. Majharul and Pervin, Suraiya and Begum, Zerina},
+  booktitle={2015 18th International Conference on Computer and Information Technology (ICCIT)},
+  title={Automatic Bengali news documents summarization by introducing sentence frequency and clustering},
+  year={2015},pages={156-160},
+  doi={10.1109/ICCITechn.2015.7488060}}
+
+@book{hausdorff-1914-hausdorff-distance,
+  title={Grundz{\"u}ge der mengenlehre},
+  author={Hausdorff, Felix},
+  volume={7},
+  year={1914},
+  publisher={von Veit}
+}
+
+% 12
+@INPROCEEDINGS{Jain-2017-word-vector-embedding-summary,
+  author={Jain, Aditya and Bhatia, Divij and Thakur, Manish K},
+  booktitle={2017 International Conference on Machine Learning and Data Science (MLDS)},
+  title={Extractive Text Summarization Using Word Vector Embedding},
+  year={2017},pages={51-55},doi={10.1109/MLDS.2017.12}}
+
+% 13
+@inproceedings{lin-2004-rouge,
+    title = "{ROUGE}: A Package for Automatic Evaluation of Summaries",
+    author = "Lin, Chin-Yew",
+    booktitle = "Text Summarization Branches Out",
+    month = jul,year = "2004",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/W04-1013",pages = "74--81",
+}
+
+% 14
+@inproceedings{mihalcea-2004-textrank,
+    title = "{T}ext{R}ank: Bringing Order into Text",
+    author = "Mihalcea, Rada  and
+      Tarau, Paul",
+    booktitle = "Proceedings of the 2004 Conference on Empirical Methods in Natural Language Processing",
+    month = jul,year = "2004",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/W04-3252",pages = "404--411"
+}
+
+% 15
+@InProceedings{Mohan-2022-topic-modeling-rev-clustering,
+    author="Mohan, G. Bharathi
+    and Kumar, R. Prasanna",
+    title="A Comprehensive Survey on Topic Modeling in Text Summarization",
+    booktitle="Micro-Electronics and Telecommunication Engineering ",
+    year="2022",publisher="Springer Nature Singapore",
+    pages="231--240",isbn="978-981-16-8721-1" }
+
+% 16
+@INPROCEEDINGS{Moratanch-2016-abstractive-rev,
+  author={Moratanch, N. and Chitrakala, S.},
+  booktitle={2016 International Conference on Circuit, Power and Computing Technologies (ICCPCT)},
+  title={A survey on abstractive text summarization},
+  year={2016},pages={1-7},doi={10.1109/ICCPCT.2016.7530193}}
+
+% 17
+@INPROCEEDINGS{moratanch-2017-extractive-review,
+  author={Moratanch, N. and Chitrakala, S.},
+  booktitle={2017 International Conference on Computer, Communication and Signal Processing (ICCCSP)},
+  title={A survey on extractive text summarization},
+  year={2017},pages={1-6},doi={10.1109/ICCCSP.2017.7944061}}
+
+% 18
+@inproceedings{page-PageRank-1999,
+  title={The PageRank Citation Ranking : Bringing Order to the Web},
+  author={Lawrence Page and Sergey Brin and Rajeev Motwani and Terry Winograd},
+  booktitle={The Web Conference},year={1999},
+  url={https://api.semanticscholar.org/CorpusID:1508503} }
+
+% 19
+@article{Pedregosa-2011-scikit-learn,
+  title={Scikit-learn: Machine Learning in {P}ython},
+  author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
+          and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
+          and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
+          Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+  journal={Journal of Machine Learning Research},
+  volume={12},pages={2825--2830},year={2011} }
+
+% 20
+@inproceedings{roychowdhury-etal-2022-spectral-base,
+    title = "Unsupervised {B}engali Text Summarization Using Sentence Embedding and Spectral Clustering",
+    author = "Roychowdhury, Sohini  and
+      Sarkar, Kamal  and
+      Maji, Arka",
+    booktitle = "Proceedings of the 19th International Conference on Natural Language Processing (ICON)",
+    month = dec,year = "2022",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.icon-main.40",pages = "337--346"}
+
+% 21
+@INPROCEEDINGS{Rubner-19998-emd,
+  author={Rubner, Y. and Tomasi, C. and Guibas, L.J.},
+  booktitle={Sixth International Conference on Computer Vision (IEEE Cat. No.98CH36271)},
+  title={A metric for distributions with applications to image databases},
+  year={1998},pages={59-66},
+  doi={10.1109/ICCV.1998.710701}}
+
+% 22
+@article{salton-1975-word-vector,
+    author = {Salton, G. and Wong, A. and Yang, C. S.},
+    title = {A vector space model for automatic indexing},
+    year = {1975},
+    issue_date = {Nov. 1975},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {18},
+    number = {11},
+    issn = {0001-0782},
+    url = {https://doi.org/10.1145/361219.361220},
+    doi = {10.1145/361219.361220},
+    abstract = {In a document retrieval, or other pattern matching environment where stored entities (documents) are compared with each other or with incoming patterns (search requests), it appears that the best indexing (property) space is one where each entity lies as far away from the others as possible; in these circumstances the value of an indexing system may be expressible as a function of the density of the object space; in particular, retrieval performance may correlate inversely with space density. An approach based on space density computations is used to choose an optimum indexing vocabulary for a collection of documents. Typical evaluation results are shown, demonstating the usefulness of the model.},
+    journal = {Commun. ACM},
+    month = {nov},
+    pages = {613–620},
+    numpages = {8},
+    keywords = {document space, content analysis, automatic information retrieval, automatic indexing}
+}
+
+% 23
+@inproceedings{sarkar-2012-tfidf,
+    author = {Sarkar, Kamal},
+    title = {An approach to summarizing Bengali news documents},
+    year = {2012},isbn = {9781450311960},
+    publisher = {Association for Computing Machinery},
+    doi = {10.1145/2345396.2345535},
+    booktitle = {Proceedings of the International Conference on Advances in Computing, Communications and Informatics},
+    pages = {857–862},numpages = {6},series = {ICACCI '12}}
+
+% 24
+@article{tas-2017-rev-text-sum-2,
+     title={A SURVEY AUTOMATIC TEXT SUMMARIZATION},
+     journal={PressAcademia Procedia},
+     volume={5},pages={205–213},year={2017},
+     DOI={10.17261/Pressacademia.2017.591},
+     author={Tas, Oguzhan and Kiyani, Farzad},number={1},
+     publisher={PressAcademia} }
+
+% 25
+@Article{vonLuxburg-2007-spectral-tutorial,
+author={von Luxburg, Ulrike},
+title={A tutorial on spectral clustering},
+journal={Statistics and Computing},
+year={2007},
+month={Dec},
+day={01},
+volume={17},
+number={4},
+pages={395-416},
+abstract={In recent years, spectral clustering has become one of the most popular modern clustering algorithms. It is simple to implement, can be solved efficiently by standard linear algebra software, and very often outperforms traditional clustering algorithms such as the k-means algorithm. On the first glance spectral clustering appears slightly mysterious, and it is not obvious to see why it works at all and what it really does. The goal of this tutorial is to give some intuition on those questions. We describe different graph Laplacians and their basic properties, present the most common spectral clustering algorithms, and derive those algorithms from scratch by several different approaches. Advantages and disadvantages of the different spectral clustering algorithms are discussed.},
+issn={1573-1375},
+doi={10.1007/s11222-007-9033-z},
+url={https://doi.org/10.1007/s11222-007-9033-z}
+}
+
+% 26
+@article{Widyassari-2022-rev-ats-tech-met,
+    title = {Review of automatic text summarization techniques \& methods},
+    journal = {Journal of King Saud University - Computer and Information Sciences},
+    volume = {34},number = {4},pages = {1029-1046},
+    year = {2022},issn = {1319-1578},
+    doi = {https://doi.org/10.1016/j.jksuci.2020.05.006},
+    author = {Adhika Pramita Widyassari and Supriadi Rustad and Guruh Fajar Shidik and Edi Noersasongko and Abdul Syukur and Affandy Affandy and De Rosal Ignatius Moses Setiadi}, }
+
+@Article{Gower-1975-procrustes-distance,
+author={Gower, J. C.},
+title={Generalized procrustes analysis},
+journal={Psychometrika},
+year={1975},
+month={Mar},
+day={01},
+volume={40},
+number={1},
+pages={33-51},
+abstract={SupposePi(i)(i = 1, 2, ...,m, j = 1, 2, ...,n) give the locations ofmn points inp-dimensional space. Collectively these may be regarded asm configurations, or scalings, each ofn points inp-dimensions. The problem is investigated of translating, rotating, reflecting and scaling them configurations to minimize the goodness-of-fit criterion $\Sigma$i=1m$\Sigma$i=1n$\Delta$2(Pj(i)Gi), whereGiis the centroid of them pointsPi(i)(i = 1, 2, ...,m). The rotated positions of each configuration may be regarded as individual analyses with the centroid configuration representing a consensus, and this relationship with individual scaling analysis is discussed. A computational technique is given, the results of which can be summarized in analysis of variance form. The special casem = 2 corresponds to Classical Procrustes analysis but the choice of criterion that fits each configuration to the common centroid configuration avoids difficulties that arise when one set is fitted to the other, regarded as fixed.},
+issn={1860-0980},
+doi={10.1007/BF02291478},
+url={https://doi.org/10.1007/BF02291478}
+}
+
+@misc{2015-Forbes-80-created-last-2-years,
+  author       = {Bernard Marr},
+  title        = {Big Data: 20 Mind-Boggling Facts Everyone Must Read},
+  howpublished = {\url{https://www.forbes.com/sites/bernardmarr/2015/09/
+ 30/big-data-20-mind-boggling-facts-everyone-must-read/}},
+  year         = {2015},
+  publisher    = {Forbes},
+  note         = {Accessed: 2024-10-12}
+}
+
+@misc{ahmed_2023_TAF_dataset,
+  author       = {Towhid Ahmed Foysal},
+  title        = {Bangla Summarization Dataset (Prothom Alo)},
+  year         = {2023},
+  url          = {https://www.kaggle.com/datasets/towhidahmedfoysal/
+bangla-summarization-datasetprothom-alo},
+  note         = {Accessed: 2024-10-13},
+  publisher    = {Kaggle}
+}
+
+@article{sarkar-2012-tfidf-2,
+  author       = {Kamal Sarkar},
+  title        = {Bengali text summarization by sentence extraction},
+  journal      = {CoRR},
+  volume       = {abs/1201.2240},
+  year         = {2012},
+  url          = {http://arxiv.org/abs/1201.2240}
+}
+
+@INPROCEEDINGS{Akter-2017-tfidf-3,
+  author={Akter, Sumya and Asa, Aysa Siddika and Uddin, Md. Palash and Hossain, Md. Delowar and Roy, Shikhor Kumer and Afjal, Masud Ibn},
+  booktitle={2017 IEEE International Conference on Imaging, Vision \& Pattern Recognition (icIVPR)},
+  title={An extractive text summarization technique for Bengali document(s) using K-means clustering algorithm},
+  year={2017},
+  doi={10.1109/ICIVPR.2017.7890883}}
