@@ -6,53 +6,53 @@ Pre-processing is a standard step in NLP that transforms the raw human language 
 Tokenization is the step of dividing an input document into sentences and words in a usable format. These sentences are then further divided into words and are put together in a list. Stop words, such as prepositions and conjunctions, add sentence fluidity but don’t carry significant meaning. For Bengali, a commonly used dataset\footnote{\textit{https://www.ranks.nl/stopwords/bengali}} of 363 Bengali stop words used to remove the stop words on a matching basis. Word Embedding is a step that replaces the words in a sentence with a corresponding vector in a vector space such that semantically similar words are placed closer together. To achieve this step, we used a dataset with 1.47 million Bengali words produced by \citeauthor{grave-etal-2018-fasttext} \cite{grave-etal-2018-fasttext} crawling Wikipedia and other online resources. Finally, each word that is present in the tokenized and filtered list is replaced with their corresponding vectors, and the words that aren't found are ignored and considered to be too rare to be relevant.
 
 \subsection{Sentence Similarity Calculation}\label{subsec:sentence-similarity-calculation}
-Sentence-similarity is a key aspect of building a graphical representation of the input document. By building an affinity matrix $A$ in such a way that each sentence is represented as a node in the graph and each edge is the similarity between the nodes, we can represent the input document in a abstract manner. This affinity matrix can be used to perform clustering in the graph. So to achieve better clustering, a novel similarity calculation technique using individual word distance and Gaussian similarity has been proposed here. A previous similar method by \citeauthor{roychowdhury-etal-2022-spectral-base}~\cite{roychowdhury-etal-2022-spectral-base} had averaged all the vectors present in a sentence to get a vector for the sentence. The shortcomings of this method that have been discussed in the previous section lead to the affinity between these sentences not being representative of the actual similarity.\\
+Sentence-similarity is a key aspect for building a graphical representation of the sentences in the input document that can be used to group sentences together. This grouping is done using affinity matrix, where each sentence is represented as node and edge as the similarity of the sentences. So, to achieve accurate clustering, a novel similarity calculation technique using individual word distance and Gaussian similarity has been proposed here.\\
 
-To mitigate this, in this study, similarity between individual words in a pair of sentences has been considered. For this, firstly, the Most Similar Word Distance ($D_{msw}$) have to be calculated as shown in Equation~\ref{eq:msd}. $D_{msw}$ Denotes the distance between a word vector and its closest counterpart from the other sentence.
+The similarity between individual words in a pair of sentences has been considered. For this, firstly, the Most Similar Word Distance ($D_{msw}$) have to be calculated as shown in Equation~\ref{eq:msd}. $D_{msw}$ Denotes the distance between a word vector and its closest counterpart from the other sentence.
 
 \begin{equation}\label{eq:msd}
     D_{msw}(x,Y) = min(\{d(x,y_i) : y_i \in Y \})
 \end{equation}
 
-All the $D_{msw}$ for each word in each sentence are then put together in a list like shown in Equation~\ref{eq:mswdset}.
+Here, for every word vector $x$ in a sentence $X$, we find the closest word vector $y_i$ from the sentence $Y$. This distance is marked as $D_{msw}(x,Y)$. $d(x,y_i)$ denotes Euclidean distance between two vector $x$ and $y_i$. We collect all the $D_{msw}(x,Y)$ for each word in each sentence and put them together in a list like shown in Equation~\ref{eq:mswdset}.
 
 \begin{equation}
-    D_{msw} = \{D_{msw}(x,Y) : x \in X\} \cup \{D_{msw}(y,X) : y \in Y\}
+    D = \{D_{msw}(x,Y) : x \in X\} \cup \{D_{msw}(y,X) : y \in Y\}
     \label{eq:mswdset}
 \end{equation}
 
-Here, for every word vector $x$ in a sentence $X$, the closest vector, in terms of Euclidean distance denoted by $d(x,y)$, is identified from all the word vectors $y$ in the sentence $Y$. Secondly, the word similarity is calculated using Gaussian similarity for each of these $D_{msw}$. The equation for word similarity is shown in Equation~\ref{eq:wsim}.
+The word similarity is calculated using Gaussian similarity for each of the element of $D$. The equation for word similarity is shown in Equation~\ref{eq:wsim}.
 
 \begin{equation}\label{eq:wsim}
-    WSim_i = e^{\frac{-D_{msw_i}^2}{2\sigma^2}}
+    W_{sim} = \{ exp\left(\frac{-D_i^2}{2\sigma^2}\right) : D_i \in D\}
 \end{equation}
 
-The Sentence similarity between the two sentence or $Sim(X,Y)$ is calculated as the Geometric mean of all the word similarities from both sentence so that the similarity between two sentence is symmetric. This is explained in the Equation~\ref{eq:sent_sim}
+Here, $\sigma$ denotes the standard deviation which represents how much noise sensitive the similarity should be. A smaller $\sigma$ represents a highly noise sensitive similarity. This is used as a control variable to further fine tune the algorithm. The similarity between the two sentence, $Sim(X,Y)$, is calculated by taking the Geometric mean of all the word similarities from both sentences. Taking $D_{msw}$ from both sentences makes the $Sim(X,Y)$ value symmetrical as this would result in $Sim(X,Y) = Sim(Y,X)$. The process of getting $Sim(X,Y)$ is explained in the following Equation~\ref{eq:sent_sim}
 
 \begin{equation}\label{eq:sent_sim}
     \begin{split}
         Sim(X,Y)
         &=  \left(
-                \prod_{i=1}^nWSim_i
+                \prod_{i=1}^nW_{Sim_i}
             \right)^{\frac{1}{n}}\\
         &=  \left(
-                e^{\frac{-D_{msw_1}^2}{2\sigma^2}}\cdot
-                e^{\frac{-D_{msw_2}^2}{2\sigma^2}}\cdot
+                e^{\frac{-D_1^2}{2\sigma^2}}\cdot
+                e^{\frac{-D_2^2}{2\sigma^2}}\cdot
                     \ldots \cdot
-                e^{\frac{-D_{msw_n}^2}{2\sigma^2}}
+                e^{\frac{-D_n^2}{2\sigma^2}}
             \right)^\frac{1}{n}\\
         &=  exp\left(
-                -\frac{D_{msw_1}^2+D_{msw_2}^2+\ldots+D_{msw_n}^2}{2n\sigma^2}
+                -\frac{D_1^2+D_2^2+\ldots+D_n^2}{2n\sigma^2}
             \right)\\
         &=  exp\left(
-                -\frac{\sum_{i=1}^nD_{msw_i}^2}{2n\sigma^2}
+                -\frac{\sum_{i=1}^nD_i^2}{2n\sigma^2}
             \right)
     \end{split}
 \end{equation}
 
 Here, by taking geometric means of the similarity between the closest words together in two sentences, an effective word to word comparison has been created between those sentences. This reduces any misleading distance that would have come from the word averaging method due to the tendency towards center. An example of this solution is depicted through Figure~\ref{fig:msd}. Here, a more representative word association can be seen for both scenarios from Figure~\ref{fig:sarkar-problem}. Red and Blue dots in the figure represent two sets of word vectors in a sentence pair. Black-dashed lines show the Most Similar Word Distance, $(D_{msw}(x,Y))$, for a word vector $x$ and the other sentence $Y$. The arrowheads point from $x$. The Figure~\ref{fig:msd}(a) shows the $D_{msw}$ for Scenario A in Figure~\ref{fig:sarkar-problem}(a). The Figure~\ref{fig:msd}(b) Shows the $D_{msw}$ for Scenario B in Figure~\ref{fig:sarkar-problem}(b). We can see that the sentences with closer words have smaller $D_{msw}$s and would have smaller geometric mean than the sentences with words that are farther apart. So the problem caused by the averaging method has been mitigated here.\\
 
-The similarity equation (equation-\ref{eq:sent_sim}) has a standard deviation $\sigma$ which works as a control variable and was fine-tuned to be $5\times10^{-11}$ where it gave the best results (Figure~\ref{fig:sigma-fine-tuning}). This whole process is described in the Algorithm~\ref{alg:similarity}. Here, line 9--13 and 19--23 are the process of getting $D_{msw}$. Line 7--26 describes the process of getting $\sum^n_{i=1}D_{msw}^2$. Line 4--29 describes the process of getting $Sim(Sentence_i,Sentence_j)$. Line 1--31 describes the process of getting the affinity matrix, $A$.
+The similarity equation (equation-\ref{eq:sent_sim}) has a standard deviation $\sigma$ which works as a control variable and was fine-tuned to be $5\times10^{-11}$ where it gave the best results (Figure~\ref{fig:sigma-fine-tuning}). This whole process is described in the Algorithm~\ref{alg:similarity}. Here, line 9--13 and 19--23 are the process of getting $D_{msw}$. Line 7--26 describes the process of getting $\sum^n_{i=1}D_i^2$. Line 4--29 describes the process of getting $Sim(Sentence_i,Sentence_j)$. Line 1--31 describes the process of getting the affinity matrix, $A$.
 
 \begin{figure}
     \centering
@@ -62,12 +62,12 @@ The similarity equation (equation-\ref{eq:sent_sim}) has a standard deviation $\
 \end{figure}
 \begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similarity}
 \begin{algorithmic}[1]
-    \State $n \gets$ length($VL$)
+    \State $n \gets$ length(WordVectorList)
     \State $A \gets \{ \{0\} \times n \} \times n$
-    \For{each sentence$_i$ in $VL$}
+    \For{each sentence$_i$ in WordVectorList}
         \State $D_{\text{Square}} \gets 0$
         \State count $\gets 0$
-        \For{each sentence$_j$ in $VL$}
+        \For{each sentence$_j$ in WordVectorList}
             \For{each word$_i$ in sentence$_i$}
                 \State $D_{\text{msw}} \gets \infty$
                 \For{each word$_j$ in sentence$_j$}
@@ -95,24 +95,6 @@ The similarity equation (equation-\ref{eq:sent_sim}) has a standard deviation $\
     \State \textbf{Return} $A$
 \end{algorithmic}
 \end{algorithm}
-%\subsubsection{Viability of this strategy}
-%To get the similarity between two sentence, we needed a strategy that can match two sets of vectors.
-%Other popular methods for the same functionality are also available.
-%For example, Earth Mover's Distance (EMD)~\cite{Rubner-19998-emd}, Hausdorff distance, Procrustes Analysis etc.
-%EMD tries to find the lowest amount of ``work'' needed to transform one set into the other one.
-%This is very computationally expensive.
-%And also it focuses on scaling and rotating which are not relevant in word vector space.
-%Hausdorff distance takes the worst case scenario and is easily influenced by outliers.
-%So, it was avoided.
-%Procrustes Analysis tries to find the lowest amount of misalignment after scaling and rotating.
-%Both of them are irrelevant in word vector space.\\
-%
-%On the other hand, our method focuses on Local Point Correspondence between two sets which is more
-%important for words.
-%The Gaussian similarity function captures the proximity of points smoothly,
-%providing continuous feedback on how similar two points are in a normalized way.
-%It is also robust against small perturbations because of the use of a soft similarity measure (Gaussian)
-%and geometric mean which helps smooth over small differences in point locations.
 
 \subsection{Clustering}\label{subsec:clustering}
 The clustering is the most integral part of this summarization technique, aiming to group all the sentences with similar meanings together. Here, spectral clustering is used to cluster the sentences using sentence similarity calculated in the step above. Spectral clustering was chosen here because \citeauthor{roychowdhury-etal-2022-spectral-base} \cite{roychowdhury-etal-2022-spectral-base} found it to be better performing than DBSCAN method. The spectral clustering steps were followed according to the tutorial given by \cite{vonLuxburg-2007-spectral-tutorial}. \\

@@ -1,0 +1,73 @@
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{graphicx} % Required for inserting images
+\usepackage{xcolor,colortbl}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+\usepackage[english]{babel}
+\input{helping_files/bangla_commands}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage[numbers]{natbib}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes.geometric, calc, positioning, fit}
+% Define styles using \tikzset instead of \tikzstyle
+\tikzset{
+    process/.style={rectangle, rounded corners, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, text width=4cm, fill=none, inner sep=10pt}, % Add padding inside
+    subprocess/.style={rectangle, rounded corners, minimum width=2.5cm, minimum height=0.8cm, text centered, draw=black, text width=4cm, fill=blue!20},
+    arrow/.style={thick,->,>=stealth}
+}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.7}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+
+
+
+\title{Extractive Text Summarization Using Word Similarity-Based Spectral Clustering}
+\author{Fahim Morshed, Md. Abdur Rahman, Sumon Ahmed}
+
+
+% Document
+\begin{document}
+
+    \maketitle
+    \setlength{\parindent}{0pt}
+    \begin{abstract} 
+        Extractive Text Summarization is the process of picking the best parts of a  larger text without losing any key information. This is really necessary in this day and age to get concise information faster due to digital information overflow. Previous attempts at extractive text summarization, specially in Bengali,  either relied on TF-IDF based  method that had no understanding of inter-sentence relationship or used similarity  measures that didn't express the relation correctly. The objective of this paper is to develop an extractive text summarization method  for Bengali language, that uses the latest NLP techniques and extended to other low resource languages. We developed a word Similarity-based Spectral Clustering (WSbSC) method for  Bengali extractive text summarization. It extracts key sentences by grouping semantically similar sentences into clusters  with a novel sentence similarity calculating algorithm. We took the geometric means of individual Gaussian similarity of Word embedding  vectors to get the similarity between two sentences. Then, used TF-IDF ranking to pick the best sentence from each cluster. This method is tested on four datasets, and it outperformed other recent models by 43.2\% on average ROUGE scores (ranging from 2.5\% to 95.4\%). The method is also experimented on Turkish, Marathi and Hindi language and found that the performance on those languages often exceeded the performance of Bengali. In addition, a new high quality dataset is provided for text summarization evaluation. We, believe this research is a crucial addition to Bengali Natural Language Processing, that can easily be extended into other languages.
+    \end{abstract}
+
+    \section{Introduction}\label{sec:introduction}
+    \input{chapters/1_introduction}
+
+    \section{Literature Review}\label{sec:literature-review}
+    \input{chapters/2_literature-review}
+
+    \section{Methodology}\label{sec:methodology}
+    \input{chapters/3_methodology}
+
+    \section{Result}\label{sec:result}
+    \input{chapters/4_result}
+
+    \section{Discussion}\label{sec:discussion}
+    \input{chapters/5_discussion}
+
+    \section{Conclusion}\label{sec:conclusion}
+    \input{chapters/6_Conclusion}
+
+
+    \bibliography{bib/main}
+    \bibliographystyle{plainnat}
+
+
+
+\end{document}
