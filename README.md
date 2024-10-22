@@ -42,10 +42,10 @@ But Text Summarization attempts in Bengali are a more recent development than in
 
 The Gaussian Similarity between the vectors is used to build the graph. On the graph, spectral clustering was used to group them together and pick one sentence from each cluster using cosine similarity to get the summary. But this model suffers critically from sentence similarity calculation. Words in a sentence do not have similar meaning, instead they express different parts of one whole meaning of a sentence. Which means they are complementary instead of being similar. So word averages always tend to be in the center and don’t represent the semantic similarity anymore because the word vectors get scattered throughout the vector space due to this complementary nature. An example is shown in Figure 2 where the distance between the average word vectors is being misleading. In the figure, each point represents a word vector. The words from the same sentence are grouped together by being colored the same. In Figure 2(a), a scenario is shown in which the words of the two sentences are closer together in a vector space. The average distance between these two sentences can be seen in the Figure 2(c). We can see that averaging the words made both of the average clusters in the center. In Figure 2(b), we can see a different scenario where the word vectors are farther apart meaning wise. But the Figure 2(d) shows the average vector for these two sentences is closer than in the first scenario, thus making this metric misleading. This shortcoming has been one of the key motivations for this research.
 
-[Figure 2(a)](mdfigs/2a.png "Figure 2(a)")
-[Figure 2(b)](mdfigs/2b.png "Figure 2(b)")
-[Figure 2(c)](mdfigs/2c.png "Figure 2(c)")
-[Figure 2(d)](mdfigs/2d.png "Figure 2(d)")
+![Figure 2(a)](mdfigs/2a.png "Figure 2(a)")
+![Figure 2(b)](mdfigs/2b.png "Figure 2(b)")
+![Figure 2(c)](mdfigs/2c.png "Figure 2(c)")
+![Figure 2(d)](mdfigs/2d.png "Figure 2(d)")
 
 Figure 2: Scenarios where averaging method fails.
 
@@ -80,25 +80,24 @@ Here, $\sigma$ denotes the standard deviation which represents how much noise se
 Equation 4.
 
 Equation 4:
-$$Sim(X,Y)
-        &=  \left(
+$$Sim(X,Y)=  \left(
                 \prod_{i=1}^nW_{Sim_i}
             \right)^{\frac{1}{n}}\\
-        &=  \left(
+        =  \left(
                 e^{\frac{-D_1^2}{2\sigma^2}}\cdot
                 e^{\frac{-D_2^2}{2\sigma^2}}\cdot
                     \ldots \cdot
                 e^{\frac{-D_n^2}{2\sigma^2}}
             \right)^\frac{1}{n}\\
-        &=  exp\left(
+        =  exp\left(
                 -\frac{D_1^2+D_2^2+\ldots+D_n^2}{2n\sigma^2}
             \right)\\
-        &=  exp\left(
+        =  exp\left(
                 -\frac{\sum_{i=1}^nD_i^2}{2n\sigma^2}
             \right)$$
 
-[Figure 3(a)](mdfigs/3a.png "Figure 3(a)")
-[Figure 3(b)](mdfigs/3b.png "Figure 3(b)")
+![Figure 3(a)](mdfigs/3a.png "Figure 3(a)")
+![Figure 3(b)](mdfigs/3b.png "Figure 3(b)")
 
 Figure 3: Process of obtaining $D_{msw}$
 
@@ -274,7 +273,7 @@ models on 4 different datasets
 
 These results are further visualized into three radar charts, so that the performance of each model on the four datasets can be visualized at once. These charts (Figure 4) show us that the proposed method is much more dataset independent and performs uniformly on every metric across the datasets. Other models, although perform good on certain datasets, fail to show consistency. For example, Both BenSumm and SASbSC perform well on Dataset-1 and Dataset-3, but the performances fall sharply on Dataset-2 and Dataset-4.
 
-[Figure 4](mdfigs/4.png "Figure 4")
+![Figure 4](mdfigs/4.png "Figure 4")
 Figure 4: The Radar chart of the models of being compared on four datasets at once
 
 ### 4.5 Experimentation
@@ -285,7 +284,7 @@ We experimented on our model with different ranking techniques and different val
 
 We checked for different Standard Deviation (σ) on Equation 4. We checked for sixty-three different values for σ from 10−12 to 10 on regular intervals and found that 5 × 10−11 works best as the value for σ on our self-curated dataset (dataset-1). The result for the fine-tuning process is shown in the following line chart (Figure 5).
 
-[Figure 5](mdfigs/5.png "Figure 5")
+![Figure 5](mdfigs/5.png "Figure 5")
 Figure 5: Fine-tuning for different standard deviation (σ) values
 
 #### 4.5.2 Different Ranking Techniques Inside Clusters
