@@ -105,7 +105,7 @@ Here, by taking geometric means of the similarity between the closest words toge
 
 The standard deviation σ in the Equation 4 was fine-tuned to be $5\times10^{-11}$ where it gave the best results (Figure 5). The process of building the affinity matrix, A, is described in the Algorithm 1. line 9--13 and 19--23 are the process of getting $D_{msw}$. Line 7--26 describes the process of getting $\sum^n_{i=1}D_i^2$. Line 4--29 describes the process of getting $Sim(Sentence_i,Sentence_j)$. Line 1--31 describes the process of getting the affinity matrix, $A$.
 
-$$\begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similarity}
+<!-- $$\begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similarity}
 \begin{algorithmic}[1]
     \State $n \gets$ length(WordVectorList)
     \State $A \gets \{ \{0\} \times n \} \times n$
@@ -140,7 +140,7 @@ $$\begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similar
     \State \textbf{Return} $A$
 \end{algorithmic}
 \end{algorithm}
-$$
+$$ -->
 
 ### 3.3 Clustering
 
@@ -154,7 +154,7 @@ Here, $S_i$, $S_j$ are sentences from the input document. The affinity matrix, A
 ### 3.4 Summary Generation
 
 Summarized text is the collection of selected sentences from different clusters. After clustering, we pick one sentence from each cluster. The sentences inside a cluster are ranked among themselves using TF-IDF techniques. From each cluster, the sentence with the most TF-IDF score is selected. We then rearranged these picked sentences are in their order of appearance to retain the normal flow of information in the input. These sentences are then concatenated together to produce the final output summary. The clustering and summary generation process is shown in Algorithm 2. After clustering in the lines 1 and 2, We ranked the sentences in the lines 3–8. The best sentence indexes are picked in the lines 9–11. The summary is generated in the lines 12–16.
-$$
+<!-- $$
 \begin{algorithm} \caption{Summary Generation} \label{alg:summary}
 \begin{algorithmic}[1]
     \State $k \gets \lceil$ length($A$) / 5 $\rceil$
@@ -175,7 +175,7 @@ $$
     \State \textbf{Return} $S$
 \end{algorithmic}
 \end{algorithm}
-$$
+$$ -->
 
 ## 4 Result
 
