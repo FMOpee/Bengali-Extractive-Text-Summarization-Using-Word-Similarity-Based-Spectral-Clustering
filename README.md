@@ -64,12 +64,12 @@ Tokenization is the step of dividing an input document into sentences and words 
 Sentence-similarity is a key aspect for building a graphical representation of the sentences in the input document that can be used to group sentences together. This grouping is done using affinity matrix, where each sentence is represented as node and edge as the similarity of the sentences. So, to achieve accurate clustering, a novel similarity calculation technique using individual word distance and Gaussian similarity has been proposed here. The similarity between individual words in a pair of sentences has been considered. For this, firstly, the Most Similar Word Distance ($D_{msw}$) have to be calculated as shown in Equation 1. $D_{msw}$ Denotes the distance between a word vector and its closest counterpart from the other sentence.
 
 Equation 1:
-$$ D_{msw}(x,Y) = min(\{d(x,y_i) : y_i \in Y \}) $$
+$$D_{msw}(x,Y) = min(\{d(x,y_i) : y_i \in Y \})$$
 
 Here, for every word vector $x$ in a sentence $X$, we find the closest word vector $y_i$ from the sentence $Y$. This distance is marked as $D_{msw}(x, Y )$. $d(x, y_i)$ denotes Euclidean distance between two vector $x$ and $y_i$. We collect all the $D_{msw}(x, Y )$ for each word in each sentence and put them together in a list like shown in Equation 2.
 
 Equation 2:
-$$ D = \{D_{msw}(x,Y) : x \in X\} \cup \{D_{msw}(y,X) : y \in Y\} $$
+$$D = \{D_{msw}(x,Y) : x \in X\} \cup \{D_{msw}(y,X) : y \in Y\}$$
 
 The word similarity is calculated using Gaussian similarity for each of the element of D. The equation for word similarity is shown in Equation 3.
 
