@@ -80,8 +80,7 @@ Here, $\sigma$ denotes the standard deviation which represents how much noise se
 Equation 4.
 
 Equation 4:
-$$\begin{split}
-        Sim(X,Y)
+$$Sim(X,Y)
         &=  \left(
                 \prod_{i=1}^nW_{Sim_i}
             \right)^{\frac{1}{n}}\\
@@ -96,8 +95,7 @@ $$\begin{split}
             \right)\\
         &=  exp\left(
                 -\frac{\sum_{i=1}^nD_i^2}{2n\sigma^2}
-            \right)
-    \end{split}$$
+            \right)$$
 
 [Figure 3(a)](mdfigs/3a.png "Figure 3(a)")
 [Figure 3(b)](mdfigs/3b.png "Figure 3(b)")
