@@ -7,22 +7,17 @@ Preprocessing is the standard process of NLP that transforms raw human language 
 Tokenization is the step of dividing an input document into sentences and words to transform it into a more usable format. Here, the input document is represented as a list of sentence and the sentences are represented as a list of words. Stop words, such as prepositions and conjunctions, add sentence fluidity but don’t carry significant meaning. Removing these words allows the algorithm to focus on more impactful words. To remove these stop words, we used a list\footnote{\textit{https://www.ranks.nl/stopwords/bengali}} of 363 bengali words. Word Embedding is the process of representing  words as vector in a vector space. In this vector space, semantically similar words are placed closer together so that the similarity relation between words can be expressed in an abstract mathmatical way. We used the FastText dataset\footnote{\textit{https://fasttext.cc/docs/en/crawl-vectors.html}}~\cite{grave-etal-2018-fasttext} with 1.47 million Bengali words and their vector representation to achieve this step. Each word from the tokenized and filtered list is replaced with their corresponding vectors. If some words aren't present in the dataset, they are considered too rare and ignored. Following these steps, the input document is transformed into a set of vectors to be used in sentence similarity calculation. 
 
 \subsection{Sentence Similarity Calculation}\label{subsec:sentence-similarity-calculation}
-Sentence similarity is the key aspect of 
-%Sentence-similarity is a key aspect for building a graphical representation of the sentences in the input document that can be used to group sentences together. This grouping is done using affinity matrix, where each sentence is represented as node and edge as the similarity of the sentences. So, to achieve accurate clustering, a novel similarity calculation technique using individual word distance and Gaussian similarity has been proposed here.\\
+Sentence similarity is the key criteria to build a graphical representation of the relation between the sentences in the input document. This graphical representation is expressed via an affinity matrix to cluster the sentences into groups of semantically similar sentences. The nodes in the affinity matrix represents the sentences of the input and the edges of the matrix represents the similarity between two sentence to graphically represent the input document. Here, we proposed a novel sentence similarity calculation technique using individual Gaussian similarity between close word pairs to construct the affinity matrix. To calculate the sentence similarity between two sentences, we adhere to the following steps.\\
 
-The similarity between individual words in a pair of sentences has been considered. For this, firstly, the Most Similar Word Distance ($D_{msw}$) have to be calculated as shown in Equation~\ref{eq:msd}. $D_{msw}$ Denotes the distance between a word vector and its closest counterpart from the other sentence.
-
+Firstly, for every word of a sentence, we find its closest counterpart from the other sentence to build a word pair. The Euclidean distance between the vector representation of the two words from this pair is defined as the Most Similar Word Distance ($D_{msw}$) to be used in the following steps. The process of calculating the $D_{msw}$ is shown in the equation \ref{eq:msd}. In this equation, for every word vector $x$, in a sentence $X$, we find the Euclidean distance ( $d(x,y_i)$ ) between the word vectors $x$ and $y_i$ where $y_i$ is a word vector from the sentence $Y$. The lowest possible distance in this set of Euclidean distance is the $D_{msw}$. 
 \begin{equation}\label{eq:msd}
     D_{msw}(x,Y) = min(\{d(x,y_i) : y_i \in Y \})
 \end{equation}
-
-Here, for every word vector $x$ in a sentence $X$, we find the closest word vector $y_i$ from the sentence $Y$. This distance is marked as $D_{msw}(x,Y)$. $d(x,y_i)$ denotes Euclidean distance between two vector $x$ and $y_i$. We collect all the $D_{msw}(x,Y)$ for each word in each sentence and put them together in a list like shown in Equation~\ref{eq:mswdset}.
-
+Then, we calculate the $D_{msw}$ for every word of the two sentences $X$ and $Y$ to make the sentence similarity calculation symmetric. This process is shown in the equation \ref{eq:mswdset}. In this equation $D$, is a set containing all the $D_{msw}$ from both $X$ and $Y$ that would be used in the later steps.
 \begin{equation}
     D = \{D_{msw}(x,Y) : x \in X\} \cup \{D_{msw}(y,X) : y \in Y\}
     \label{eq:mswdset}
 \end{equation}
-
 The word similarity is calculated using Gaussian similarity for each of the element of $D$. The equation for word similarity is shown in Equation~\ref{eq:wsim}.
 
 \begin{equation}\label{eq:wsim}
