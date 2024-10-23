@@ -1,4 +1,4 @@
-The summarization process followed here can be boiled down as two basic steps, grouping all the close sentences together based on their meaning to minimize redundancy and picking one sentence from each group to maximize sentence coverage. To group semantically similar sentences into clusters, we build a sentence similarity graph and perform spectral clustering on it~\cite{roychowdhury-etal-2022-spectral-base}. The sentence similarity graph is produced using a novel sentence similarity calculation algorithm that uses geometric mean of Gaussian similarity between individual word pairs from the two sentences. The Gaussian similarity is calculated using the vector embedding representations of the words. On the other hand, we used TF--IDF scores of the sentences in a cluster to pick the highest ranked and thus most representative sentence from the cluster~\cite{Akter-2017-tfidf-3,das-2022-tfidf,sarkar-2012-tfidf,sarkar-2012-tfidf-2}. The summarization process followed here involves 4 steps. These are, Pre-processing, Sentence similarity calculation, Clustering and Summary generation. These steps are further discussed in the following subsections. 
+The summarization process followed here can be boiled down as two basic steps, grouping all the close sentences together based on their meaning to minimize redundancy and picking one sentence from each group to maximize sentence coverage. To group semantically similar sentences into clusters, we build a sentence similarity graph and perform spectral clustering on it~\cite{roychowdhury-etal-2022-spectral-base}. The sentence similarity graph is produced using a novel sentence similarity calculation algorithm that uses geometric mean of Gaussian similarity between individual word pairs from the two sentences. The Gaussian similarity is calculated using the vector embedding representations of the words. On the other hand, we used TF-IDF scores of the sentences in a cluster to pick the highest ranked and thus most representative sentence from the cluster~\cite{Akter-2017-tfidf-3,das-2022-tfidf,sarkar-2012-tfidf,sarkar-2012-tfidf-2}. The summarization process followed here involves 4 steps. These are, Pre-processing, Sentence similarity calculation, Clustering and Summary generation. These steps are further discussed in the following subsections. 
 
 \subsection{Preprocessing}\label{subsec:preprocessing}
 Preprocessing is the standard process of NLP that transforms raw human language inputs into a format that can be used by a computer algorithm. In this preprocessing step, the input document is transformed into a few set of vectors where each word is represented with a vector, each sentence is represented as a set of vectors and the whole document as a list containing those sets. To achieve this representation, the preprocessing follows three steps. These are tokenization, stop word removal, and word embedding. A very common step in preprocessing, word stemming, isn't used here as the word embedding dataset works best for the whole word instead of the root word. These steps are further discussed below.\\
@@ -12,7 +12,7 @@ Firstly, for every word of a sentence, we find its closest counterpart from the 
 \begin{equation}\label{eq:msd}
     D_{msw}(x,Y) = min(\{d(x,y_i) : y_i \in Y \})
 \end{equation}
-Then, we calculate the $D_{msw}$ for every word of the two sentences $X$ and $Y$ to make the sentence similarity calculation symmetric. This process is shown in the equation \ref{eq:mswdset}. In this equation $D$, is a set containing all the $D_{msw}$ from both $X$ and $Y$ that would be used in the later steps.
+Then, we calculate the $D_{msw}$ for every word of the two sentences $X$ and $Y$ to make the sentence similarity calculation symmetric. This process is shown in the equation \ref{eq:mswdset}. In this equation, $D$, is a set containing all the $D_{msw}$ from both $X$ and $Y$ that would be used in the later steps.
 \begin{equation}
     D = \{D_{msw}(x,Y) : x \in X\} \cup \{D_{msw}(y,X) : y \in Y\}
     \label{eq:mswdset}
@@ -42,11 +42,9 @@ Finally, the sentence similarity between the two sentences $Sim(X,Y)$ is calcula
             \right)
     \end{split}
 \end{equation}
-By following steps described above, we get a similarity value for two sentence. This value solves the lack of local word correspondence problem faced by the word averaging method based similarity calculation \cite{roychowdhury-etal-2022-spectral-base} by considering local word to word similarity. 
-%Here, by taking geometric means of the similarity between the closest words together in two sentences, an effective word to word comparison has been created between those sentences. This reduces any misleading distance that would have come from the word averaging method due to the tendency towards center. An example of this solution is depicted through Figure~\ref{fig:msd}. Here, a more representative word association can be seen for both scenarios from Figure~\ref{fig:sarkar-problem}. Red and Blue dots in the figure represent two sets of word vectors in a sentence pair. Black-dashed lines show the Most Similar Word Distance, $(D_{msw}(x,Y))$, for a word vector $x$ and the other sentence $Y$. The arrowheads point from $x$. The Figure~\ref{fig:msd}(a) shows the $D_{msw}$ for Scenario A in Figure~\ref{fig:sarkar-problem}(a). The Figure~\ref{fig:msd}(b) Shows the $D_{msw}$ for Scenario B in Figure~\ref{fig:sarkar-problem}(b). We can see that the sentences with closer words have smaller $D_{msw}$s and would have smaller geometric mean than the sentences with words that are farther apart. So the problem caused by the averaging method has been mitigated here.\\
+By following steps described above, we get a similarity value for two sentence. This value solves the lack of local word correspondence problem faced by the word averaging method based similarity calculation \cite{roychowdhury-etal-2022-spectral-base} by considering local word to word similarity. This correspondence is shown in the figure \ref{fig:msd} to demonstrate the merit of the method described above. Figure \ref{fig:msd} follows up the scenario from the figure \ref{fig:sarkar-problem} to show that the proposed method can solve the local word correspondence problem faced by word averaging method. The figure shows that the scenario \ref{fig:msd}(a) has a set of smaller $D_{msw}$ than the scenario \ref{fig:msd}(b). Having smaller $D_{msw}$ makes the individual word similarities $W_{sim}$ from equation \ref{eq:wsim} larger due to the nature of Gaussian kernel function. These values would result in a higher sentence similarity for the sentences in the scenario \ref{fig:msd}(a) than in the scenario \ref{fig:msd}(b). This solved the problem showed in the figure \ref{fig:sarkar-problem} where the scenario \ref{fig:sarkar-problem}(a) has a larger sentence average distance than \ref{fig:sarkar-problem}(b) resulting in \ref{fig:sarkar-problem}(a) having a smaller sentence similarity than \ref{fig:sarkar-problem}(b).\\
 
-The standard deviation $\sigma$ in the Equation \ref{eq:sent_sim} was fine-tuned to be $5\times10^{-11}$ where it gave the best results (Figure~\ref{fig:sigma-fine-tuning}). The process of building the affinity matrix, $A$, is described in the Algorithm~\ref{alg:similarity}. Here, line 9--13 and 19--23 are the process of getting $D_{msw}$. Line 7--26 describes the process of getting $\sum^n_{i=1}D_i^2$. Line 4--29 describes the process of getting $Sim(Sentence_i,Sentence_j)$. Line 1--31 describes the process of getting the affinity matrix, $A$.
-
+The whole process of sentence similarity calculation is shown in the following algorithm \ref{alg:similarity}. In this algorithm, we calculate an affinity matrix using the input word vector list from the preprocessing step. We took the most similar word distance $D_{msw}$ in line 8--13 and 18--23 for each word (line 7 and 17) of a sentence pair (line 3 and 6). $\sum^n_{i=1}D_i^2$ from equation \ref{eq:sent_sim} is calculated in the lines 14 and 24 to be used in the calculation of sentence similarity (line 27). The similarity is used to construct an affinity matrix $A$ (line 28).
 \begin{figure}
     \centering
     \input{figs/0301_msd}
@@ -55,33 +53,33 @@ The standard deviation $\sigma$ in the Equation \ref{eq:sent_sim} was fine-tuned
 \end{figure}
 \begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similarity}
 \begin{algorithmic}[1]
-    \State $n \gets$ length(WordVectorList)
-    \State $A \gets \{ \{0\} \times n \} \times n$
+    \State $l \gets$ length(WordVectorList)
+    \State $A \gets [ [ 0 ] * l ] * l$
     \For{each sentence$_i$ in WordVectorList}
-        \State $D_{\text{Square}} \gets 0$
-        \State count $\gets 0$
+        \State $D_{Square} \gets 0$
+        \State n $\gets 0$
         \For{each sentence$_j$ in WordVectorList}
             \For{each word$_i$ in sentence$_i$}
-                \State $D_{\text{msw}} \gets \infty$
+                \State $D_{msw} \gets \infty$
                 \For{each word$_j$ in sentence$_j$}
-                    \If{Distance(word$_i$, word$_j$) $< D_{\text{msw}}$}
-                        \State $D_{\text{msw}} \gets$ Distance(word$_i$, word$_j$)
+                    \If{Distance(word$_i$, word$_j$) $< D_{msw}$}
+                        \State $D_{msw} \gets$ distance(word$_i$, word$_j$)
                     \EndIf
                 \EndFor
-                \State $D_{\text{Square}} \gets D_{\text{Square}} + D_{\text{msw}}^2$
-                \State count++
+                \State $D_{Square} \gets D_{Square} + D_{msw}^2$
+                \State $n \gets n+1$ 
             \EndFor
             \For{each word$_j$ in sentence$_j$}
-                \State $D_{\text{msw}} \gets \infty$
+                \State $D_{msw} \gets \infty$
                 \For{each word$_i$ in sentence$_i$}
-                    \If{Distance(word$_i$, word$_j$) $< D_{\text{msw}}$}
-                        \State $D_{\text{msw}} \gets$ Distance(word$_i$, word$_j$)
+                    \If{Distance(word$_i$, word$_j$) $< D_{msw}$}
+                        \State $D_{msw} \gets$ distance(word$_i$, word$_j$)
                     \EndIf
                 \EndFor
-                \State $D_{\text{Square}} \gets D_{\text{Square}} + D_{\text{msw}}^2$
-                \State count++
+                \State $D_{Square} \gets D_{Square} + D_{msw}^2$
+                \State $n \gets n+1$
             \EndFor
-            \State similarity $\gets \exp \left( \frac{- D_{\text{Square}}}{2 \times \text{count} \times \sigma^2} \right)$
+            \State similarity $\gets \exp \left( \frac{- D_{Square}}{2 \times n \times \sigma^2} \right)$
             \State $A[i][j] \gets A[j][i] \gets$ similarity
         \EndFor
     \EndFor
