@@ -18,7 +18,8 @@ Then, we calculate the $D_{msw}$ for every word of the two sentences $X$ and $Y$
     D = \{D_{msw}(x,Y) : x \in X\} \cup \{D_{msw}(y,X) : y \in Y\}
     \label{eq:mswdset}
 \end{equation}
-The word similarity is calculated using Gaussian similarity for each of the element of $D$. The equation for word similarity is shown in Equation~\ref{eq:wsim}.
+After this, the word similarity between the word pairs from the steps above is calculated to get the degree of word correspondence between the two sentences. Here, the word similarity is calculated using Gaussian kernel function for the elements of the set $D$ because Gaussian kernel functions provides a smooth, flexible and most representative similarity between two vectors \cite{babud1986gaussian}.    
+%The word similarity is calculated using Gaussian similarity for each of the element of $D$. The equation for word similarity is shown in Equation~\ref{eq:wsim}.
 
 \begin{equation}\label{eq:wsim}
     W_{sim} = \{ exp\left(\frac{-D_i^2}{2\sigma^2}\right) : D_i \in D\}

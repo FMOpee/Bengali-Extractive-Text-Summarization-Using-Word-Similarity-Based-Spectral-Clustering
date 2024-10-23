@@ -16,9 +16,10 @@
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage[numbers]{natbib}
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{bib/main.bib}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, shapes.geometric, calc, positioning, fit}
-% Define styles using \tikzset instead of \tikzstyle
 \tikzset{
     process/.style={rectangle, rounded corners, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, text width=4cm, fill=none, inner sep=10pt}, % Add padding inside
     subprocess/.style={rectangle, rounded corners, minimum width=2.5cm, minimum height=0.8cm, text centered, draw=black, text width=4cm, fill=blue!20},
@@ -67,7 +68,7 @@
 
     \bibliography{bib/main}
     \bibliographystyle{plainnat}
-
+	%\printbibliography
 
 
 \end{document}
