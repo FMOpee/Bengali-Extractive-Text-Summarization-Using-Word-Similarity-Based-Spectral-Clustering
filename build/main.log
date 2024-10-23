@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  23 OCT 2024 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  23 OCT 2024 14:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1012,8 +1012,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
  []
 
 
-Package natbib Warning: Citation `babud1986gaussian' on page 6 undefined on inp
-ut line 21.
+Package natbib Warning: Citation `babud-1986-gaussian' on page 6 undefined on i
+nput line 21.
+
+
+Package natbib Warning: Citation `babud-1986-gaussian' on page 6 undefined on i
+nput line 21.
 
 
 
@@ -1075,13 +1079,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
  []
 
 
-
-[10]
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
 
+
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
@@ -1099,9 +1103,6 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 44.
 
 
-
-[12]
-
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 83.
 
@@ -1111,6 +1112,10 @@ Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--86
  []
 
 (./figs/0402_finetuning.tex)
+
+[12]
+
+[13]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 99.
@@ -1130,16 +1135,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--130
 dataset/blob/main/dataset/XTINGE-
  []
 
-)
-
-[13]
-
-[14] (./chapters/5_discussion.tex
+) (./chapters/5_discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
 
+
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 3--11
 
  []
@@ -1160,13 +1163,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
  []
 
 
-
-[15]
 Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
+
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
@@ -1202,8 +1205,6 @@ ts/towhidahmedfoysal/
  []
 
 
-
-[17]
 Underfull \hbox (badness 10000) in paragraph at lines 134--139
 []\OT1/cmr/m/n/10.95 Bernard Marr.  Big data: 20 mind-boggling facts ev-ery-one
 
@@ -1222,6 +1223,8 @@ cmr/m/n/10.95 , 2015.  Ac-cessed:
  []
 
 
+
+[17]
 Underfull \hbox (badness 1231) in paragraph at lines 141--147
 \OT1/cmr/m/it/10.95 ing\OT1/cmr/m/n/10.95 , pages 404--411. As-so-ci-a-tion for
  Com-pu-ta-tional Lin-guis-tics, July 2004.  URL
@@ -1256,7 +1259,7 @@ L3 programming layer <2024-09-10>
 Here is how much of TeX's memory you used:
  29633 strings out of 473579
  740055 string characters out of 5732262
- 1348147 words of memory out of 5000000
+ 1349307 words of memory out of 5000000
  52013 multiletter control sequences out of 15000+600000
  589223 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1277,7 +1280,7 @@ amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on build/main.pdf (19 pages, 319980 bytes).
+Output written on build/main.pdf (19 pages, 320600 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  101 compressed objects within 2 object streams
