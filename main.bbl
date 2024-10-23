@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,6 +14,14 @@ Sumya Akter, Aysa~Siddika Asa, Md.~Palash Uddin, Md.~Delowar Hossain,
 \newblock In \emph{2017 IEEE International Conference on Imaging, Vision \&
   Pattern Recognition (icIVPR)}, 2017.
 \newblock \doi{10.1109/ICIVPR.2017.7890883}.
+
+\bibitem[Babaud et~al.(1986)Babaud, Witkin, Baudin, and
+  Duda]{babud-1986-gaussian}
+Jean Babaud, Andrew~P. Witkin, Michel Baudin, and Richard~O. Duda.
+\newblock Uniqueness of the gaussian kernel for scale-space filtering.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, PAMI-8\penalty0 (1):\penalty0 26--33, 1986.
+\newblock \doi{10.1109/TPAMI.1986.4767749}.
 
 \bibitem[Baxendale(1958)]{Baxendale_1958_firstsummarization}
 P.~B. Baxendale.
