@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  24 OCT 2024 16:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  24 OCT 2024 22:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1060,35 +1060,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
 [8]) (./chapters/4_result.tex
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--24
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
 
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
-
-
-[11]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 45.
@@ -1176,15 +1175,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-) (./main.bbl
+
+
+[16]) (./main.bbl
 Underfull \hbox (badness 2932) in paragraph at lines 10--17
 \OT1/cmr/m/n/10.95 gali doc-u-ment(s) us-ing k-means clus-ter-ing al-go-rithm. 
  In \OT1/cmr/m/it/10.95 2017 IEEE In-ter-na-
  []
 
 
-
-[16]
 Underfull \hbox (badness 10000) in paragraph at lines 82--87
 []\OT1/cmr/m/n/10.95 Towhid Ahmed Foysal.  Bangla sum-ma-riza-tion dataset (pro
 -thom alo),
@@ -1245,10 +1244,10 @@ L3 programming layer <2024-09-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29636 strings out of 473579
- 740108 string characters out of 5732262
- 1349187 words of memory out of 5000000
- 52017 multiletter control sequences out of 15000+600000
+ 29636 strings out of 473578
+ 740108 string characters out of 5732241
+ 1349840 words of memory out of 5000000
+ 52018 multiletter control sequences out of 15000+600000
  589223 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,19n,87p,2084b,2205s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1268,7 +1267,7 @@ amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (19 pages, 321501 bytes).
+Output written on main.pdf (19 pages, 322159 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  101 compressed objects within 2 object streams
