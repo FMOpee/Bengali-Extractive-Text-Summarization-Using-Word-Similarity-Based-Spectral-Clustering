@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  24 OCT 2024 00:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  24 OCT 2024 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1070,13 +1070,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
  []
 
 
+
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
 
-
-[10]
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
@@ -1094,6 +1094,9 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 44.
 
 
+
+[12]
+
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 83.
 
@@ -1103,10 +1106,6 @@ Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--86
  []
 
 (./figs/0402_finetuning.tex)
-
-[12]
-
-[13]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 99.
@@ -1126,14 +1125,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--130
 dataset/blob/main/dataset/XTINGE-
  []
 
-) (./chapters/5_discussion.tex
+)
+
+[13]
+
+[14] (./chapters/5_discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
 
-
-[14]
 Underfull \hbox (badness 10000) in paragraph at lines 3--11
 
  []
@@ -1154,13 +1155,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
  []
 
 
+
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
-
-[15]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
@@ -1244,9 +1245,9 @@ L3 programming layer <2024-09-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29635 strings out of 473578
- 740098 string characters out of 5732241
- 1349327 words of memory out of 5000000
+ 29636 strings out of 473579
+ 740108 string characters out of 5732262
+ 1349187 words of memory out of 5000000
  52017 multiletter control sequences out of 15000+600000
  589223 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1267,7 +1268,7 @@ amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (19 pages, 319026 bytes).
+Output written on main.pdf (19 pages, 321566 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  101 compressed objects within 2 object streams
