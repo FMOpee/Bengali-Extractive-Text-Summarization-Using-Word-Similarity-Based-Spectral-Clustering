@@ -25,7 +25,9 @@ To evaluate the correctness of the machine generated summaries compared to the h
 
 \begin{enumerate}
     \item \textbf{ROUGE-1} uses unigram matching to find how similar two summaries are. It calculates total common characters between the summaries and generally is a good performance indicator. But using it as the only metric can also be misleading as very large texts will share a very high proportion of uni-grams between them.
+    
     \item \textbf{ROUGE-2} uses bi-gram matching to find how much similar the two summaries are in a word level. Shared bigrams lead to a deeper analysis of syntactic similarities between the two summaries. Using this in combination with the ROUGE-1 is a standard practice to evaluate machine generated summaries \cite{wafaa-2021-summary-comprehensive-review}.
+    
     \item \textbf{ROUGE-LCS} finds the longest common sub-sequence between two summaries to calculate the rouge scores. It focuses on finding similarity in the flow of information in the sentence level between two summaries.
 \end{enumerate}
 
