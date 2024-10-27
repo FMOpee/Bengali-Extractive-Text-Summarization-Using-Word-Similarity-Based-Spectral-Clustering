@@ -5,80 +5,66 @@ We implemented Bensumm \cite{chowdhury-etal-2021-tfidf-clustering} and SASbSC \c
 
 \textbf{WSbSC} is the proposed model for this research. We use local word correspondence-based Gaussian similarity to perform spectral clustering for grouping semantically similar sentences together. We extract one sentence from each group as the output summary to minimize redundancy and maximize coverage.\\
 
-\textbf{SASbSC} is the method proposed by \citeauthor{roychowdhury-etal-2022-spectral-base} \cite{roychowdhury-etal-2022-spectral-base}. This method is similar to the proposed method as both methods use word vector embedding and spectral clustering to generate summaries. It uses a sentence center similarity-based graph for spectral clustering. Then it uses cosine similarity to extract sentences from each cluster. SCSbSC averages all the word vectors of a particular sentence to get the Sentence center and calculates sentence similarity based on gaussian similarity of those average vectors. This method was implemented in python as described in their article.\\
+\textbf{SASbSC} \cite{roychowdhury-etal-2022-spectral-base} is the second method we considered for comparing against the proposed method due to SASbSC being a recent model with a very similar approach to the proposed method. SASbSC also uses word vector embedding and spectral clustering in their summarization workflow. However, it uses the average of word vectors in a sentence for calculating sentence similarity to be used in the clustering. After clustering, SASbSC uses cosine similarity between the sentence average vectors in a cluster to pick the best sentence from that cluster.\\
 
-\textbf{Model-3:} BenSumm describes two different summarization methods in the study~\cite{chowdhury-etal-2021-tfidf-clustering}. But only the extractive method of their paper is implemented and compared with the proposed method because it is also an extractive summarizer. BenSumm implements a TF-IDF based cosine similarity graph between the sentences and then clusters the sentences using Agglomerative Clustering. The implementation codes are publicly available in GitHub\footnote{\textit{https://github.com/tafseer-nayeem/BengaliSummarization}}.\\
+\textbf{BenSumm} \cite{chowdhury-etal-2021-tfidf-clustering} is the a recent Bengali text summarization method that describes an extractive and an abstractive text summarization technique. We compared the extractive technique with our model to ensure a fair and balanced comparison. BenSumm used TF-IDF based sentence vectors to build a similarity matrix which they used to cluster the sentences using agglomerative clustering. A Github implementation\footnote{\textit{https://github.com/tafseer-nayeem/BengaliSummarization}} provided by the authors is used in the comparison process.\\
 
-\textbf{Model-4:} LexRank~\cite{Erkan-lexRank-2004} uses a TF-IDF based Matrix and Googles PageRank algorithm~\cite{page-PageRank-1999} to rank sentences. Then the top ranked sentences are selected and arranged into summary. An implemented version of this method is available as a python package in PyPI as LexRank\footnote{\textit{https://pypi.org/project/lexrank/}}. LexRank is implemented using a large Bengali Wikipedia corpus\footnote{\textit{https://www.kaggle.com/datasets/shazol/bangla-wikipedia-corpus}}.
+\textbf{LexRank} \cite{Erkan-lexRank-2004} uses a TF-IDF based Matrix and Googles PageRank algorithm \cite{page-PageRank-1999} to rank sentences. Then the top ranked sentences are selected and arranged into summary. An implemented version of this method is available as a python package in PyPI as lexrank\footnote{\textit{https://pypi.org/project/lexrank/}} which is used in the comparison process using a large Bengali wikipedia corpus\footnote{\textit{https://www.kaggle.com/datasets/shazol/bangla-wikipedia-corpus}}.
 
 \subsection{Evaluation Datasets}\label{subsec:evaluation-datasets}
-To examine our proposed model, we compared our model with three benchmark models on four different datasets. Multiple datasets are used to examine the effectiveness of the text summarization models to avoid biased result due to any problem with the dataset.
+We used four evaluation dataset with varying quality, size and source to examine the robustness of the methods being tested. The first dataset is a \textbf{self-curated} extractive dataset that we developed to evaluate the performance of our proposed method using human generated summaries as reference. An expert linguistic team of ten members summarized 250 news articles of varying sizes to diversify the dataset. Each article is summarized twice by two different experts to minimize human bias in the summary. In total, 500 different document-summary pairs are present in this dataset. The dataset is publicly available on Github\footnote{\textit{dataset link}} for reproducibility.\\
 
-\subsubsection{Dataset-1 (Self-curated)}
-To evaluate the performance of implemented text summarization methods with existing works~\cite{chowdhury-etal-2021-tfidf-clustering,Erkan-lexRank-2004,roychowdhury-etal-2022-spectral-base}, a curated Bengali extractive text summarization dataset was produced by an expert linguistic team. 250 news documents of various sizes were summarized for this purpose. Each document was summarized twice by two different person to minimize human bias. In total, there is 500 different document-summary pair in this dataset. This dataset is made publicly available\footnote{\textit{dataset link}} for other researchers to use for evaluation purpose in their research.
+The second dataset is a \textbf{Kaggle} dataset\footnote{\textit{https://www.kaggle.com/datasets/towhidahmedfoysal/bangla-summarization-datasetprothom-alo}} produced by Towhid Ahmed Foysal \cite{ahmed_2023_TAF_dataset}. This dataset is a collection of summary article pair from The Daily Prothom Alo. The dataset is vast in size however the summaries are slightly lower in quality. We filtered out all the articles which are smaller than 50 characters, and with unrelated summaries to improve the quality of the dataset. After filtering, total 10,204 articles remained, each with two summaries in the dataset.\\
 
-\subsubsection{Dataset-2 (Towhid Ahmed Foysal)\cite{ahmed_2023_TAF_dataset}}
-This dataset is a collection of summary article pair from The Daily Prothom Alo. It was published by Towhid Ahmed Foysal in Kaggle\footnote{\textit{https://www.kaggle.com/datasets/towhidahmedfoysal/bangla-summarization-datasetprothom-alo}}. The original dataset was filtered so that all the articles were smaller than 50 characters, and all the summaries that contain something not in the original articles were discarded. After filtering, a total of 10,204 articles remained, each with two summaries.
+The third dataset we used for evaluation is the \textbf{BNLPC} \cite{Hque-2015-BNLPC-Dataset} dataset. This dataset is a collection of news article summaries published with a text summarization method \cite{Hque-2015-BNLPC-Dataset}. The dataset was collected from GitHub\footnote{\textit{https://github.com/tafseer-nayeem/BengaliSummarization/tree/main/Dataset/BNLPC/Dataset2}} for reproducibility. The dataset contains one hundred articles with three different summaries for each article.\\
 
-\subsubsection{Dataset-3 (BNLPC)\cite{Hque-2015-BNLPC-Dataset}}
-This dataset is a collection of news article summaries published by \citeauthor{Hque-2015-BNLPC-Dataset}~\cite{Hque-2015-BNLPC-Dataset}. The dataset was collected from GitHub\footnote{\textit{https://github.com/tafseer-nayeem/BengaliSummarization/tree/main/Dataset/BNLPC/Dataset2}}. The dataset contains one hundred articles with three different summaries for each article.
-
-\subsubsection{Dataset-4 (Abid Mahdi)}
-This dataset was published by Abid Mahdi on GitHub\footnote{\textit{https://github.com/Abid-Mahadi/Bangla-Text-summarization-Dataset}}. The dataset contains 200 documents each with two human generated summaries. These documents were collected from several different Bengali news portals. The summaries were generated by linguistic experts to ensure its quality.
-
+The fourth dataset is a \textbf{Github} dataset\footnote{\textit{https://github.com/Abid-Mahadi/Bangla-Text-summarization-Dataset}} produced by Abid Mahdi. The dataset contains 200 documents each with two human generated summaries. These documents were collected from several different Bengali news portals. The summaries were generated by linguistic experts to ensure its quality.
 
 \subsection{Evaluation Metrics}\label{subsec:evaluation-metrics}
-To evaluate the correctness of the machine generated summaries compared to the human generated summaries, we used the Recall-Oriented Understudy for Gisting Evaluation (ROUGE) method~\cite{lin-2004-rouge}. It compares two text blocks, a human produced reference summary and a machine generated summary. The ROUGE method uses N-gram-based overlapping to find a precision, recall and F-1 score. The Rouge python package\footnote{\textit{https://pypi.org/project/rouge/}} is used as the implementation to calculate ROUGE scores. There are three different metrics in the package for comparison of the summaries which are:
+To evaluate the correctness of the machine generated summaries compared to the human generated summaries, we used the ROUGE method~\cite{lin-2004-rouge}. The method compares two summaries, a reference summary and a machine generated summary to evaluate the machine generated summaries. The method uses N-gram-based overlapping to calculate a precision, recall and F-1 score for the summaries. we used the Rouge package\footnote{\textit{https://pypi.org/project/rouge/}} as the implementation to evaluate the proposed models against human generated sumamries. The package has three different metrics for comparison of summaries. These are are:
 
 \begin{enumerate}
-    \item \textbf{ROUGE-1:} It uses unigram matching to find how much similar two summaries are. It calculates total common characters and is a good performance indicator. But it can also be misleading too as many large enough texts will share a very high proportion of uni-grams between them.
-    \item \textbf{ROUGE-2:} It uses bi-gram matching to find how much similar the two summaries are in a word level. Shared bigrams lead to a deeper analysis of syntactic similarities between the two summaries.
-    \item \textbf{ROUGE-LCS:} It finds the longest common sub-sequence between the summaries to calculate the rouge scores. It can calculate the similarity in flow of the sentences between two summaries.
+    \item \textbf{ROUGE-1} uses unigram matching to find how similar two summaries are. It calculates total common characters between the summaries and generally is a good performance indicator. But using it as the only metric can also be misleading as very large texts will share a very high proportion of uni-grams between them.
+    \item \textbf{ROUGE-2} uses bi-gram matching to find how much similar the two summaries are in a word level. Shared bigrams lead to a deeper analysis of syntactic similarities between the two summaries. Using this in combination with the ROUGE-1 is a standard practice to evaluate machine generated summaries \cite{wafaa-2021-summary-comprehensive-review}.
+    \item \textbf{ROUGE-LCS} finds the longest common sub-sequence between two summaries to calculate the rouge scores. It focuses on finding similarity in the flow of information in the sentence level between two summaries.
 \end{enumerate}
 
 In this study, we compared the F-1 scores from each of these metrics for the four models.
 
 \subsection{Comparison}\label{subsec:comparison}
-Average F-1 scores for the three Rouge metrics (Rouge-1, Rouge-2, Rouge-LCS) of the four models (Proposed (WSbSC), SASbSC, BenSumm, LexRank) on the four datasets are shown in the table~\ref{tab:result_comparison-1}. We can see that our proposed model performs 11.9\%, 24.1\% and 16.2\% better than the closest method (SASbSC) in Rouge-1, Rouge-2 and Rouge-LCS respectively on our self-curated dataset. It performs 68.9\%, 95.4\% and 84.6\% better than the next closest method (BenSumm) on Dataset-2. It performs a tie in R-1, 3\% better in R-2 and 2.6\% better than the closest method (SASbSC) on R-LCS using the BNLPC dataset. It performs 58\%, 86.4\%, and 67.9\% better than the closest method (BenSumm) on Dataset-4 in all three metrics.\\
+We calculated the avaerage F-1 scores for three Rouge metrics (Rouge-1, Rouge-2, Rouge-LCS) for four extractive text summarization models (WSbSC (proposed), BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}, SASbSC \cite{roychowdhury-etal-2022-spectral-base}, LexRank \cite{Erkan-lexRank-2004}) on four datasets (Self-Curated (SC), Kaggle, BNLPC, Github). The result of this evaluation is shown in table \ref{tab:result_comparison-1}. In this table, we can see that our proposed model performs  11.9\%, 24.1\% and 16.2\% better than the 2nd best method (SASbSC) in Rouge-1, Rouge-2 and Rouge-LCS respectively on our self-curated dataset. It performs 68.9\%, 95.4\% and 84.6\% better respectively than the 2nd best method (BenSumm) on the Kaggle dataset. It also performs a tie in R-1, 3\% better in R-2 and 2.6\% better than the 2nd best method (SASbSC) on R-LCS using the BNLPC dataset. It performs 58\%, 86.4\%, and 67.9\% better than the 2nd best method (BenSumm) on the Github dataset in all three metrics.\\
 
 \begin{table}[]
     \centering
-    \begin{tabular}{lccc} \hline
-         Dataset-1 (SC)                                                 &               &               &               \\
-         Model                                                          & Rouge-1       & Rouge-2       & Rouge-LCS     \\\hline
-         Model-1 (WSbSC)(Proposed)                                      & \textbf{0.47} & \textbf{0.36} & \textbf{0.43} \\
-         Model-2 (BenSumm)~\cite{chowdhury-etal-2021-tfidf-clustering}  & 0.41          & 0.29          & 0.36          \\
-         Model-3 (SASbSC)~\cite{roychowdhury-etal-2022-spectral-base}   & 0.42          & 0.29          & 0.37          \\
-         Model-4 (LexRank)~\cite{Erkan-lexRank-2004}                    & 0.22          & 0.14          & 0.20          \\\hline
-         Dataset-2 (TAF)                                                &               &               &               \\\hline
-         Model-1 (WSbSC)(Proposed)                                      & \textbf{0.49} & \textbf{0.43} & \textbf{0.48} \\
-         Model-2 (BenSumm)~\cite{chowdhury-etal-2021-tfidf-clustering}  & 0.29          & 0.22          & 0.26          \\
-         Model-3 (SASbSC)~\cite{roychowdhury-etal-2022-spectral-base}   & 0.23          & 0.12          & 0.18          \\
-         Model-4 (LexRank)~\cite{Erkan-lexRank-2004}                    & 0.24          & 0.16          & 0.22          \\\hline
-         Dataset-3 (BNLPC)                                              &               &               &               \\\hline
-         Model-1 (WSbSC)(Proposed)                                      & \textbf{0.41} & \textbf{0.34} & \textbf{0.40} \\
-         Model-2 (BenSumm)~\cite{chowdhury-etal-2021-tfidf-clustering}  & 0.36          & 0.28          & 0.34          \\
-         Model-3 (SASbSC)~\cite{roychowdhury-etal-2022-spectral-base}   & \textbf{0.41} & 0.33          & 0.39          \\
-         Model-4 (LexRank)~\cite{Erkan-lexRank-2004}                    & 0.26          & 0.19          & 0.24          \\\hline
-         Dataset-4 (AM)                                                 &               &               &               \\\hline
-         Model-1 (WSbSC)(Proposed)                                      & \textbf{0.49} & \textbf{0.41} & \textbf{0.47} \\
-         Model-2 (BenSumm)~\cite{chowdhury-etal-2021-tfidf-clustering}  & 0.31          & 0.22          & 0.28          \\
-         Model-3 (SASbSC)~\cite{roychowdhury-etal-2022-spectral-base}   & 0.30          & 0.18          & 0.24          \\
-         Model-4 (LexRank)~\cite{Erkan-lexRank-2004}                    & 0.22          & 0.14          & 0.20          \\
+    \begin{tabular}{llccc} \hline
+Dataset 		& Model                                                & Rouge-1       & Rouge-2       & Rouge-LCS     \\\hline
+Self-curated	& WSbSC (Proposed)                                     & \textbf{0.47} & \textbf{0.36} & \textbf{0.43} \\
+         		& BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}  & 0.41          & 0.29          & 0.36          \\
+         		& SASbSC \cite{roychowdhury-etal-2022-spectral-base}   & 0.42          & 0.29          & 0.37          \\
+         		& LexRank \cite{Erkan-lexRank-2004}                    & 0.22          & 0.14          & 0.20          \\\hline
+Kaggle			& WSbSC (Proposed)                                     & \textbf{0.49} & \textbf{0.43} & \textbf{0.48} \\
+         		& BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}  & 0.29          & 0.22          & 0.26          \\
+         		& SASbSC \cite{roychowdhury-etal-2022-spectral-base}   & 0.23          & 0.12          & 0.18          \\
+         		& LexRank \cite{Erkan-lexRank-2004}                    & 0.24          & 0.16          & 0.22          \\\hline
+BNLPC 			& WSbSC (Proposed)                                     & \textbf{0.41} & \textbf{0.34} & \textbf{0.40} \\
+         		& BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}  & 0.36          & 0.28          & 0.34          \\
+         		& SASbSC \cite{roychowdhury-etal-2022-spectral-base}   & \textbf{0.41} & 0.33          & 0.39          \\
+         		& LexRank \cite{Erkan-lexRank-2004}                    & 0.26          & 0.19          & 0.24          \\\hline
+Github          & WSbSC (Proposed)                                     & \textbf{0.49} & \textbf{0.41} & \textbf{0.47} \\
+         		& BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}  & 0.31          & 0.22          & 0.28          \\
+         		& SASbSC \cite{roychowdhury-etal-2022-spectral-base}   & 0.30          & 0.18          & 0.24          \\
+         		& LexRank \cite{Erkan-lexRank-2004}                    & 0.22          & 0.14          & 0.20          \\\hline
     \end{tabular}
-    \caption{Comparison of average Rouge scores between graph based extractive summarization models on 4 different datasets}
+    \caption{Comparison of average Rouge scores between graph based extractive summarization models on 4 datasets}
     \label{tab:result_comparison-1}
 \end{table}
-
-These results are further visualized into three radar charts, so that the performance of each model on the four datasets can be visualized at once.
-
-These charts (Figure~\ref{fig:radarchart}) show us that the proposed method is much more dataset independent and performs uniformly on every metric across the datasets. Other models, although perform good on certain datasets, fail to show consistency. For example, Both BenSumm and SASbSC perform well on Dataset-1 and Dataset-3, but the performances fall sharply on Dataset-2 and Dataset-4.
+These results are further visualized into three radar charts in figure \ref{fig:radarchart} to compare the performance of the models using all four datasets to compare them on individual metrics. In these charts, we can see that proposed method performs more consistently and uniformly across all the datasets regardless of the quality of the dataset. But other models, such as BenSumm performs well in some datasets (SC, GitHub, BNLPC) but also fails in the Kaggle dataset. Similarly, SASbSC performs well in SC and BNLPC datasets but the performance decreases sharply in Kaggle and GitHub datasets. LexRank although performs similarly across all datasets but is far lower on average.
 
 \subsection{Experimentation}\label{subsec:experimentation}
-We experimented on our model with different ranking techniques and different values for standard deviation ($\sigma$) on Equation~\ref{eq:sent_sim} to get the best rouge values for a summary. The standard deviation ($\sigma$) for the Gaussian Similarity represents a smoothing factor that can be used as a control variable to be fine-tuned for the best result. On the other hand, ranking methods pick the most representative sentence from a cluster after the clustering step. We checked First Rank and TF-IDF Rank methods for ranking. These experimentations are discussed with more detail below.
+We experimented on our model with different ranking techniques and different values for standard deviation ($\sigma$) for the equation~\ref{eq:sent_sim} to get the best rouge values for a summary. The standard deviation ($\sigma$) for the Gaussian Similarity represents a smoothing factor that can be used as a control variable to be fine-tuned for the best result. On the other hand, ranking methods pick the most representative sentence from a cluster after the clustering step. We checked lead extracting and TF-IDF ranking methods for to pick the a representative sentence from each cluster. These experimentations are discussed with more detail below.
 
 \subsubsection{Fine-tuning Standard Deviation ($\sigma$)}\label{subsubsec:sigma}
-We checked for different Standard Deviation ($\sigma$) on Equation~\ref{eq:sent_sim}. We checked for sixty-three different values for $\sigma$ from $10^{-12}$ to $10$ on regular intervals and found that $5\times10^{-11}$ works best as the value for $\sigma$ on our self-curated dataset (dataset-1). The result for the fine-tuning process is shown in the following line chart (Figure~\ref{fig:sigma-fine-tuning}).
+We checked for different Standard Deviation ($\sigma$) on equation~\ref{eq:sent_sim} to pick the best $\sigma$. Sixty-three different values for $\sigma$ from $10^{-12}$ to $10$ on regular intervals have been experimented on and can be seen that $5\times10^{-11}$ works best as the value for $\sigma$ on our self-curated dataset. The result for fine-tuning process is shown in the following line chart (Figure~\ref{fig:sigma-fine-tuning}).
 
 \begin{figure}[]
     \centering
@@ -93,31 +79,31 @@ We checked for different Standard Deviation ($\sigma$) on Equation~\ref{eq:sent_
     \label{fig:sigma-fine-tuning}
 \end{figure}
 
-\subsubsection{Different Ranking Techniques Inside Clusters}\label{subsubsec:different-ranking-techniques-inside-clusters}
-We implemented two ranking methods to pick the best sentence from each cluster. The first one is the First Rank method where we just pick the sentence that appears first in the input document. The second one is the TF-IDF ranking, where we ranked the sentences by their TF-IDF scores and pick the best one. We can see in the table~\ref{tab:ranking} that the TF-IDF performs better on a high quality dataset like our Self-curated one.
+\subsubsection{Different Sentence Extraction Techniques Inside Clusters} \label{subsubsec:different-ranking-techniques-inside-clusters}
+We implemented two sentence extraction methods to pick the most representative sentence from each cluster. Firstly, the lead extraction method is used where we just select the sentence that appears first in the input document because generally the earlier sentences in an input has more information on the context of the input document. The second extraction method is the TF-IDF ranking method, where we ranked the sentences by their TF-IDF scores and picked the sentence with the most TF-IDF score. We can see in the table~\ref{tab:ranking} that the TF-IDF performs better on a high quality dataset like the self-curated dataset.
 
 \begin{table}[]
     \centering
-    \begin{tabular}{cccc}\hline
-        Method      & Rouge-1       & Rouge-2       & Rouge-LCS     \\\hline
-        FirstRank   & 0.47          & 0.36          & 0.43          \\
-        TF-IDF      & \textbf{0.50} & \textbf{0.40} & \textbf{0.46} \\\hline
+    \begin{tabular}{lccc}\hline
+        Method      	& Rouge-1       & Rouge-2       & Rouge-LCS     \\\hline
+        Lead extraction	& 0.47          & 0.36          & 0.43          \\
+        TF-IDF ranking	& \textbf{0.50} & \textbf{0.40} & \textbf{0.46} \\\hline
     \end{tabular}
     \caption{Comparison of Result of different ranking techniques}
     \label{tab:ranking}
 \end{table}
 
 \subsection{Implementation Into Other Languages}\label{subsec:implementation-into-other-languages}
-The proposed model is not language-dependent, thus it can be extended into other languages. To perform this method into a language, we only need a language-specific tokenizer, a list of stop-words and a word vector embedding dataset. We tried to find quality extractive text summarization dataset for evaluating the method, but could only find relevant datasets in three other languages i.e., Hindi, Marathi and Turkish. We adopted this Model into these three low resource languages to check this hypothesis.\\
+The proposed model is not language-dependent because it does not rely on any language specific features to summarize the input documents, thus it can be extended into other languages too. To implement this method into a language, we only need a language-specific tokenizer, a list of stop-words and a word vector embedding dataset. We implemented this model on three more languages to show the language independent nature of the model. To evaluate the quality of the sentence extraction, we tried to find evaluation datasets for summarization on other low resource languages, but could only find relevant datasets in three other languages. These languages are Hindi, Marathi and Turkish. We adopted the proposed model into these three low resource languages to check how well it performs.\\
 
 \begin{table}[]
     \centering
-    \begin{tabular}{cccc}\hline
-        Language                & Rouge-1   & Rouge-2   & Rouge-LCS \\\hline
-        Bengali (Dataset - 1)   & 0.47      & 0.36      & 0.43      \\
-        Bengali (Dataset - 2)   & 0.49      & 0.43      & 0.48      \\
-        Bengali (Dataset - 3)   & 0.41      & 0.34      & 0.40      \\
-        Bengali (Dataset - 4)   & 0.49      & 0.41      & 0.47      \\
+    \begin{tabular}{lccc}\hline
+        Language              	& Rouge-1   & Rouge-2   & Rouge-LCS \\\hline
+        Bengali (Self-curated)	& 0.47      & 0.36      & 0.43      \\
+        Bengali (Kaggle)   		& 0.49      & 0.43      & 0.48      \\
+        Bengali (BNLPC)   		& 0.41      & 0.34      & 0.40      \\
+        Bengali (Github)   		& 0.49      & 0.41      & 0.47      \\
         Bengali (Average)       & 0.47      & 0.38      & 0.44      \\\hline
         Hindi                   & 0.40      & 0.26      & 0.36      \\\hline
         Marathi                 & 0.50	    & 0.42      & 0.50      \\\hline
@@ -127,4 +113,4 @@ The proposed model is not language-dependent, thus it can be extended into other
     \label{tab:other_language}
 \end{table}
 
-The Table-\ref{tab:other_language} shows the result of the proposed word similarity based spectral clustering method for extractive summarization in other low resource languages. For the Hindi language, we used a Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/disisbig/hindi-text-short-and-large-summarization-corpus/}} produced by Gaurav Arora. For the Marathi language, we used another Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/ketki19/marathi}} produced by Ketki Nirantar. For the Turkish language, we used a GitHub dataset\footnote{\textit{https://github.com/xtinge/turkish-extractive-summarization-dataset/blob/main/dataset/XTINGE-SUM\_TR\_EXT/xtinge-sum\_tr\_ext.json}} produced by the XTINGE~\cite{Demir-2024-xtinge_turkish_extractive} team. We can see that the results on Marathi and Turkish are slightly better than the result on Bengali. Although it performs slightly lower on Hindi, The score is still similar to Bengali.
+The Table-\ref{tab:other_language} shows the result of the proposed WSbSC method for extractive summarization in other low resource languages. In this table, We can see that the results on Marathi and Turkish are slightly better than the result on Bengali. Although it performs slightly lower on Hindi, The score is still similar to Bengali. To evaluate the result on Hindi language, we used a Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/disisbig/hindi-text-short-and-large-summarization-corpus/}} produced by Gaurav Arora. For the Marathi language, we used another Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/ketki19/marathi}} produced by Ketki Nirantar. For the Turkish language, we used a GitHub dataset\footnote{\textit{https://github.com/xtinge/turkish-extractive-summarization-dataset/blob/main/dataset/XTINGE-SUM\_TR\_EXT/xtinge-sum\_tr\_ext.json}} produced by the XTINGE~\cite{Demir-2024-xtinge_turkish_extractive} team for evaluation. 
