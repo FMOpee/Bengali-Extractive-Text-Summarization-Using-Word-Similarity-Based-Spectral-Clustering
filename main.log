@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  27 OCT 2024 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  27 OCT 2024 20:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1255,10 +1255,10 @@ L3 programming layer <2024-09-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29636 strings out of 473579
- 740108 string characters out of 5732262
- 1350158 words of memory out of 5000000
- 52017 multiletter control sequences out of 15000+600000
+ 29636 strings out of 473578
+ 740108 string characters out of 5732241
+ 1349158 words of memory out of 5000000
+ 52018 multiletter control sequences out of 15000+600000
  589223 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,19n,87p,2084b,2205s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1278,7 +1278,7 @@ amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (19 pages, 323420 bytes).
+Output written on main.pdf (19 pages, 323403 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  101 compressed objects within 2 object streams
