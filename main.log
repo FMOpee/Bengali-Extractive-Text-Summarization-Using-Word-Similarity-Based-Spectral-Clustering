@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  28 OCT 2024 07:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  28 OCT 2024 11:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -931,41 +931,35 @@ Overfull \hbox (5.94899pt too wide) in paragraph at lines 39--16
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--25
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+
+ []
+
+) (./chapters/2_literature-review.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
 
 
-[3]) (./chapters/2_literature-review.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
-
-
-Overfull \hbox (3.09013pt too wide) in paragraph at lines 4--5
-\OT1/cmr/m/n/10.95 based Ex-trac-tive Text Sum-ma-riza-tion meth-ods like LexRa
-nk [[]] or Tex-tRank [[]]. LexRank [[]]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
 
 
-[4] (./figs/0201_Sarkar_problem.tex
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+(./figs/0201_Sarkar_problem.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1012,20 +1006,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
  []
 
 
+
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
 
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
-
-
-[7] (./figs/0301_msd.tex
+(./figs/0301_msd.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1093,6 +1087,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
  []
 
 
+
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
@@ -1103,19 +1099,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
  []
 
 
-
-[11]
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
+
+
+[12]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 39.
 
 
 
-[12]
+[13]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 71.
@@ -1126,10 +1123,6 @@ Overfull \hbox (5.4854pt too wide) in paragraph at lines 195--74
  []
 
 (./figs/0402_finetuning.tex)
-
-[13]
-
-[14]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 87.
@@ -1149,14 +1142,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--118
 dataset/blob/main/dataset/XTINGE-
  []
 
-) (./chapters/5_discussion.tex
+)
+
+[14]
+
+[15] (./chapters/5_discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
 
-
-[15]
 Overfull \hbox (4.78717pt too wide) in paragraph at lines 3--4
 \OT1/cmr/m/n/10.95 LexRank [[]], and SAS-bSC [[]], across mul-ti-ple datasets (
 Self-curated, Kag-gle, BNLPC, GitHub)
@@ -1178,13 +1173,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
  []
 
 
+
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
 
-
-[16]
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
@@ -1195,13 +1190,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--2
  []
 
 
+
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-
-
-[17]) (./main.bbl
+) (./main.bbl
 Underfull \hbox (badness 2932) in paragraph at lines 10--17
 \OT1/cmr/m/n/10.95 gali doc-u-ment(s) us-ing k-means clus-ter-ing al-go-rithm. 
  In \OT1/cmr/m/it/10.95 2017 IEEE In-ter-na-
@@ -1214,6 +1209,8 @@ and op-ti-miza-tion.  \OT1/cmr/m/it/10.95 Ex-
  []
 
 
+
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 91--96
 []\OT1/cmr/m/n/10.95 Towhid Ahmed Foysal.  Bangla sum-ma-riza-tion dataset (pro
 -thom alo),
@@ -1226,8 +1223,6 @@ ts/towhidahmedfoysal/
  []
 
 
-
-[18]
 Underfull \hbox (badness 10000) in paragraph at lines 151--156
 []\OT1/cmr/m/n/10.95 Bernard Marr.  Big data: 20 mind-boggling facts ev-ery-one
 
@@ -1252,6 +1247,8 @@ Underfull \hbox (badness 1231) in paragraph at lines 158--164
  []
 
 
+
+[19]
 Underfull \hbox (badness 3354) in paragraph at lines 195--202
 \OT1/cmr/m/n/10.95 sum-ma-riza-tion us-ing sen-tence em-bed-ding and spec-tral 
 clus-ter-ing.  In \OT1/cmr/m/it/10.95 Pro-ceed-
@@ -1263,9 +1260,7 @@ Underfull \hbox (badness 1210) in paragraph at lines 195--202
 s-tics, De-cem-ber 2022.  URL
  []
 
-
-
-[19])
+)
 
 [20] (./main.aux)
  ***********
@@ -1274,13 +1269,13 @@ L3 programming layer <2024-09-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29636 strings out of 473578
- 740087 string characters out of 5732241
- 1346120 words of memory out of 5000000
- 52018 multiletter control sequences out of 15000+600000
+ 29636 strings out of 473579
+ 740087 string characters out of 5732262
+ 1348053 words of memory out of 5000000
+ 52017 multiletter control sequences out of 15000+600000
  589223 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,19n,87p,2084b,2205s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,19n,87p,2735b,2205s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-di
@@ -1297,7 +1292,7 @@ amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (20 pages, 325855 bytes).
+Output written on main.pdf (20 pages, 327833 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams
