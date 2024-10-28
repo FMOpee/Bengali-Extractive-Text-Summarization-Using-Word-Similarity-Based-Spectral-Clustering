@@ -15,6 +15,15 @@ Sumya Akter, Aysa~Siddika Asa, Md.~Palash Uddin, Md.~Delowar Hossain,
   Pattern Recognition (icIVPR)}, 2017.
 \newblock \doi{10.1109/ICIVPR.2017.7890883}.
 
+\bibitem[Alguliyev et~al.(2019)Alguliyev, Aliguliyev, Isazade, Abdi, and
+  Idris]{alguliyev-2019-cosum}
+Rasim~M. Alguliyev, Ramiz~M. Aliguliyev, Nijat~R. Isazade, Asad Abdi, and
+  Norisma Idris.
+\newblock Cosum: Text summarization based on clustering and optimization.
+\newblock \emph{Expert Systems}, 36\penalty0 (1):\penalty0 e12340, 2019.
+\newblock \doi{https://doi.org/10.1111/exsy.12340}.
+\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1111/exsy.12340}.
+
 \bibitem[Babaud et~al.(1986)Babaud, Witkin, Baudin, and
   Duda]{babud-1986-gaussian}
 Jean Babaud, Andrew~P. Witkin, Michel Baudin, and Richard~O. Duda.
@@ -180,16 +189,6 @@ Lawrence Page, Sergey Brin, Rajeev Motwani, and Terry Winograd.
 \newblock The pagerank citation ranking : Bringing order to the web.
 \newblock In \emph{The Web Conference}, 1999.
 \newblock URL \url{https://api.semanticscholar.org/CorpusID:1508503}.
-
-\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
-  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
-  Cournapeau, Brucher, Perrot, and Duchesnay]{Pedregosa-2011-scikit-learn}
-F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
-  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
-  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
-\newblock Scikit-learn: Machine learning in {P}ython.
-\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830,
-  2011.
 
 \bibitem[Roychowdhury et~al.(2022)Roychowdhury, Sarkar, and
   Maji]{roychowdhury-etal-2022-spectral-base}
