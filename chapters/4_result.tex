@@ -33,8 +33,32 @@ To evaluate the correctness of generated summaries against human written summari
 
 In this study, we compared the F-1 scores from each of these metrics for the four models.
 
+
+\subsection{Experimentation}\label{subsec:experimentation}
+The proposed model contains three main steps, similarity calculation, clustering and sentence extraction. Each of these steps have different techniques or values that can be experimented on to find the most suited strategy. For sentence similarity calculation, different values for standard deviation ($\sigma$) can be fixed to get the most representative semantic similarity value. Spectral clustering was found to work best for the clustering step through experimentations done by other researchers \cite{roychowdhury-etal-2022-spectral-base}. To extract the best sentence from a cluster, lead extraction and TF-IDF ranking strategies was considered. Thus, experimentations on finding the most suited standard deviation value and sentence extraction was conducted. These experimentations are described in the following sections.
+
+\subsubsection{Fine-tuning Standard Deviation ($\sigma$)}\label{subsubsec:sigma}
+Standard deviation ($\sigma$) plays a crucial role for sentence similarity calculation (Equation \ref{eq:sent_sim}). Therefore, to fix the most suited $\sigma$ value sixty-three different values were experimented on. These values ranged from $10^{-12}$ to $10$ on regular intervals. After experimentation, $5\times10^{-11}$ was fixed as the value for $\sigma$ that gives the most representative semantic relation between sentences. The result for fine-tuning process is shown in Figure \ref{fig:sigma-fine-tuning}.
+\begin{figure}[h]
+	\centering
+	\input{figs/0402_finetuning}
+	\caption{Fine-tuning for different standard deviation~($\sigma$)~values}
+	\label{fig:sigma-fine-tuning}
+\end{figure}
+\subsubsection{Different Sentence Extraction Techniques Inside Clusters} \label{subsubsec:different-ranking-techniques-inside-clusters}
+We implemented two sentence extraction methods to pick the most representative sentence from each cluster. Firstly, the lead extraction method is used to select the sentence that appears first in the input document. Because, generally the earlier sentences in an input contain more information on the context of the input document. Secondly, extracting sentences based on their TF-IDF score was also experimented on. In Table \ref{tab:ranking}, the TF-IDF ranking is shown to performs better than the lead extraction method.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lccc}\hline
+		Method      	& Rouge-1       & Rouge-2       & Rouge-LCS     \\\hline
+		Lead extraction	& 0.47          & 0.36          & 0.43          \\
+		TF-IDF ranking	& \textbf{0.50} & \textbf{0.40} & \textbf{0.46} \\\hline
+	\end{tabular}
+	\caption{Comparison of Result of different ranking techniques}
+	\label{tab:ranking}
+\end{table}
 \subsection{Comparison}\label{subsec:comparison}
-We calculated the avaerage F-1 scores for three Rouge metrics (Rouge-1, Rouge-2, Rouge-LCS) for four extractive text summarization models (WSbSC (proposed), BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}, SASbSC \cite{roychowdhury-etal-2022-spectral-base}, LexRank \cite{Erkan-lexRank-2004}) on four datasets (Self-Curated (SC), Kaggle, BNLPC, Github). The result of this evaluation is shown in table \ref{tab:result_comparison-1}. In this table, we can see that our proposed model performs  11.9\%, 24.1\% and 16.2\% better than the 2nd best method (SASbSC) in Rouge-1, Rouge-2 and Rouge-LCS respectively on our self-curated dataset. It performs 68.9\%, 95.4\% and 84.6\% better respectively than the 2nd best method (BenSumm) on the Kaggle dataset. It also performs a tie in R-1, 3\% better in R-2 and 2.6\% better than the 2nd best method (SASbSC) on R-LCS using the BNLPC dataset. It performs 58\%, 86.4\%, and 67.9\% better than the 2nd best method (BenSumm) on the Github dataset in all three metrics.\\
+The performance of the proposed method (WSbSC) is compared with BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}, SASbSC \cite{roychowdhury-etal-2022-spectral-base} and LexRank \cite{Erkan-lexRank-2004} on four datasets (Self-Curated (SC), Kaggle, BNLPC, Github) using the average F-1 score for three ROUGE metrics (Rouge-1, Rouge-2, Rouge-LCS). The comparative results of this evaluation are shown in Table \ref{tab:result_comparison-1} where our proposed model performs 11.9\%, 24.1\% and 16.2\% better than SASbSC in Rouge-1, Rouge-2 and Rouge-LCS respectively on the self-curated dataset. It performs 68.9\%, 95.4\% and 84.6\% better in Rouge-1, Rouge-2 and Rouge-LCS respectively than BenSumm on the Kaggle dataset. It also performs 3\% and 2.6\% better in Rouge-2 and Rouge-LCS respectively and ties in Rouge-1 with SASbSC using the BNLPC dataset. It performs 58\%, 86.4\%, and 67.9\% better in Rouge-1, Rouge-2 and Rouge-LCS respectively than BenSumm on the Github dataset.\\
 
 \begin{table}[]
     \centering
@@ -60,43 +84,16 @@ Github          & WSbSC (Proposed)                                     & \textbf
     \caption{Comparison of average Rouge scores between graph based extractive summarization models on 4 datasets}
     \label{tab:result_comparison-1}
 \end{table}
-These results are further visualized into three radar charts in figure \ref{fig:radarchart} to compare the performance of the models using all four datasets to compare them on individual metrics. In these charts, we can see that proposed method performs more consistently and uniformly across all the datasets regardless of the quality of the dataset. But other models, such as BenSumm performs well in some datasets (SC, GitHub, BNLPC) but also fails in the Kaggle dataset. Similarly, SASbSC performs well in SC and BNLPC datasets but the performance decreases sharply in Kaggle and GitHub datasets. LexRank although performs similarly across all datasets but is far lower on average.
-
-\subsection{Experimentation}\label{subsec:experimentation}
-We experimented on our model with different ranking techniques and different values for standard deviation ($\sigma$) for the equation~\ref{eq:sent_sim} to get the best rouge values for a summary. The standard deviation ($\sigma$) for the Gaussian Similarity represents a smoothing factor that can be used as a control variable to be fine-tuned for the best result. On the other hand, ranking methods pick the most representative sentence from a cluster after the clustering step. We checked lead extracting and TF-IDF ranking methods for to pick the a representative sentence from each cluster. These experimentations are discussed with more detail below.
-
-\subsubsection{Fine-tuning Standard Deviation ($\sigma$)}\label{subsubsec:sigma}
-We checked for different Standard Deviation ($\sigma$) on equation~\ref{eq:sent_sim} to pick the best $\sigma$. Sixty-three different values for $\sigma$ from $10^{-12}$ to $10$ on regular intervals have been experimented on and can be seen that $5\times10^{-11}$ works best as the value for $\sigma$ on our self-curated dataset. The result for fine-tuning process is shown in the following line chart (Figure~\ref{fig:sigma-fine-tuning}).
-
 \begin{figure}[]
-    \centering
-    \input{figs/0401_radarchart}
-    \caption{The Radar chart of the models of being compared on four datasets at once}
-    \label{fig:radarchart}
+	\centering
+	\scalebox{0.55}{\input{figs/0401_radarchart}}
+	\caption{The Radar chart of the models of being compared on four datasets at once}
+	\label{fig:radarchart}
 \end{figure}
-\begin{figure}
-    \centering
-    \input{figs/0402_finetuning}
-    \caption{Fine-tuning for different standard deviation~($\sigma$)~values}
-    \label{fig:sigma-fine-tuning}
-\end{figure}
-
-\subsubsection{Different Sentence Extraction Techniques Inside Clusters} \label{subsubsec:different-ranking-techniques-inside-clusters}
-We implemented two sentence extraction methods to pick the most representative sentence from each cluster. Firstly, the lead extraction method is used where we just select the sentence that appears first in the input document because generally the earlier sentences in an input has more information on the context of the input document. The second extraction method is the TF-IDF ranking method, where we ranked the sentences by their TF-IDF scores and picked the sentence with the most TF-IDF score. We can see in the table~\ref{tab:ranking} that the TF-IDF performs better on a high quality dataset like the self-curated dataset.
-
-\begin{table}[]
-    \centering
-    \begin{tabular}{lccc}\hline
-        Method      	& Rouge-1       & Rouge-2       & Rouge-LCS     \\\hline
-        Lead extraction	& 0.47          & 0.36          & 0.43          \\
-        TF-IDF ranking	& \textbf{0.50} & \textbf{0.40} & \textbf{0.46} \\\hline
-    \end{tabular}
-    \caption{Comparison of Result of different ranking techniques}
-    \label{tab:ranking}
-\end{table}
+These results are further visualized into three radar charts in Figure \ref{fig:radarchart} to compare the performance of the models on different Rouge metrics. As stated in the charts, the proposed method performed consistently and uniformly across all the datasets regardless of the quality of the dataset. But other models, such as BenSumm performs well in three datasets (SC, GitHub, BNLPC) but fails in the Kaggle dataset. Similarly, SASbSC performs well in SC and BNLPC datasets but its performance decreases sharply in Kaggle and GitHub datasets. LexRank although performs consistently across all datasets but is far lower on average. According to the result analysis in Table \ref{tab:result_comparison-1} and Figure \ref{fig:radarchart}, WSbSC is the most accurate and reliable Bengali extractive text summarization model.
 
 \subsection{Implementation Into Other Languages}\label{subsec:implementation-into-other-languages}
-The proposed model is not language-dependent because it does not rely on any language specific features to summarize the input documents, thus it can be extended into other languages too. To implement this method into a language, we only need a language-specific tokenizer, a list of stop-words and a word vector embedding dataset. We implemented this model on three more languages to show the language independent nature of the model. To evaluate the quality of the sentence extraction, we tried to find evaluation datasets for summarization on other low resource languages, but could only find relevant datasets in three other languages. These languages are Hindi, Marathi and Turkish. We adopted the proposed model into these three low resource languages to check how well it performs.\\
+The proposed model is language-independent thus, it can be extended into other languages too. For this, only a language-specific tokenizer, a stop-word list and a word embedding dataset is required. We implemented this model on three non-bengali datasets to show the language independent nature of the model. To evaluate the quality of the sentence extraction, we tried to find evaluation datasets for summarization on other low resource languages. But could only find relevant datasets in three other languages i.e. Hindi, Marathi and Turkish. We adopted the proposed model into these three low resource languages to check how well it performs.\\
 
 \begin{table}[]
     \centering
@@ -115,4 +112,4 @@ The proposed model is not language-dependent because it does not rely on any lan
     \label{tab:other_language}
 \end{table}
 
-The Table-\ref{tab:other_language} shows the result of the proposed WSbSC method for extractive summarization in other low resource languages. In this table, We can see that the results on Marathi and Turkish are slightly better than the result on Bengali. Although it performs slightly lower on Hindi, The score is still similar to Bengali. To evaluate the result on Hindi language, we used a Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/disisbig/hindi-text-short-and-large-summarization-corpus/}} produced by Gaurav Arora. For the Marathi language, we used another Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/ketki19/marathi}} produced by Ketki Nirantar. For the Turkish language, we used a GitHub dataset\footnote{\textit{https://github.com/xtinge/turkish-extractive-summarization-dataset/blob/main/dataset/XTINGE-SUM\_TR\_EXT/xtinge-sum\_tr\_ext.json}} produced by the XTINGE~\cite{Demir-2024-xtinge_turkish_extractive} team for evaluation. 
+The Table \ref{tab:other_language} shows the result of the proposed WSbSC method for extractive summarization in other low resource languages. In this table, we can see that the results on Marathi and Turkish are slightly better than the result on Bengali. Although it performs slightly lower on Hindi, the score is still similar to Bengali. To evaluate the models performance on Hindi, we used a Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/disisbig/hindi-text-short-and-large-summarization-corpus/}} produced by Gaurav Arora. For the Marathi, we used another Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/ketki19/marathi}} produced by Ketki Nirantar. For the Turkish language, we used a GitHub dataset\footnote{\textit{https://github.com/xtinge/turkish-extractive-summarization-dataset/blob/main/dataset/XTINGE-SUM\_TR\_EXT/xtinge-sum\_tr\_ext.json}} produced by the XTINGE \cite{Demir-2024-xtinge_turkish_extractive} team for evaluation. 
