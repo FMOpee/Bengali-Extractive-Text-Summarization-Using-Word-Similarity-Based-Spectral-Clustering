@@ -12,12 +12,6 @@ Despite the advancements of ATS in other languages, it remains an under-research
 
 In this paper, we propose a new clustering-based text summarization approach to address the challenge of calculating sentence similarity accurately. Our method improves upon previous attempts at graph-based summarization methods \cite{chowdhury-etal-2021-tfidf-clustering, roychowdhury-etal-2022-spectral-base} by focusing on the individual similarity between word pairs in sentences rather than averaging word vectors. We showed that the use of this novel approach greatly improved the accuracy, coverage and reliability of the output summaries due to having a deeper understanding of the semantic similarity between sentences. To calculate sentence similarity, we used the geometric mean of individual word similarities. The individual word similarities were achieved using Gaussian kernel function on a pair of corresponding word vector from each sentence. The word pairs are selected by finding the word vector with the smallest Euclidean distance from the target sentence. Thus, we get the semantic similarity between two sentences which can be used to build an affinity matrix to graphically represent the relationship between the sentences. This graph is clustered into groups to divide the document into distinct topics. One sentence from every cluster is selected to reduce redundancy and increase topic coverage. This method consistently outperforms other graph based text summarization methods such as BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}, LexRank \cite{Erkan-lexRank-2004}, SASbSC \cite{roychowdhury-etal-2022-spectral-base} using four datasets on ROUGE metrics \cite{lin-2004-rouge} as shown in Figure \ref{fig:radarchart} and Table \ref{tab:result_comparison-1}. This method performs well in other low resource languages also such as Hindi, Marathi and Turkish due to the language independent nature, as shown in the Table \ref{tab:other_language}.\\
 
-\begin{figure}
-    \centering
-    \input{figs/0101_process_flow_diagram}
-    \caption{Process Flow Diagram}
-    \label{fig:process-flow-diagram}
-\end{figure}
 The main contributions of this paper are:
 (I) Proposed a new way to calculate similarity between two sentences.
 (II) Contributes a novel methodology for extractive text summarization for the Bengali language; by improving sentence similarity calculations and enhancing clustering techniques.
