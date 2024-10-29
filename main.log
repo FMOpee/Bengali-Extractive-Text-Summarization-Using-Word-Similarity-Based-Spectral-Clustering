@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  28 OCT 2024 11:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  29 OCT 2024 09:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -890,12 +890,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (./chapters/1_introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
+Underfull \hbox (badness 10000) in paragraph at lines 1--4
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
@@ -904,11 +904,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
@@ -919,19 +914,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 
-
-[2]
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
+
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
 (./figs/0101_process_flow_diagram.tex)
-Overfull \hbox (5.94899pt too wide) in paragraph at lines 39--16
+Overfull \hbox (5.94899pt too wide) in paragraph at lines 39--18
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--24
+Underfull \hbox (badness 10000) in paragraph at lines 21--26
 
  []
 
@@ -948,8 +948,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-
-[4]
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
@@ -959,48 +957,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-(./figs/0201_Sarkar_problem.tex
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-)) (./chapters/3_methodology.tex
 
-[5]
+
+[4] (./figs/0201_Sarkar_problem.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+))
+
+[5] (./chapters/3_methodology.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
@@ -1060,13 +1060,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
 [8]
 
 [9]) (./chapters/4_result.tex
+
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
 
-
-[10]
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
@@ -1082,13 +1082,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
  []
 
 
+
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-
-[11]
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
@@ -1099,13 +1099,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
  []
 
 
+
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
-
-
-[12]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 39.
@@ -1168,13 +1167,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
  []
 
 
+
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
 
-
-[16]
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
@@ -1241,14 +1240,14 @@ cmr/m/n/10.95 , 2015.  Ac-cessed:
  []
 
 
+
+[19]
 Underfull \hbox (badness 1231) in paragraph at lines 158--164
 \OT1/cmr/m/it/10.95 ing\OT1/cmr/m/n/10.95 , pages 404--411. As-so-ci-a-tion for
  Com-pu-ta-tional Lin-guis-tics, July 2004.  URL
  []
 
 
-
-[19]
 Underfull \hbox (badness 3354) in paragraph at lines 195--202
 \OT1/cmr/m/n/10.95 sum-ma-riza-tion us-ing sen-tence em-bed-ding and spec-tral 
 clus-ter-ing.  In \OT1/cmr/m/it/10.95 Pro-ceed-
@@ -1260,9 +1259,11 @@ Underfull \hbox (badness 1210) in paragraph at lines 195--202
 s-tics, De-cem-ber 2022.  URL
  []
 
-)
 
-[20] (./main.aux)
+
+[20])
+
+[21] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
@@ -1271,11 +1272,11 @@ L3 programming layer <2024-09-10>
 Here is how much of TeX's memory you used:
  29636 strings out of 473579
  740087 string characters out of 5732262
- 1348053 words of memory out of 5000000
+ 1351783 words of memory out of 5000000
  52017 multiletter control sequences out of 15000+600000
  589223 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,19n,87p,2735b,2205s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,19n,87p,2518b,2205s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-di
@@ -1292,10 +1293,10 @@ amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (20 pages, 327833 bytes).
+Output written on main.pdf (21 pages, 327207 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 166 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
