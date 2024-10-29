@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  29 OCT 2024 11:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  29 OCT 2024 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,12 +1099,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
  []
 
 
-
-[12]
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
+
+
+[12]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 39.
@@ -1270,7 +1271,7 @@ L3 programming layer <2024-09-10>
 Here is how much of TeX's memory you used:
  29636 strings out of 473579
  740087 string characters out of 5732262
- 1349210 words of memory out of 5000000
+ 1349052 words of memory out of 5000000
  52017 multiletter control sequences out of 15000+600000
  589223 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1291,7 +1292,7 @@ amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (20 pages, 326046 bytes).
+Output written on main.pdf (20 pages, 325865 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams
