@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: sample-acmlarge.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: main.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty publisher in Akter-2017-tfidf-3
+Warning--empty address in Akter-2017-tfidf-3
+Warning--page numbers missing in both pages and numpages fields in Akter-2017-tfidf-3
+Warning--empty address in chowdhury-etal-2021-tfidf-clustering
+Warning--empty address in das-2022-tfidf
+Warning--empty publisher in Demir-2024-xtinge_turkish_extractive
+Warning--empty address in Demir-2024-xtinge_turkish_extractive
+Warning--page numbers missing in both pages and numpages fields in Demir-2024-xtinge_turkish_extractive
+Warning--empty address in grave-etal-2018-fasttext
+Warning--page numbers missing in both pages and numpages fields in grave-etal-2018-fasttext
+Warning--page numbers missing in both pages and numpages fields in gupta-2010-extractive-rev
+Warning--empty publisher in Hque-2015-BNLPC-Dataset
+Warning--empty address in Hque-2015-BNLPC-Dataset
+Warning--empty address in hausdorff-1914-hausdorff-distance
+Warning--empty publisher in Jain-2017-word-vector-embedding-summary
+Warning--empty address in Jain-2017-word-vector-embedding-summary
+Warning--empty address in lin-2004-rouge
+Warning--empty address in mihalcea-2004-textrank
+Warning--empty address in Mohan-2022-topic-modeling-rev-clustering
+Warning--empty publisher in Moratanch-2016-abstractive-rev
+Warning--empty address in Moratanch-2016-abstractive-rev
+Warning--empty publisher in moratanch-2017-extractive-review
+Warning--empty address in moratanch-2017-extractive-review
+Warning--empty publisher in page-PageRank-1999
+Warning--empty address in page-PageRank-1999
+Warning--page numbers missing in both pages and numpages fields in page-PageRank-1999
+Warning--empty address in roychowdhury-etal-2022-spectral-base
+Warning--empty publisher in Rubner-19998-emd
+Warning--empty address in Rubner-19998-emd
+Warning--empty address in sarkar-2012-tfidf
+Warning--page numbers missing in both pages and numpages fields in sarkar-2012-tfidf-2
+You've used 30 entries,
+            5981 wiz_defined-function locations,
+            1706 strings with 25239 characters,
+and the built_in function-call counts, 35304 in all, are:
+= -- 4597
+> -- 952
+< -- 0
++ -- 333
+- -- 369
+* -- 2301
+:= -- 3185
+add.period$ -- 149
+call.type$ -- 30
+change.case$ -- 204
+chr.to.int$ -- 29
+cite$ -- 61
+duplicate$ -- 3279
+empty$ -- 2251
+format.name$ -- 427
+if$ -- 8805
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 134
+newline$ -- 355
+num.names$ -- 209
+pop$ -- 1294
+preamble$ -- 1
+purify$ -- 442
+quote$ -- 0
+skip$ -- 1247
+stack$ -- 0
+substring$ -- 2599
+swap$ -- 374
+text.length$ -- 57
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 700
+warning$ -- 31
+while$ -- 197
+width$ -- 0
+write$ -- 688
+(There were 31 warnings)
