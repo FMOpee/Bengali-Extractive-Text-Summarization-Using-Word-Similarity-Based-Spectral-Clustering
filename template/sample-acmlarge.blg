@@ -1,0 +1,115 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: sample-acmlarge.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: main.bib
+Warning--I didn't find a database entry for "alguliyev-2019-cosum"
+Warning--I didn't find a database entry for "Lamport:LaTeX"
+Warning--I didn't find a database entry for "Abril07"
+Warning--I didn't find a database entry for "Cohen07"
+Warning--I didn't find a database entry for "JCohen96"
+Warning--I didn't find a database entry for "Kosiur01"
+Warning--I didn't find a database entry for "Harel79"
+Warning--I didn't find a database entry for "Editor00"
+Warning--I didn't find a database entry for "Editor00a"
+Warning--I didn't find a database entry for "Spector90"
+Warning--I didn't find a database entry for "Douglass98"
+Warning--I didn't find a database entry for "Knuth97"
+Warning--I didn't find a database entry for "Andler79"
+Warning--I didn't find a database entry for "Hagerup1993"
+Warning--I didn't find a database entry for "Smith10"
+Warning--I didn't find a database entry for "VanGundy07"
+Warning--I didn't find a database entry for "Harel78"
+Warning--I didn't find a database entry for "Bornmann2019"
+Warning--I didn't find a database entry for "AnzarootPBM14"
+Warning--I didn't find a database entry for "Clarkson85"
+Warning--I didn't find a database entry for "anisi03"
+Warning--I didn't find a database entry for "Thornburg01"
+Warning--I didn't find a database entry for "Ablamowicz07"
+Warning--I didn't find a database entry for "Poker06"
+Warning--I didn't find a database entry for "Obama08"
+Warning--I didn't find a database entry for "Novak03"
+Warning--I didn't find a database entry for "Lee05"
+Warning--I didn't find a database entry for "JoeScientist001"
+Warning--I didn't find a database entry for "rous08"
+Warning--I didn't find a database entry for "SaeediMEJ10"
+Warning--I didn't find a database entry for "SaeediJETC10"
+Warning--I didn't find a database entry for "Kirschmer:2010:AEI:1958016.1958018"
+Warning--I didn't find a database entry for "MR781536"
+Warning--I didn't find a database entry for "MR781537"
+Warning--I didn't find a database entry for "2004:ITE:1009386.1010128"
+Warning--I didn't find a database entry for "TUGInstmem"
+Warning--I didn't find a database entry for "CTANacmart"
+Warning--I didn't find a database entry for "R"
+Warning--I didn't find a database entry for "UMassCitations"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty publisher in Akter-2017-tfidf-3
+Warning--empty address in Akter-2017-tfidf-3
+Warning--page numbers missing in both pages and numpages fields in Akter-2017-tfidf-3
+Warning--empty address in chowdhury-etal-2021-tfidf-clustering
+Warning--empty address in das-2022-tfidf
+Warning--empty address in grave-etal-2018-fasttext
+Warning--page numbers missing in both pages and numpages fields in grave-etal-2018-fasttext
+Warning--page numbers missing in both pages and numpages fields in gupta-2010-extractive-rev
+Warning--empty address in lin-2004-rouge
+Warning--empty address in mihalcea-2004-textrank
+Warning--empty address in Mohan-2022-topic-modeling-rev-clustering
+Warning--empty publisher in Moratanch-2016-abstractive-rev
+Warning--empty address in Moratanch-2016-abstractive-rev
+Warning--empty publisher in moratanch-2017-extractive-review
+Warning--empty address in moratanch-2017-extractive-review
+Warning--empty publisher in page-PageRank-1999
+Warning--empty address in page-PageRank-1999
+Warning--page numbers missing in both pages and numpages fields in page-PageRank-1999
+Warning--empty address in roychowdhury-etal-2022-spectral-base
+Warning--empty address in sarkar-2012-tfidf
+Warning--page numbers missing in both pages and numpages fields in sarkar-2012-tfidf-2
+You've used 20 entries,
+            5981 wiz_defined-function locations,
+            1695 strings with 23594 characters,
+and the built_in function-call counts, 23949 in all, are:
+= -- 3057
+> -- 660
+< -- 0
++ -- 236
+- -- 266
+* -- 1551
+:= -- 2175
+add.period$ -- 98
+call.type$ -- 20
+change.case$ -- 137
+chr.to.int$ -- 19
+cite$ -- 41
+duplicate$ -- 2230
+empty$ -- 1528
+format.name$ -- 306
+if$ -- 5929
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 92
+newline$ -- 252
+num.names$ -- 139
+pop$ -- 898
+preamble$ -- 1
+purify$ -- 295
+quote$ -- 0
+skip$ -- 859
+stack$ -- 0
+substring$ -- 1739
+swap$ -- 258
+text.length$ -- 38
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 485
+warning$ -- 21
+while$ -- 140
+width$ -- 0
+write$ -- 475
+(There were 60 warnings)

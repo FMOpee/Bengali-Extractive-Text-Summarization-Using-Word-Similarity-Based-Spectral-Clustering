@@ -1,0 +1,336 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{20}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Akter et~al\mbox{.}(2017)]%
+        {Akter-2017-tfidf-3}
+\bibfield{author}{\bibinfo{person}{Sumya Akter}, \bibinfo{person}{Aysa~Siddika
+  Asa}, \bibinfo{person}{Md.~Palash Uddin}, \bibinfo{person}{Md.~Delowar
+  Hossain}, \bibinfo{person}{Shikhor~Kumer Roy}, {and}
+  \bibinfo{person}{Masud~Ibn Afjal}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{An extractive text summarization technique for
+  Bengali document(s) using K-means clustering algorithm}. In
+  \bibinfo{booktitle}{\emph{2017 IEEE International Conference on Imaging,
+  Vision \& Pattern Recognition (icIVPR)}}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICIVPR.2017.7890883}
+\showDOI{\tempurl}
+
+
+\bibitem[Baxendale(1958)]%
+        {Baxendale_1958_firstsummarization}
+\bibfield{author}{\bibinfo{person}{P.~B. Baxendale}.}
+  \bibinfo{year}{1958}\natexlab{}.
+\newblock \showarticletitle{Machine-Made Index for Technical Literature—An
+  Experiment}.
+\newblock \bibinfo{journal}{\emph{IBM Journal of Research and Development}}
+  \bibinfo{volume}{2}, \bibinfo{number}{4} (\bibinfo{year}{1958}),
+  \bibinfo{pages}{354--361}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1147/rd.24.0354}
+\showDOI{\tempurl}
+
+
+\bibitem[Chowdhury et~al\mbox{.}(2021)]%
+        {chowdhury-etal-2021-tfidf-clustering}
+\bibfield{author}{\bibinfo{person}{Radia~Rayan Chowdhury},
+  \bibinfo{person}{Mir~Tafseer Nayeem}, \bibinfo{person}{Tahsin~Tasnim Mim},
+  \bibinfo{person}{Md. Saifur~Rahman Chowdhury}, {and}
+  \bibinfo{person}{Taufiqul Jannat}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Unsupervised Abstractive Summarization of {B}engali
+  Text Documents}. In \bibinfo{booktitle}{\emph{Proceedings of the 16th
+  Conference of the European Chapter of the Association for Computational
+  Linguistics: Main Volume}}. \bibinfo{publisher}{Association for Computational
+  Linguistics}, \bibinfo{pages}{2612--2619}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.18653/v1/2021.eacl-main.224}
+\showDOI{\tempurl}
+
+
+\bibitem[Dash et~al\mbox{.}(2022)]%
+        {das-2022-tfidf}
+\bibfield{author}{\bibinfo{person}{Satya~Ranjan Dash}, \bibinfo{person}{Pubali
+  Guha}, \bibinfo{person}{Debasish~Kumar Mallick}, {and}
+  \bibinfo{person}{Shantipriya Parida}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Summarizing Bengali Text: An Extractive Approach}.
+  In \bibinfo{booktitle}{\emph{Intelligent Data Engineering and Analytics}}.
+  \bibinfo{publisher}{Springer Nature Singapore}, \bibinfo{pages}{133--140}.
+\newblock
+\showISBNx{978-981-16-6624-7}
+
+
+\bibitem[Edmundson(1969)]%
+        {edmundson_1969_earlysum}
+\bibfield{author}{\bibinfo{person}{H.~P. Edmundson}.}
+  \bibinfo{year}{1969}\natexlab{}.
+\newblock \showarticletitle{New Methods in Automatic Extracting}.
+\newblock \bibinfo{journal}{\emph{J. ACM}} \bibinfo{volume}{16},
+  \bibinfo{number}{2} (\bibinfo{date}{apr} \bibinfo{year}{1969}),
+  \bibinfo{pages}{264–285}.
+\newblock
+\showISSN{0004-5411}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/321510.321519}
+\showDOI{\tempurl}
+
+
+\bibitem[El-Kassas et~al\mbox{.}(2021)]%
+        {wafaa-2021-summary-comprehensive-review}
+\bibfield{author}{\bibinfo{person}{Wafaa~S. El-Kassas},
+  \bibinfo{person}{Cherif~R. Salama}, \bibinfo{person}{Ahmed~A. Rafea}, {and}
+  \bibinfo{person}{Hoda~K. Mohamed}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Automatic text summarization: A comprehensive
+  survey}.
+\newblock \bibinfo{journal}{\emph{Expert Systems with Applications}}
+  \bibinfo{volume}{165} (\bibinfo{year}{2021}), \bibinfo{pages}{113679}.
+\newblock
+\showISSN{0957-4174}
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.eswa.2020.113679}
+\showDOI{\tempurl}
+
+
+\bibitem[Erkan and Radev(2004)]%
+        {Erkan-lexRank-2004}
+\bibfield{author}{\bibinfo{person}{G\"{u}nes Erkan} {and}
+  \bibinfo{person}{Dragomir~R. Radev}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{LexRank: graph-based lexical centrality as salience
+  in text summarization}.
+\newblock \bibinfo{journal}{\emph{J. Artif. Int. Res.}} \bibinfo{volume}{22},
+  \bibinfo{number}{1} (\bibinfo{date}{dec} \bibinfo{year}{2004}),
+  \bibinfo{pages}{457–479}.
+\newblock
+\showISSN{1076-9757}
+
+
+\bibitem[Grave et~al\mbox{.}(2018)]%
+        {grave-etal-2018-fasttext}
+\bibfield{author}{\bibinfo{person}{Edouard Grave}, \bibinfo{person}{Piotr
+  Bojanowski}, \bibinfo{person}{Prakhar Gupta}, \bibinfo{person}{Armand
+  Joulin}, {and} \bibinfo{person}{Tomas Mikolov}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Learning Word Vectors for 157 Languages}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Eleventh International
+  Conference on Language Resources and Evaluation ({LREC} 2018)}}.
+  \bibinfo{publisher}{European Language Resources Association (ELRA)}.
+\newblock
+\urldef\tempurl%
+\url{https://aclanthology.org/L18-1550}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Gupta and Lehal(2010)]%
+        {gupta-2010-extractive-rev}
+\bibfield{author}{\bibinfo{person}{Vishal Gupta} {and}
+  \bibinfo{person}{Gurpreet Lehal}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{A Survey of Text Summarization Extractive
+  Techniques}.
+\newblock \bibinfo{journal}{\emph{Journal of Emerging Technologies in Web
+  Intelligence}}  \bibinfo{volume}{2} (\bibinfo{date}{08}
+  \bibinfo{year}{2010}).
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.4304/jetwi.2.3.258-268}
+\showDOI{\tempurl}
+
+
+\bibitem[Lin(2004)]%
+        {lin-2004-rouge}
+\bibfield{author}{\bibinfo{person}{Chin-Yew Lin}.}
+  \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{{ROUGE}: A Package for Automatic Evaluation of
+  Summaries}. In \bibinfo{booktitle}{\emph{Text Summarization Branches Out}}.
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{74--81}.
+\newblock
+\urldef\tempurl%
+\url{https://aclanthology.org/W04-1013}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Mihalcea and Tarau(2004)]%
+        {mihalcea-2004-textrank}
+\bibfield{author}{\bibinfo{person}{Rada Mihalcea} {and} \bibinfo{person}{Paul
+  Tarau}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{{T}ext{R}ank: Bringing Order into Text}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2004 Conference on Empirical
+  Methods in Natural Language Processing}}. \bibinfo{publisher}{Association for
+  Computational Linguistics}, \bibinfo{pages}{404--411}.
+\newblock
+\urldef\tempurl%
+\url{https://aclanthology.org/W04-3252}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Mohan and Kumar(2022)]%
+        {Mohan-2022-topic-modeling-rev-clustering}
+\bibfield{author}{\bibinfo{person}{G.~Bharathi Mohan} {and}
+  \bibinfo{person}{R.~Prasanna Kumar}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{A Comprehensive Survey on Topic Modeling in Text
+  Summarization}. In \bibinfo{booktitle}{\emph{Micro-Electronics and
+  Telecommunication Engineering}}. \bibinfo{publisher}{Springer Nature
+  Singapore}, \bibinfo{pages}{231--240}.
+\newblock
+\showISBNx{978-981-16-8721-1}
+
+
+\bibitem[Moratanch and Chitrakala(2016)]%
+        {Moratanch-2016-abstractive-rev}
+\bibfield{author}{\bibinfo{person}{N. Moratanch} {and} \bibinfo{person}{S.
+  Chitrakala}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{A survey on abstractive text summarization}. In
+  \bibinfo{booktitle}{\emph{2016 International Conference on Circuit, Power and
+  Computing Technologies (ICCPCT)}}. \bibinfo{pages}{1--7}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCPCT.2016.7530193}
+\showDOI{\tempurl}
+
+
+\bibitem[Moratanch and Chitrakala(2017)]%
+        {moratanch-2017-extractive-review}
+\bibfield{author}{\bibinfo{person}{N. Moratanch} {and} \bibinfo{person}{S.
+  Chitrakala}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{A survey on extractive text summarization}. In
+  \bibinfo{booktitle}{\emph{2017 International Conference on Computer,
+  Communication and Signal Processing (ICCCSP)}}. \bibinfo{pages}{1--6}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCCSP.2017.7944061}
+\showDOI{\tempurl}
+
+
+\bibitem[Page et~al\mbox{.}(1999)]%
+        {page-PageRank-1999}
+\bibfield{author}{\bibinfo{person}{Lawrence Page}, \bibinfo{person}{Sergey
+  Brin}, \bibinfo{person}{Rajeev Motwani}, {and} \bibinfo{person}{Terry
+  Winograd}.} \bibinfo{year}{1999}\natexlab{}.
+\newblock \showarticletitle{The PageRank Citation Ranking : Bringing Order to
+  the Web}. In \bibinfo{booktitle}{\emph{The Web Conference}}.
+\newblock
+\urldef\tempurl%
+\url{https://api.semanticscholar.org/CorpusID:1508503}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Roychowdhury et~al\mbox{.}(2022)]%
+        {roychowdhury-etal-2022-spectral-base}
+\bibfield{author}{\bibinfo{person}{Sohini Roychowdhury}, \bibinfo{person}{Kamal
+  Sarkar}, {and} \bibinfo{person}{Arka Maji}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Unsupervised {B}engali Text Summarization Using
+  Sentence Embedding and Spectral Clustering}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 19th International Conference on
+  Natural Language Processing (ICON)}}. \bibinfo{publisher}{Association for
+  Computational Linguistics}, \bibinfo{pages}{337--346}.
+\newblock
+\urldef\tempurl%
+\url{https://aclanthology.org/2022.icon-main.40}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Sarkar(2012a)]%
+        {sarkar-2012-tfidf}
+\bibfield{author}{\bibinfo{person}{Kamal Sarkar}.}
+  \bibinfo{year}{2012}\natexlab{a}.
+\newblock \showarticletitle{An approach to summarizing Bengali news documents}.
+  In \bibinfo{booktitle}{\emph{Proceedings of the International Conference on
+  Advances in Computing, Communications and Informatics}}
+  \emph{(\bibinfo{series}{ICACCI '12})}. \bibinfo{publisher}{Association for
+  Computing Machinery}, \bibinfo{pages}{857–862}.
+\newblock
+\showISBNx{9781450311960}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2345396.2345535}
+\showDOI{\tempurl}
+
+
+\bibitem[Sarkar(2012b)]%
+        {sarkar-2012-tfidf-2}
+\bibfield{author}{\bibinfo{person}{Kamal Sarkar}.}
+  \bibinfo{year}{2012}\natexlab{b}.
+\newblock \showarticletitle{Bengali text summarization by sentence extraction}.
+\newblock \bibinfo{journal}{\emph{CoRR}}  \bibinfo{volume}{abs/1201.2240}
+  (\bibinfo{year}{2012}).
+\newblock
+\urldef\tempurl%
+\url{http://arxiv.org/abs/1201.2240}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Tas and Kiyani(2017)]%
+        {tas-2017-rev-text-sum-2}
+\bibfield{author}{\bibinfo{person}{Oguzhan Tas} {and} \bibinfo{person}{Farzad
+  Kiyani}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{A SURVEY AUTOMATIC TEXT SUMMARIZATION}.
+\newblock \bibinfo{journal}{\emph{PressAcademia Procedia}} \bibinfo{volume}{5},
+  \bibinfo{number}{1} (\bibinfo{year}{2017}), \bibinfo{pages}{205–213}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.17261/Pressacademia.2017.591}
+\showDOI{\tempurl}
+
+
+\bibitem[Widyassari et~al\mbox{.}(2022)]%
+        {Widyassari-2022-rev-ats-tech-met}
+\bibfield{author}{\bibinfo{person}{Adhika~Pramita Widyassari},
+  \bibinfo{person}{Supriadi Rustad}, \bibinfo{person}{Guruh~Fajar Shidik},
+  \bibinfo{person}{Edi Noersasongko}, \bibinfo{person}{Abdul Syukur},
+  \bibinfo{person}{Affandy Affandy}, {and} \bibinfo{person}{De~Rosal
+  Ignatius~Moses Setiadi}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Review of automatic text summarization techniques
+  \& methods}.
+\newblock \bibinfo{journal}{\emph{Journal of King Saud University - Computer
+  and Information Sciences}} \bibinfo{volume}{34}, \bibinfo{number}{4}
+  (\bibinfo{year}{2022}), \bibinfo{pages}{1029--1046}.
+\newblock
+\showISSN{1319-1578}
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.jksuci.2020.05.006}
+\showDOI{\tempurl}
+
+
+\end{thebibliography}
