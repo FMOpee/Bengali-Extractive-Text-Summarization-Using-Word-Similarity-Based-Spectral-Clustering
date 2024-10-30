@@ -295,7 +295,8 @@ Although text summarization have been a forefront of NLP research, text summariz
 \begin{figure}
 	\centering
 	%\input{figs/0201_Sarkar_problem}
-	\includegraphics{sample-franklin}
+	%\includegraphics{sample-franklin}
+	\includegraphics[width=0.8\textwidth]{figs/sarkar_problem-edited}
 	\caption{A scenario where sentence averaging method fails. Dots in the figure represent word vectors and are grouped by colours if they are from the same sentence. (a) and (c) shows a scenario where the distance between sentence average vectors are larger than (b) and (d) despite the word vectors being more closely related.}
 	\label{fig:sarkar-problem}
 \end{figure}
@@ -307,8 +308,8 @@ The summarization process followed here can be boiled down as two basic steps, g
 \begin{figure}
 	\centering
 	%\input{figs/0101_process_flow_diagram}
-	
-	\includegraphics{sample-franklin}
+	%\includegraphics{sample-franklin}
+	\includegraphics[width=0.8\textwidth]{figs/process-flow-diagram-new}
 	\caption{Process Flow Diagram}
 	\label{fig:process-flow-diagram}
 \end{figure}
@@ -367,8 +368,8 @@ The whole process of sentence similarity calculation is shown in the Algorithm \
 \begin{figure}
 	\centering
 	%\input{figs/0301_msd}
-	
-	\includegraphics{sample-franklin}
+	%\includegraphics{sample-franklin}
+	\includegraphics[width=0.8\textwidth]{figs/msd-edited}
 	\caption{Local word correspondence of $D_{msw}$ method. Dots in the figure represent word vectors and are coloured with the same colour if they are from the same sentence. Black dashed arrows represent the $D_{msw}$ from its destination word vector. Here, scenario (a) will have larger similarity due to it having smaller $D_{msw}$ than scenario (b)}
 	\label{fig:msd}
 \end{figure}
@@ -494,17 +495,17 @@ The proposed model contains three main steps, similarity calculation, clustering
 
 \subsubsection{Fine-tuning Standard Deviation ($\sigma$)}\label{subsubsec:sigma}
 Standard deviation ($\sigma$) plays a crucial role for sentence similarity calculation (Equation \ref{eq:sent_sim}). Therefore, to fix the most suited $\sigma$ value sixty-three different values were experimented on. These values ranged from $10^{-12}$ to $10$ on regular intervals. After experimentation, $5\times10^{-11}$ was fixed as the value for $\sigma$ that gives the most representative semantic relation between sentences. The result for fine-tuning process is shown in Figure \ref{fig:sigma-fine-tuning}.
-\begin{figure}[h]
+\begin{figure}[]
 	\centering
 	%\input{figs/0402_finetuning}
-	
-	\includegraphics{sample-franklin}
+	%\includegraphics{sample-franklin}
+	\includegraphics[width=0.8\textwidth]{figs/fine-tuning-edited}
 	\caption{Fine-tuning for different standard deviation~($\sigma$)~values}
 	\label{fig:sigma-fine-tuning}
 \end{figure}
 \subsubsection{Different Sentence Extraction Techniques Inside Clusters} \label{subsubsec:different-ranking-techniques-inside-clusters}
 We implemented two sentence extraction methods to pick the most representative sentence from each cluster. Firstly, the lead extraction method is used to select the sentence that appears first in the input document. Because, generally the earlier sentences in an input contain more information on the context of the input document. Secondly, extracting sentences based on their TF-IDF score was also experimented on. In Table \ref{tab:ranking}, the TF-IDF ranking is shown to performs better than the lead extraction method.
-\begin{table}[h]
+\begin{table}[]
 	\centering
 	\begin{tabular}{lccc}\hline
 		Method      	& Rouge-1       & Rouge-2       & Rouge-LCS     \\\hline
@@ -544,7 +545,7 @@ The performance of the proposed method (WSbSC) is compared with BenSumm \cite{ch
 \begin{figure}[]
 	\centering
 %	\scalebox{0.55}{\input{figs/0401_radarchart}}
-	\includegraphics{sample-franklin}
+	\includegraphics[width=0.8\textwidth]{figs/radar-chart-edited}
 	\caption{The Radar chart of the models of being compared on four datasets at once}
 	\label{fig:radarchart}
 \end{figure}

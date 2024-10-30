@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  30 OCT 2024 21:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  31 OCT 2024 02:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1164,211 +1164,277 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
 
 [4.4]
-<sample-franklin.png, id=205, 411.5375pt x 323.2075pt>
-File: sample-franklin.png Graphic file (type png)
-<use sample-franklin.png>
-Package pdftex.def Info: sample-franklin.png  used on input line 298.
-(pdftex.def)             Requested size: 411.5365pt x 323.20671pt.
+Package epstopdf Info: Source file: <figs/sarkar_problem-edited.eps>
+(epstopdf)                    date: 2024-10-30 22:25:15
+(epstopdf)                    size: 1084034 bytes
+(epstopdf)             Output file: <figs/sarkar_problem-edited-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2024-10-31 02:02:52
+(epstopdf)                    size: 16649 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/sarkar_problem-edited
+-eps-converted-to.pdf figs/sarkar_problem-edited.eps>
+(epstopdf)             \includegraphics on input line 299.
+Package epstopdf Info: Output file is already uptodate.
+<figs/sarkar_problem-edited-eps-converted-to.pdf, id=205, 663.47874pt x 599.238
+75pt>
+File: figs/sarkar_problem-edited-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/sarkar_problem-edited-eps-converted-to.pdf>
+Package pdftex.def Info: figs/sarkar_problem-edited-eps-converted-to.pdf  used 
+on input line 299.
+(pdftex.def)             Requested size: 361.83737pt x 326.80266pt.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 299.
+(Font)              scaled to size 9.0pt on input line 300.
 
 
-Class acmart Warning: A possible image without description on input line 301.
+Class acmart Warning: A possible image without description on input line 302.
 
 
 
-[5.5 <./sample-franklin.png>]
-File: sample-franklin.png Graphic file (type png)
-<use sample-franklin.png>
-Package pdftex.def Info: sample-franklin.png  used on input line 311.
-(pdftex.def)             Requested size: 411.5365pt x 323.20671pt.
+[5.5 <./figs/sarkar_problem-edited-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figs/process-flow-diagram-new.eps>
+(epstopdf)                    date: 2024-10-31 01:56:46
+(epstopdf)                    size: 1982718 bytes
+(epstopdf)             Output file: <figs/process-flow-diagram-new-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2024-10-31 02:02:54
+(epstopdf)                    size: 28933 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/process-flow-diagram-
+new-eps-converted-to.pdf figs/process-flow-diagram-new.eps>
+(epstopdf)             \includegraphics on input line 312.
+Package epstopdf Info: Output file is already uptodate.
+<figs/process-flow-diagram-new-eps-converted-to.pdf, id=226, 426.59375pt x 169.
+63374pt>
+File: figs/process-flow-diagram-new-eps-converted-to.pdf Graphic file (type pdf
+)
+<use figs/process-flow-diagram-new-eps-converted-to.pdf>
+Package pdftex.def Info: figs/process-flow-diagram-new-eps-converted-to.pdf  us
+ed on input line 312.
+(pdftex.def)             Requested size: 361.83737pt x 143.89168pt.
 
 
-Class acmart Warning: A possible image without description on input line 314.
+Class acmart Warning: A possible image without description on input line 315.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+[6.6 <./figs/process-flow-diagram-new-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
 
-Underfull \vbox (badness 2698) has occurred while \output is active []
-
-
-
-[6.6]
 
 [7.7{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 361--365
+Underfull \hbox (badness 10000) in paragraph at lines 362--366
 
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 366.
+(Font)              scaled to size 10.0pt on input line 367.
 
-LaTeX Warning: Reference `alg:similarity' on page 8 undefined on input line 366
+LaTeX Warning: Reference `alg:similarity' on page 8 undefined on input line 367
 .
 
-File: sample-franklin.png Graphic file (type png)
-<use sample-franklin.png>
-Package pdftex.def Info: sample-franklin.png  used on input line 371.
-(pdftex.def)             Requested size: 411.5365pt x 323.20671pt.
+Package epstopdf Info: Source file: <figs/msd-edited.eps>
+(epstopdf)                    date: 2024-10-30 22:20:24
+(epstopdf)                    size: 356826 bytes
+(epstopdf)             Output file: <figs/msd-edited-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-10-31 02:02:56
+(epstopdf)                    size: 14467 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/msd-edited-eps-conver
+ted-to.pdf figs/msd-edited.eps>
+(epstopdf)             \includegraphics on input line 372.
+Package epstopdf Info: Output file is already uptodate.
+<figs/msd-edited-eps-converted-to.pdf, id=277, 290.08376pt x 123.46124pt>
+File: figs/msd-edited-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/msd-edited-eps-converted-to.pdf>
+Package pdftex.def Info: figs/msd-edited-eps-converted-to.pdf  used on input li
+ne 372.
+(pdftex.def)             Requested size: 361.83737pt x 154.00966pt.
 
-Class acmart Warning: A possible image without description on input line 374.
+Class acmart Warning: A possible image without description on input line 375.
 
 Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
 
 
-[8.8]
+[8.8 <./figs/msd-edited-eps-converted-to.pdf>]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 5.5pt on input line 426.
+
+
+LaTeX Warning: Reference `alg:summary' on page 9 undefined on input line 428.
+
+Excluding 'comment' comment.
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
+
+ []
+
+
 
 [9.9]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 425.
-
-
-LaTeX Warning: Reference `alg:summary' on page 10 undefined on input line 427.
-
-Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
+Underfull \hbox (badness 10000) in paragraph at lines 462--463
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 461--462
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--466
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
 
  []
 
 
 
 [10.10]
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 472--473
-
- []
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 497.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--475
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 498.
 
- []
+Package epstopdf Info: Source file: <figs/fine-tuning-edited.eps>
+(epstopdf)                    date: 2024-10-30 23:07:14
+(epstopdf)                    size: 491470 bytes
+(epstopdf)             Output file: <figs/fine-tuning-edited-eps-converted-to.p
+df>
+(epstopdf)                    date: 2024-10-31 02:02:58
+(epstopdf)                    size: 26627 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/fine-tuning-edited-ep
+s-converted-to.pdf figs/fine-tuning-edited.eps>
+(epstopdf)             \includegraphics on input line 502.
+Package epstopdf Info: Output file is already uptodate.
+<figs/fine-tuning-edited-eps-converted-to.pdf, id=338, 254.9525pt x 127.47626pt
+>
+File: figs/fine-tuning-edited-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/fine-tuning-edited-eps-converted-to.pdf>
+Package pdftex.def Info: figs/fine-tuning-edited-eps-converted-to.pdf  used on 
+input line 502.
+(pdftex.def)             Requested size: 361.83737pt x 180.92805pt.
+
+Class acmart Warning: A possible image without description on input line 505.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 508.
 
 
 
 [11.11]
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 496.
-File: sample-franklin.png Graphic file (type png)
-<use sample-franklin.png>
-Package pdftex.def Info: sample-franklin.png  used on input line 501.
-(pdftex.def)             Requested size: 411.5365pt x 323.20671pt.
-
-
-Class acmart Warning: A possible image without description on input line 504.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 518--519
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 520.
+               Default added (so using `tbp') on input line 521.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 544.
+               Default added (so using `tbp') on input line 545.
 
-File: sample-franklin.png Graphic file (type png)
-<use sample-franklin.png>
-Package pdftex.def Info: sample-franklin.png  used on input line 547.
-(pdftex.def)             Requested size: 411.5365pt x 323.20671pt.
+Package epstopdf Info: Source file: <figs/radar-chart-edited.eps>
+(epstopdf)                    date: 2024-10-30 21:50:14
+(epstopdf)                    size: 841854 bytes
+(epstopdf)             Output file: <figs/radar-chart-edited-eps-converted-to.p
+df>
+(epstopdf)                    date: 2024-10-31 02:03:00
+(epstopdf)                    size: 59203 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/radar-chart-edited-ep
+s-converted-to.pdf figs/radar-chart-edited.eps>
+(epstopdf)             \includegraphics on input line 548.
+Package epstopdf Info: Output file is already uptodate.
+<figs/radar-chart-edited-eps-converted-to.pdf, id=370, 420.57124pt x 412.54124p
+t>
+File: figs/radar-chart-edited-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/radar-chart-edited-eps-converted-to.pdf>
+Package pdftex.def Info: figs/radar-chart-edited-eps-converted-to.pdf  used on 
+input line 548.
+(pdftex.def)             Requested size: 361.83737pt x 354.92963pt.
 
-Class acmart Warning: A possible image without description on input line 550.
+Class acmart Warning: A possible image without description on input line 551.
 
 
-
-[12.12]
-Underfull \hbox (badness 10000) in paragraph at lines 554--555
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 
  []
 
 
+
+[12.12 <./figs/fine-tuning-edited-eps-converted-to.pdf>]
+
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 556.
+               Default added (so using `tbp') on input line 557.
 
 
 
 [13.13]
-Underfull \hbox (badness 10000) in paragraph at lines 576--577
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
 
  []
 
 
 
-[14.14]
-Underfull \hbox (badness 10000) in paragraph at lines 578--579
+[14.14 <./figs/radar-chart-edited-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 580--581
+Underfull \hbox (badness 10000) in paragraph at lines 583--584
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 587--588
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
 
  []
 
 
 
 [15.15]
-Underfull \hbox (badness 10000) in paragraph at lines 582--583
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 591--592
-
- []
-
-
-Underfull \vbox (badness 4927) has occurred while \output is active []
-
-
-
-[16.16]
-Underfull \hbox (badness 10000) in paragraph at lines 593--594
+Underfull \hbox (badness 10000) in paragraph at lines 594--595
 
  []
 
@@ -1379,18 +1445,18 @@ LaTeX Info: Redefining \tempurl on input line 99.
 LaTeX Info: Redefining \tempurl on input line 116.
 LaTeX Info: Redefining \tempurl on input line 154.
 LaTeX Info: Redefining \tempurl on input line 170.
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+
+
+[16.16]
 LaTeX Info: Redefining \tempurl on input line 198.
 LaTeX Info: Redefining \tempurl on input line 214.
 LaTeX Info: Redefining \tempurl on input line 230.
 LaTeX Info: Redefining \tempurl on input line 245.
 LaTeX Info: Redefining \tempurl on input line 269.
 LaTeX Info: Redefining \tempurl on input line 283.
-
-Underfull \vbox (badness 1270) has occurred while \output is active []
-
-
-
-[17.17]
 LaTeX Info: Redefining \tempurl on input line 298.
 LaTeX Info: Redefining \tempurl on input line 324.
 LaTeX Info: Redefining \tempurl on input line 337.
@@ -1409,7 +1475,7 @@ Class acmart Warning: Some images may lack descriptions.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 1188.
+surrounding objects on input line 1189.
 
 
 
@@ -1418,7 +1484,7 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (c:/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [18.18]
+) [17.17]
 (./sample-acmlarge.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
@@ -1432,13 +1498,13 @@ Package rerunfilecheck Info: File `sample-acmlarge.out' has not changed.
 (rerunfilecheck)             Checksum: F8583D5E2121D6F2794DB94E1F3BD23F;2632.
  ) 
 Here is how much of TeX's memory you used:
- 21352 strings out of 473578
- 345105 string characters out of 5732241
- 815178 words of memory out of 5000000
- 43133 multiletter control sequences out of 15000+600000
+ 21515 strings out of 473578
+ 351145 string characters out of 5732241
+ 818735 words of memory out of 5000000
+ 43297 multiletter control sequences out of 15000+600000
  746710 words of font info for 443 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,17n,131p,2495b,727s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,17n,131p,2495b,713s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb><c:/
 texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI5.pfb><c:/texli
 ve/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb><c:/texlive/20
@@ -1450,10 +1516,10 @@ ts/type1/public/libertine/LinLibertineTB.pfb><c:/texlive/2024/texmf-dist/fonts/
 type1/public/libertine/LinLibertineTI.pfb><c:/texlive/2024/texmf-dist/fonts/typ
 e1/public/newtx/txexs.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/
 txmiaX.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-acmlarge.pdf (18 pages, 660754 bytes).
+Output written on sample-acmlarge.pdf (17 pages, 684020 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 467 compressed objects within 5 object streams
- 99 named destinations out of 1000 (max. 500000)
- 104614 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 568 PDF objects out of 1000 (max. 8388607)
+ 491 compressed objects within 5 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 104634 words of extra memory for PDF output out of 106986 (max. 10000000)
 
