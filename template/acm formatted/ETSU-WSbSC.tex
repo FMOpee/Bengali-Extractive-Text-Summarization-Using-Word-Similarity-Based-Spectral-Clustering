@@ -177,19 +177,19 @@ Finally, the sentence similarity between the two sentences $Sim(X,Y)$ is calcula
 	\begin{split}
 		Sim(X,Y)
 		&=  \left(
-		\prod_{i=1}^nW_{Sim_i}
-		\right)^{\frac{1}{n}}\\
+			\prod_{i=1}^nW_{Sim_i}
+		\right)^{1/n}\\
 		&=  \left(
-		e^{\frac{-D_1^2}{2\sigma^2}}\cdot
-		e^{\frac{-D_2^2}{2\sigma^2}}\cdot
-		\ldots \cdot
-		e^{\frac{-D_n^2}{2\sigma^2}}
-		\right)^\frac{1}{n}\\
+			exp\left(\frac{-D_1^2}{2\sigma^2}\right)\cdot
+			exp\left(\frac{-D_2^2}{2\sigma^2}\right)\cdot
+				\ldots \cdot
+			exp\left(\frac{-D_n^2}{2\sigma^2}\right)
+		\right)^{1/n}\\
 		&=  exp\left(
-		-\frac{D_1^2+D_2^2+\ldots+D_n^2}{2n\sigma^2}
-		\right)\\
+			-\frac{D_1^2+D_2^2+\ldots+D_n^2}{2n\sigma^2}
+			\right)\\
 		&=  exp\left(
-		-\frac{\sum_{i=1}^nD_i^2}{2n\sigma^2}
+			-\frac{\sum_{i=1}^nD_i^2}{2n\sigma^2}
 		\right)
 	\end{split}
 \end{equation}
@@ -199,8 +199,6 @@ shows that the proposed method can solve the local word correspondence problem f
 
 \begin{figure}
 	\centering
-	%\input{figs/0301_msd}
-	%\includegraphics{sample-franklin}
 	\includegraphics[width=0.8\textwidth]{figs/msd-edited}
 	\caption{Local word correspondence of $D_{msw}$ method. Dots in the figure represent word vectors and are coloured with the same colour if they are from the same sentence. Black dashed arrows represent the $D_{msw}$ from its destination word vector. Here, scenario (a) will have larger similarity due to it having smaller $D_{msw}$ than scenario (b)}
 	\label{fig:msd}

@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: sample-acmlarge.aux
+The top-level auxiliary file: ETSU-WSbSC.aux
 The style file: ACM-Reference-Format.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -44,7 +44,7 @@ Warning--empty address in sarkar-2012-tfidf
 Warning--page numbers missing in both pages and numpages fields in sarkar-2012-tfidf-2
 You've used 30 entries,
             5981 wiz_defined-function locations,
-            1706 strings with 25239 characters,
+            1706 strings with 25229 characters,
 and the built_in function-call counts, 35304 in all, are:
 = -- 4597
 > -- 952
