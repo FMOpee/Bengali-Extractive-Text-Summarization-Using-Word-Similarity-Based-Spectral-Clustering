@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.20)  31 OCT 2024 13:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  31 OCT 2024 20:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1113,44 +1113,47 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 
 [4.4]
 Package epstopdf Info: Source file: <figs/sarkar_problem-edited.eps>
-(epstopdf)                    date: 2024-10-31 13:14:49
-(epstopdf)                    size: 1087930 bytes
+(epstopdf)                    date: 2024-10-31 20:27:06
+(epstopdf)                    size: 674650 bytes
 (epstopdf)             Output file: <figs/sarkar_problem-edited-eps-converted-t
 o.pdf>
-(epstopdf)                    date: 2024-10-31 13:36:38
-(epstopdf)                    size: 16638 bytes
+(epstopdf)                    date: 2024-10-31 20:28:46
+(epstopdf)                    size: 16330 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/sarkar_problem-edited
 -eps-converted-to.pdf figs/sarkar_problem-edited.eps>
 (epstopdf)             \includegraphics on input line 133.
 Package epstopdf Info: Output file is already uptodate.
-<figs/sarkar_problem-edited-eps-converted-to.pdf, id=207, 662.475pt x 599.23875
+<figs/sarkar_problem-edited-eps-converted-to.pdf, id=207, 662.475pt x 286.06876
 pt>
 File: figs/sarkar_problem-edited-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/sarkar_problem-edited-eps-converted-to.pdf>
 Package pdftex.def Info: figs/sarkar_problem-edited-eps-converted-to.pdf  used 
 on input line 133.
-(pdftex.def)             Requested size: 361.83737pt x 327.29642pt.
+(pdftex.def)             Requested size: 361.83737pt x 156.24704pt.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 134.
 
 
 Class acmart Warning: A possible image without description on input line 136.
 
-
-
-[5.5 <./figs/sarkar_problem-edited-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/process-flow-diagram-new.eps>
-(epstopdf)                    date: 2024-10-31 11:25:44
-(epstopdf)                    size: 1992410 bytes
+(epstopdf)                    date: 2024-10-31 20:38:09
+(epstopdf)                    size: 2008866 bytes
 (epstopdf)             Output file: <figs/process-flow-diagram-new-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2024-10-31 11:27:17
+(epstopdf)                    date: 2024-10-31 18:37:19
 (epstopdf)                    size: 29266 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/process-flow-diagram-
 new-eps-converted-to.pdf figs/process-flow-diagram-new.eps>
 (epstopdf)             \includegraphics on input line 145.
-Package epstopdf Info: Output file is already uptodate.
-<figs/process-flow-diagram-new-eps-converted-to.pdf, id=226, 426.59375pt x 169.
+runsystem(repstopdf --outfile=figs/process-flow-diagram-new-eps-converted-to.pd
+f figs/process-flow-diagram-new.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <figs/process-flow-diagram-new-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2024-10-31 20:38:17
+(epstopdf)                    size: 28984 bytes.
+<figs/process-flow-diagram-new-eps-converted-to.pdf, id=214, 426.59375pt x 169.
 63374pt>
 File: figs/process-flow-diagram-new-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -1159,25 +1162,25 @@ Package pdftex.def Info: figs/process-flow-diagram-new-eps-converted-to.pdf  us
 ed on input line 145.
 (pdftex.def)             Requested size: 361.83737pt x 143.89168pt.
 
-
 Class acmart Warning: A possible image without description on input line 148.
 
 
 
-[6.6 <./figs/process-flow-diagram-new-eps-converted-to.pdf>]
+[5.5 <./figs/sarkar_problem-edited-eps-converted-to.pdf>]
 
-[7.7{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
+[6.6{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc} <./f
+igs/process-flow-diagram-new-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/msd-edited.eps>
-(epstopdf)                    date: 2024-10-31 13:18:33
-(epstopdf)                    size: 357738 bytes
+(epstopdf)                    date: 2024-10-31 20:10:17
+(epstopdf)                    size: 374822 bytes
 (epstopdf)             Output file: <figs/msd-edited-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-10-31 13:36:40
-(epstopdf)                    size: 14540 bytes
+(epstopdf)                    date: 2024-10-31 20:13:48
+(epstopdf)                    size: 17803 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/msd-edited-eps-conver
 ted-to.pdf figs/msd-edited.eps>
 (epstopdf)             \includegraphics on input line 202.
 Package epstopdf Info: Output file is already uptodate.
-<figs/msd-edited-eps-converted-to.pdf, id=278, 290.08376pt x 123.46124pt>
+<figs/msd-edited-eps-converted-to.pdf, id=266, 290.08376pt x 123.46124pt>
 File: figs/msd-edited-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/msd-edited-eps-converted-to.pdf>
 Package pdftex.def Info: figs/msd-edited-eps-converted-to.pdf  used on input li
@@ -1190,23 +1193,23 @@ Class acmart Warning: A possible image without description on input line 205.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 207.
 
-LaTeX Warning: Reference `alg:similarity' on page 8 undefined on input line 207
+LaTeX Warning: Reference `alg:similarity' on page 7 undefined on input line 207
 .
 
 Excluding 'comment' comment.
 
-[8.8 <./figs/msd-edited-eps-converted-to.pdf>]
+[7.7]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 5.5pt on input line 257.
 
 
-LaTeX Warning: Reference `alg:summary' on page 9 undefined on input line 259.
+LaTeX Warning: Reference `alg:summary' on page 8 undefined on input line 259.
 
 Excluding 'comment' comment.
 
-[9.9]
+[8.8 <./figs/msd-edited-eps-converted-to.pdf>]
 
-[10.10]
+[9.9]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 318.
 
@@ -1215,17 +1218,17 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 319.
 
 Package epstopdf Info: Source file: <figs/fine-tuning-edited.eps>
-(epstopdf)                    date: 2024-10-31 13:07:01
+(epstopdf)                    date: 2024-10-31 18:37:19
 (epstopdf)                    size: 428066 bytes
 (epstopdf)             Output file: <figs/fine-tuning-edited-eps-converted-to.p
 df>
-(epstopdf)                    date: 2024-10-31 13:07:35
+(epstopdf)                    date: 2024-10-31 18:37:19
 (epstopdf)                    size: 24874 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/fine-tuning-edited-ep
 s-converted-to.pdf figs/fine-tuning-edited.eps>
 (epstopdf)             \includegraphics on input line 323.
 Package epstopdf Info: Output file is already uptodate.
-<figs/fine-tuning-edited-eps-converted-to.pdf, id=345, 204.765pt x 74.2775pt>
+<figs/fine-tuning-edited-eps-converted-to.pdf, id=334, 204.765pt x 74.2775pt>
 File: figs/fine-tuning-edited-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/fine-tuning-edited-eps-converted-to.pdf>
 Package pdftex.def Info: figs/fine-tuning-edited-eps-converted-to.pdf  used on 
@@ -1239,28 +1242,28 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 330.
 
 
+
+[10.10]
+
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 343.
 
-
-
-[11.11 <./figs/fine-tuning-edited-eps-converted-to.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 369.
 
 Package epstopdf Info: Source file: <figs/radar-chart-edited.eps>
-(epstopdf)                    date: 2024-10-31 11:08:21
+(epstopdf)                    date: 2024-10-31 18:37:19
 (epstopdf)                    size: 1036794 bytes
 (epstopdf)             Output file: <figs/radar-chart-edited-eps-converted-to.p
 df>
-(epstopdf)                    date: 2024-10-31 11:08:32
+(epstopdf)                    date: 2024-10-31 18:37:19
 (epstopdf)                    size: 125639 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/radar-chart-edited-ep
 s-converted-to.pdf figs/radar-chart-edited.eps>
 (epstopdf)             \includegraphics on input line 372.
 Package epstopdf Info: Output file is already uptodate.
-<figs/radar-chart-edited-eps-converted-to.pdf, id=383, 424.58624pt x 412.54124p
+<figs/radar-chart-edited-eps-converted-to.pdf, id=368, 424.58624pt x 412.54124p
 t>
 File: figs/radar-chart-edited-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/radar-chart-edited-eps-converted-to.pdf>
@@ -1276,24 +1279,32 @@ LaTeX Warning: No positions in optional float specifier.
 
 
 
+[11.11 <./figs/fine-tuning-edited-eps-converted-to.pdf>]
+
 [12.12]
 
 [13.13 <./figs/radar-chart-edited-eps-converted-to.pdf>]
+Underfull \vbox (badness 4927) has occurred while \output is active []
+
+
 
 [14.14] (./ETSU-WSbSC.bbl
 LaTeX Info: Redefining \tempurl on input line 68.
 LaTeX Info: Redefining \tempurl on input line 84.
 LaTeX Info: Redefining \tempurl on input line 99.
 LaTeX Info: Redefining \tempurl on input line 116.
-
-
-[15.15]
 LaTeX Info: Redefining \tempurl on input line 154.
 LaTeX Info: Redefining \tempurl on input line 170.
 LaTeX Info: Redefining \tempurl on input line 198.
 LaTeX Info: Redefining \tempurl on input line 214.
 LaTeX Info: Redefining \tempurl on input line 230.
 LaTeX Info: Redefining \tempurl on input line 245.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[15.15]
 LaTeX Info: Redefining \tempurl on input line 269.
 LaTeX Info: Redefining \tempurl on input line 283.
 LaTeX Info: Redefining \tempurl on input line 298.
@@ -1337,13 +1348,13 @@ Package rerunfilecheck Info: File `ETSU-WSbSC.out' has not changed.
 (rerunfilecheck)             Checksum: F8583D5E2121D6F2794DB94E1F3BD23F;2632.
  ) 
 Here is how much of TeX's memory you used:
- 21507 strings out of 473579
- 350858 string characters out of 5732262
- 824091 words of memory out of 5000000
- 43296 multiletter control sequences out of 15000+600000
+ 21507 strings out of 473578
+ 350858 string characters out of 5732241
+ 814372 words of memory out of 5000000
+ 43297 multiletter control sequences out of 15000+600000
  745562 words of font info for 438 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,17n,131p,2488b,702s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,17n,131p,2488b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb><c:/
 texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI5.pfb><c:/texli
 ve/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb><c:/texlive/20
@@ -1355,7 +1366,7 @@ ts/type1/public/libertine/LinLibertineTB.pfb><c:/texlive/2024/texmf-dist/fonts/
 type1/public/libertine/LinLibertineTI.pfb><c:/texlive/2024/texmf-dist/fonts/typ
 e1/public/newtx/txexs.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/
 txmiaX.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on ETSU-WSbSC.pdf (16 pages, 745601 bytes).
+Output written on ETSU-WSbSC.pdf (16 pages, 748684 bytes).
 PDF statistics:
  564 PDF objects out of 1000 (max. 8388607)
  488 compressed objects within 5 object streams
