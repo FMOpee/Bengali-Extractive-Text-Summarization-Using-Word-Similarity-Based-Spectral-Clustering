@@ -10,7 +10,7 @@
 \acmDOI{XXXXXXX.XXXXXXX}
 
 
-\acmJournal{POMACS}
+\acmJournal{TALLIP}
 \acmVolume{37}
 \acmNumber{4}
 \acmArticle{111}
@@ -55,37 +55,18 @@
 \end{abstract}
 
 \begin{CCSXML}
-<ccs2012>
- <concept>
-  <concept_id>00000000.0000000.0000000</concept_id>
-  <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
-  <concept_significance>500</concept_significance>
- </concept>
- <concept>
-  <concept_id>00000000.00000000.00000000</concept_id>
-  <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
-  <concept_significance>300</concept_significance>
- </concept>
- <concept>
-  <concept_id>00000000.00000000.00000000</concept_id>
-  <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
- <concept>
-  <concept_id>00000000.00000000.00000000</concept_id>
-  <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
-</ccs2012>
+	<ccs2012>
+	<concept>
+	<concept_id>10010147.10010178.10010179.10003352</concept_id>
+	<concept_desc>Computing methodologies~Information extraction</concept_desc>
+	<concept_significance>500</concept_significance>
+	</concept>
+	</ccs2012>
 \end{CCSXML}
 
-\ccsdesc[500]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
-\ccsdesc[300]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
-\ccsdesc{Do Not Use This Code~Generate the Correct Terms for Your Paper}
-\ccsdesc[100]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+\ccsdesc[500]{Computing methodologies~Information extraction}
 
-\keywords{Do, Not, Us, This, Code, Put, the, Correct, Terms, for,
-  Your, Paper}
+\keywords{Extractive Text Summarization, Natural Language Processing, Bengali, Hindi, Marathi, Turkish, Spectral Clustering, Word Embedding, Gaussian Similarity, Evaluation Dataset}
 
 \received{20 February 2007}
 \received[revised]{12 March 2009}
@@ -124,20 +105,15 @@ To solve the problem of representing semantic relationship, a mathematical abstr
 
 Although text summarization have been a forefront of NLP research, text summarization research in Bengali is a more recent development than in other high resource languages. So, a lot of sophisticated approaches from other languages haven't been attempted at Bengali yet. Earlier bengali extractive methods have been focused on some derivative of TF-IDF based text summarization such as the methods developed by \citeauthor{chowdhury-etal-2021-tfidf-clustering} \cite{chowdhury-etal-2021-tfidf-clustering}, \citeauthor{das-2022-tfidf} \cite{das-2022-tfidf}, \citeauthor{sarkar-2012-tfidf} \cite{sarkar-2012-tfidf} etc. \citeauthor{sarkar-2012-tfidf} \cite{sarkar-2012-tfidf} used a simple TF-IDF score of each sentence to rank them and pick the best sentences to generate the output summary. \citeauthor{das-2022-tfidf} \cite{das-2022-tfidf} used weighted TF-IDF along with some other sentence features like sentence position to rank the sentences. \citeauthor{chowdhury-etal-2021-tfidf-clustering} \cite{chowdhury-etal-2021-tfidf-clustering} however, used TF-IDF matrix of a document to build a graph and perform hierarchical clustering to group sentences together and pick one sentence from each group. One shortcoming of this method is that TF-IDF matrix is not semantically equivalent to the actual sentences due to the fundamental issues with TF-IDF. So, the TF-IDF doesn't perfectly represent the semantic relationship between the sentences in the generated graph. Using word vector embedding for Bengali has solved this problem of semantic representation. Word embedding datasets such as FastText \cite{grave-etal-2018-fasttext} dataset\footnote{\textit{https://fasttext.cc/docs/en/crawl-vectors.html}} with word vector embeddings in 157 languages, including Bengali. Using this dataset, SASbSC \cite{roychowdhury-etal-2022-spectral-base} proposed a model where they replaced all the words from the input with their respective vector, then averaged the word vectors in a sentence to get a vector representation for the sentence. The sentence average vectors are then used to get the similarity between two sentences using the Gaussian similarity function to build an affinity matrix. This affinity matrix is used to cluster the sentences using spectral clustering to group sentences into distinct topics. The summary is generated after picking one sentence from each cluster to reduce redundancy and increase coverage.
 
-But the sentence average method suffers critically due to its inability in capturing accurate relationship between sentences. This happens due to words in a sentence generally not having similar meaning with each other, instead they express different parts of one whole meaning of a sentence. This makes the words more complementary instead of being similar leading to word vectors being scattered throughout the word vector space. This characteristics makes the sentence average vectors always tending towards the centre and not representing the semantic similarity accurately. An example of this happening is shown in Figure \ref{fig:sarkar-problem} where the distance between the sentence average vectors are being misleading. In the figure, scenario (a) shows two sentence with word vectors very closely corresponding with each other. On the other hand, scenario (b) shows two sentences without any significant word correspondence. The distance between the sentence average vectors  from (a) and (b) are shown in figure (c) and (d) respectively. We can see that the scenario (a) and (c) have a larger distance between sentence average vectors than scenario (b) and (d) despite having more word correspondence. This larger distance makes the Gaussian similarity between the sentences lower due to the inverse exponential nature of the function. The lower similarity leads to the graphical representation being less accurate and thus failing to capture the true semantic relationship within the sentences. This shortcoming of the method has been one of the key motivations for this research.
-
+But the sentence average method suffers critically due to its inability in capturing accurate relationship between sentences. This happens due to words in a sentence generally not having similar meaning with each other, instead they express different parts of one whole meaning of a sentence. This makes the words more complementary instead of being similar leading to word vectors being scattered throughout the word vector space. This characteristics makes the sentence average vectors always tending towards the centre and not representing the semantic similarity accurately. An example of this happening is shown in Figure \ref{fig:sarkar-problem} where the distance between the sentence average vectors are being misleading. In the figure, scenario (a) shows two sentence with word vectors very closely corresponding with each other. On the other hand, scenario (b) shows two sentences without any significant word correspondence. But the scenario (a) has a larger distance between sentence average vectors than scenario (b) despite having more word correspondence. This larger distance makes the Gaussian similarity between the sentences lower due to the inverse exponential nature of the function. The lower similarity leads to the graphical representation being less accurate and thus failing to capture the true semantic relationship within the sentences. This shortcoming of the method has been one of the key motivations for this research.
 \begin{figure}
 	\centering
-	%\input{figs/0201_Sarkar_problem}
-	%\includegraphics{sample-franklin}
 	\includegraphics[width=0.8\textwidth]{figs/sarkar_problem-edited}
-	\caption{A scenario where sentence averaging method fails. Dots in the figure represent word vectors and are grouped by colours if they are from the same sentence. (a) and (c) shows a scenario where the distance between sentence average vectors are larger than (b) and (d) despite the word vectors being more closely related.}
+	\caption{A scenario where sentence averaging method fails. (a) shows a scenario where the distance between sentence average vectors are larger than (b) despite the word vectors from (a) being more closely related than (b).}
 	\label{fig:sarkar-problem}
 \end{figure}
-
 \section{Methodology}\label{sec:methodology}
-The summarization process followed here can be boiled down as two basic steps, grouping all the close sentences together based on their meaning to minimize redundancy and picking one sentence from each group to maximize sentence coverage. To group semantically similar sentences into clusters, we build a sentence similarity graph and perform spectral clustering on it~\cite{roychowdhury-etal-2022-spectral-base}. The sentence similarity graph is produced using a novel sentence similarity calculation algorithm that uses geometric mean of Gaussian similarity between individual word pairs from the two sentences. The Gaussian similarity is calculated using the vector embedding representations of the words. On the other hand, we used TF-IDF scores to pick the highest ranked sentences from a cluster \cite{Akter-2017-tfidf-3, das-2022-tfidf, sarkar-2012-tfidf, sarkar-2012-tfidf-2}. The summarization process followed here involves 4 steps. These are, Pre-processing, Sentence similarity calculation, Clustering and Summary generation. These steps are illustrated in Figure \ref{fig:process-flow-diagram} and further discussed in the following subsections. 
-
+The summarization process followed here can be boiled down as two basic steps, grouping all the close sentences together based on their meaning to minimize redundancy and picking one sentence from each group to maximize sentence coverage. To group semantically similar sentences into clusters, we build a sentence similarity graph and perform spectral clustering on it \cite{roychowdhury-etal-2022-spectral-base}. The sentence similarity graph is produced using a novel sentence similarity calculation algorithm that uses geometric mean of Gaussian similarity between individual word pairs from the two sentences. The Gaussian similarity is calculated using the vector embedding representations of the words. On the other hand, we used TF-IDF scores to pick the highest ranked sentences from a cluster \cite{Akter-2017-tfidf-3, das-2022-tfidf, sarkar-2012-tfidf, sarkar-2012-tfidf-2}. The summarization process followed here involves 4 steps. These are, Pre-processing, Sentence similarity calculation, Clustering and Summary generation. These steps are illustrated in Figure \ref{fig:process-flow-diagram} and further discussed in the following subsections. 
 \begin{figure}
 	\centering
 	%\input{figs/0101_process_flow_diagram}
@@ -146,7 +122,6 @@ The summarization process followed here can be boiled down as two basic steps, g
 	\caption{Process Flow Diagram}
 	\label{fig:process-flow-diagram}
 \end{figure}
-
 \subsection{Preprocessing}\label{subsec:preprocessing}
 Preprocessing is the standard process of NLP that transforms raw human language inputs into a format that can be used by a computer algorithm. In this step, the document is transformed into a few set of vectors where each word is represented with a vector, each sentence is represented as a set of vectors and the whole document as a list containing those sets. To achieve this representation, the preprocessing follows three steps. These are tokenization, stop word removal, and word embedding. A very common step in preprocessing, word stemming, isn't used here as the word embedding dataset works best for the whole word instead of the root word. These steps are further discussed below.
 
@@ -196,14 +171,12 @@ Finally, the sentence similarity between the two sentences $Sim(X,Y)$ is calcula
 By following steps described above, we get a similarity value for two sentences. This value solves the lack of local word correspondence problem faced by the word averaging based similarity calculation method \cite{roychowdhury-etal-2022-spectral-base}. Figure \ref{fig:msd} demonstrates the merit of the method claimed above. Figure \ref{fig:msd} 
 %follows up the scenario from the Figure \ref{fig:sarkar-problem} to 
 shows that the proposed method can solve the local word correspondence problem faced by word averaging method. In the figure, the scenario \ref{fig:msd}(a) has a set of smaller $D_{msw}$ than the scenario \ref{fig:msd}(b). Having smaller $D_{msw}$ makes the individual word similarities $W_{sim}$ larger due to the nature of Gaussian kernel function. These values would result in a higher sentence similarity for the sentences in the scenario \ref{fig:msd}(a) than in the scenario \ref{fig:msd}(b). This solved the problem showed in the Figure \ref{fig:sarkar-problem} where the scenario \ref{fig:sarkar-problem}(a) has a larger sentence average distance than \ref{fig:sarkar-problem}(b) resulting in \ref{fig:sarkar-problem}(a) having a smaller sentence similarity than \ref{fig:sarkar-problem}(b).
-
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{figs/msd-edited}
-	\caption{Local word correspondence of $D_{msw}$ method. Dots in the figure represent word vectors and are coloured with the same colour if they are from the same sentence. Black dashed arrows represent the $D_{msw}$ from its destination word vector. Here, scenario (a) will have larger similarity due to it having smaller $D_{msw}$ than scenario (b)}
+	\caption{Emphasis of local word correspondence in $D_{msw}$ method. Here, scenario (a) has a larger similarity value due to having a set of smaller $D_{msw}$ than scenario (b)}
 	\label{fig:msd}
 \end{figure}
-
 The whole process of sentence similarity calculation is shown in the Algorithm \ref{alg:similarity}. In this algorithm, we calculate an affinity matrix using the input word vector list. We took the most similar word distance $D_{msw}$ in line 8--13 and 18--23 for each word (line 7 and 17) of a sentence pair (line 3 and 6). Sum of $D^2$ from Equation \ref{eq:sent_sim} is calculated in the lines 14 and 24 to be used in the calculation of sentence similarity (line 27). The similarity is used to construct an affinity matrix $A$ (line 28).
 \begin{comment}
 \begin{algorithm} \caption{Sentence Similarity Calculation} \label{alg:similarity}
@@ -242,7 +215,6 @@ The whole process of sentence similarity calculation is shown in the Algorithm \
 	\end{algorithmic}
 \end{algorithm}
 \end{comment}
-
 \subsection{Clustering}\label{subsec:clustering}
 Clustering is a key corner stone of the proposed method where we aim to cluster semantically similar sentences together to divide the input document into multiple topics. Clustering the document minimizes redundancy in the output summary by ignoring multiple sentences from the same topic. For clustering, spectral and DBSCAN methods were considered due to their capability of being able to cluster irregular shapes. However, spectral clustering was found to perform better than DBSCAN because, smaller input documents have lower density which hinders DBSCAN \cite{roychowdhury-etal-2022-spectral-base}.
 
@@ -293,7 +265,6 @@ We implemented Bensumm \cite{chowdhury-etal-2021-tfidf-clustering} and SASbSC \c
 \textbf{BenSumm} \cite{chowdhury-etal-2021-tfidf-clustering} is another recent research that describes an extractive and an abstractive text summarization technique. We compared the extractive technique with our model to ensure a fair and balanced comparison. Here, similarity matrix is built using TF-IDF which groups the sentences using agglomerative clustering. A Github implementation\footnote{\textit{https://github.com/tafseer-nayeem/BengaliSummarization}} provided by the authors is used in the comparison process.
 
 \textbf{LexRank} \cite{Erkan-lexRank-2004} uses a TF-IDF based matrix and Googles PageRank algorithm \cite{page-PageRank-1999} to rank sentences. Then the top ranked sentences are selected and arranged into summary. An implemented version of this method is available as lexrank\footnote{\textit{https://pypi.org/project/lexrank/}} which is used in the comparison process using a large Bengali wikipedia corpus\footnote{\textit{https://www.kaggle.com/datasets/shazol/bangla-wikipedia-corpus}}.
-
 \subsection{Evaluation Datasets}\label{subsec:evaluation-datasets}
 We used four evaluation dataset with varying quality, size and source to examine the robustness of the methods being tested. The first dataset is a \textbf{self-curated} extractive dataset that we developed to evaluate the performance of our proposed method. An expert linguistic team of ten members summarized 250 news articles of varying sizes to diversify the dataset. Each article is summarized twice by two different experts to minimize human bias in the summary. In total, 500 different document-summary pairs are present in this dataset. The dataset is publicly available on Github\footnote{\textit{dataset link}} for reproducibility.
 
@@ -310,22 +281,17 @@ To evaluate the correctness of generated summaries against human written summari
 	\item \textbf{ROUGE-LCS} finds the longest common sub-sequence between two summaries to calculate the rouge scores. It focuses on finding similarity in the flow of information in the sentence level between two summaries.
 \end{enumerate}
 In this study, we compared the F-1 scores from each of these metrics for the four models.
-
 \subsection{Experimentation}\label{subsec:experimentation}
 The proposed model contains three main steps, similarity calculation, clustering and sentence extraction. Each of these steps have different techniques or values that can be experimented on to find the most suited strategy. For sentence similarity calculation, different values for standard deviation ($\sigma$) can be fixed to get the most representative semantic similarity value. Spectral clustering was found to work best for the clustering step through experimentations done by other researchers \cite{roychowdhury-etal-2022-spectral-base}. To extract the best sentence from a cluster, lead extraction and TF-IDF ranking strategies was considered. Thus, experimentations on finding the most suited standard deviation value and sentence extraction was conducted. These experimentations are described in the following sections.
-
-\subsubsection{Fine-tuning Standard Deviation ($\sigma$)}\label{subsubsec:sigma}
+\subsubsection{Fine-tuning Standard Deviation ($\sigma$): }\label{subsubsec:sigma}
 Standard deviation ($\sigma$) plays a crucial role for sentence similarity calculation (Equation \ref{eq:sent_sim}). Therefore, to fix the most suited $\sigma$ value sixty-three different values were experimented on. These values ranged from $10^{-12}$ to $10$ on regular intervals. After experimentation, $5\times10^{-11}$ was fixed as the value for $\sigma$ that gives the most representative semantic relation between sentences. The result for fine-tuning process is shown in Figure \ref{fig:sigma-fine-tuning}.
 \begin{figure}[]
 	\centering
-	%\input{figs/0402_finetuning}
-	%\includegraphics{sample-franklin}
 	\includegraphics[width=0.8\textwidth]{figs/fine-tuning-edited}
-	\caption{Fine-tuning for different standard deviation~($\sigma$)~values}
+	\caption{Fine-tuning for different standard deviation ($\sigma$) values}
 	\label{fig:sigma-fine-tuning}
 \end{figure}
-
-\subsubsection{Different Sentence Extraction Techniques Inside Clusters} \label{subsubsec:different-ranking-techniques-inside-clusters}
+\subsubsection{Different Sentence Extraction Techniques From Clusters: } \label{subsubsec:different-ranking-techniques-inside-clusters}
 We implemented two sentence extraction methods to pick the most representative sentence from each cluster. Firstly, the lead extraction method is used to select the sentence that appears first in the input document. Because, generally the earlier sentences in an input contain more information on the context of the input document. Secondly, extracting sentences based on their TF-IDF score was also experimented on. In Table \ref{tab:ranking}, the TF-IDF ranking is shown to performs better than the lead extraction method.
 \begin{table}[]
 	\centering
@@ -337,7 +303,6 @@ We implemented two sentence extraction methods to pick the most representative s
 	\caption{Comparison of Result of different ranking techniques}
 	\label{tab:ranking}
 \end{table}
-
 \subsection{Comparison}\label{subsec:comparison}
 The performance of the proposed method (WSbSC) is compared with BenSumm \cite{chowdhury-etal-2021-tfidf-clustering}, SASbSC \cite{roychowdhury-etal-2022-spectral-base} and LexRank \cite{Erkan-lexRank-2004} on four datasets (Self-Curated (SC), Kaggle, BNLPC, Github) using the average F-1 score for three ROUGE metrics (Rouge-1, Rouge-2, Rouge-LCS). The comparative results of this evaluation are shown in Table \ref{tab:result_comparison-1} where our proposed model performs 11.9\%, 24.1\% and 16.2\% better than SASbSC in Rouge-1, Rouge-2 and Rouge-LCS respectively on the self-curated dataset. It performs 68.9\%, 95.4\% and 84.6\% better in Rouge-1, Rouge-2 and Rouge-LCS respectively than BenSumm on the Kaggle dataset. It also performs 3\% and 2.6\% better in Rouge-2 and Rouge-LCS respectively and ties in Rouge-1 with SASbSC using the BNLPC dataset. It performs 58\%, 86.4\%, and 67.9\% better in Rouge-1, Rouge-2 and Rouge-LCS respectively than BenSumm on the Github dataset.
 \begin{table}[]
@@ -364,7 +329,6 @@ The performance of the proposed method (WSbSC) is compared with BenSumm \cite{ch
 	\caption{Comparison of average Rouge scores between graph based extractive summarization models on 4 datasets}
 	\label{tab:result_comparison-1}
 \end{table}
-
 These results are further visualized into three radar charts in Figure \ref{fig:radarchart} to compare the performance of the models on different Rouge metrics. As stated in the charts, the proposed method performed consistently and uniformly across all the datasets regardless of the quality of the dataset. But other models, such as BenSumm performs well in three datasets (SC, GitHub, BNLPC) but fails in the Kaggle dataset. Similarly, SASbSC performs well in SC and BNLPC datasets but its performance decreases sharply in Kaggle and GitHub datasets. LexRank although performs consistently across all datasets but is far lower on average. According to the result analysis in Table \ref{tab:result_comparison-1} and Figure \ref{fig:radarchart}, WSbSC is the most accurate and reliable Bengali extractive text summarization model.
 \begin{figure}[]
 	\centering
@@ -373,7 +337,6 @@ These results are further visualized into three radar charts in Figure \ref{fig:
 	\caption{The Radar chart of the models of being compared on four datasets at once}
 	\label{fig:radarchart}
 \end{figure}
-
 \subsection{Implementation Into Other Languages}\label{subsec:implementation-into-other-languages}
 The proposed model is language-independent thus, it can be extended into other languages too. For this, only a language-specific tokenizer, a stop-word list and a word embedding dataset is required. We implemented this model on three non-bengali datasets to show the language independent nature of the model. To evaluate the quality of the sentence extraction, we tried to find evaluation datasets for summarization on other low resource languages. But could only find relevant datasets in three other languages i.e. Hindi, Marathi and Turkish. We adopted the proposed model into these three low resource languages to check how well it performs.
 \begin{table}[]
@@ -392,9 +355,7 @@ The proposed model is language-independent thus, it can be extended into other l
 	\caption{Comparison of Result of proposed summarization method in other low-resource languages}
 	\label{tab:other_language}
 \end{table}
-
 The Table \ref{tab:other_language} shows the result of the proposed WSbSC method for extractive summarization in other low resource languages. In this table, we can see that the results on Marathi and Turkish are slightly better than the result on Bengali. Although it performs slightly lower on Hindi, the score is still similar to Bengali. To evaluate the models performance on Hindi, we used a Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/disisbig/hindi-text-short-and-large-summarization-corpus/}} produced by Gaurav Arora. For the Marathi, we used another Kaggle dataset\footnote{\textit{https://www.kaggle.com/datasets/ketki19/marathi}} produced by Ketki Nirantar. For the Turkish language, we used a GitHub dataset\footnote{\textit{https://github.com/xtinge/turkish-extractive-summarization-dataset/blob/main/dataset/XTINGE-SUM\_TR\_EXT/xtinge-sum\_tr\_ext.json}} produced by the XTINGE \cite{Demir-2024-xtinge_turkish_extractive} team for evaluation. 
-
 \section{Discussion}\label{sec:discussion}
 The results presented at Table \ref{tab:result_comparison-1}, \ref{tab:other_language} and Figure \ref{fig:radarchart} highlights the effectiveness of proposed WSbSC model for extractive text summarization in Bengali, as well as its adaptability to other low-resource languages. This section analyses the comparative results, the strengths and limitations of the proposed method, and potential areas for further research.
 
