@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  1 NOV 2024 22:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  1 NOV 2024 23:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1172,7 +1172,7 @@ o.pdf>
 -eps-converted-to.pdf figs/sarkar_problem-edited.eps>
 (epstopdf)             \includegraphics on input line 114.
 Package epstopdf Info: Output file is already uptodate.
-<figs/sarkar_problem-edited-eps-converted-to.pdf, id=197, 662.475pt x 286.06876
+<figs/sarkar_problem-edited-eps-converted-to.pdf, id=199, 662.475pt x 286.06876
 pt>
 File: figs/sarkar_problem-edited-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/sarkar_problem-edited-eps-converted-to.pdf>
@@ -1199,7 +1199,7 @@ d-to.pdf>
 new-eps-converted-to.pdf figs/process-flow-diagram-new.eps>
 (epstopdf)             \includegraphics on input line 124.
 Package epstopdf Info: Output file is already uptodate.
-<figs/process-flow-diagram-new-eps-converted-to.pdf, id=213, 426.59375pt x 169.
+<figs/process-flow-diagram-new-eps-converted-to.pdf, id=215, 426.59375pt x 169.
 63374pt>
 File: figs/process-flow-diagram-new-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -1227,7 +1227,7 @@ Package epstopdf Info: Source file: <figs/msd-edited.eps>
 ted-to.pdf figs/msd-edited.eps>
 (epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
-<figs/msd-edited-eps-converted-to.pdf, id=265, 290.08376pt x 123.46124pt>
+<figs/msd-edited-eps-converted-to.pdf, id=267, 290.08376pt x 123.46124pt>
 File: figs/msd-edited-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/msd-edited-eps-converted-to.pdf>
 Package pdftex.def Info: figs/msd-edited-eps-converted-to.pdf  used on input li
@@ -1304,7 +1304,7 @@ df>
 s-converted-to.pdf figs/fine-tuning-edited.eps>
 (epstopdf)             \includegraphics on input line 282.
 Package epstopdf Info: Output file is already uptodate.
-<figs/fine-tuning-edited-eps-converted-to.pdf, id=346, 204.765pt x 74.2775pt>
+<figs/fine-tuning-edited-eps-converted-to.pdf, id=348, 204.765pt x 74.2775pt>
 File: figs/fine-tuning-edited-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/fine-tuning-edited-eps-converted-to.pdf>
 Package pdftex.def Info: figs/fine-tuning-edited-eps-converted-to.pdf  used on 
@@ -1339,7 +1339,7 @@ df>
 s-converted-to.pdf figs/radar-chart-edited.eps>
 (epstopdf)             \includegraphics on input line 328.
 Package epstopdf Info: Output file is already uptodate.
-<figs/radar-chart-edited-eps-converted-to.pdf, id=380, 424.58624pt x 412.54124p
+<figs/radar-chart-edited-eps-converted-to.pdf, id=382, 424.58624pt x 412.54124p
 t>
 File: figs/radar-chart-edited-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/radar-chart-edited-eps-converted-to.pdf>
@@ -1427,7 +1427,7 @@ Package rerunfilecheck Info: File `ETSU-WSbSC.out' has not changed.
 Here is how much of TeX's memory you used:
  22586 strings out of 473578
  369714 string characters out of 5732241
- 838731 words of memory out of 5000000
+ 838777 words of memory out of 5000000
  44314 multiletter control sequences out of 15000+600000
  769810 words of font info for 457 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1446,10 +1446,10 @@ ype1/public/libertine/LinLibertineTI.pfb><c:/texlive/2024/texmf-dist/fonts/type
 1/public/newtx/NewTXMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx
 /txexs.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/
 texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on ETSU-WSbSC.pdf (17 pages, 797611 bytes).
+Output written on ETSU-WSbSC.pdf (17 pages, 797812 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 510 compressed objects within 6 object streams
+ 595 PDF objects out of 1000 (max. 8388607)
+ 512 compressed objects within 6 object streams
  104 named destinations out of 1000 (max. 500000)
  121530 words of extra memory for PDF output out of 128383 (max. 10000000)
 
