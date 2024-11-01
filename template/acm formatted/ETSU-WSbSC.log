@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  1 NOV 2024 21:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  1 NOV 2024 22:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1374,11 +1374,14 @@ LaTeX Info: Redefining \tempurl on input line 154.
 LaTeX Info: Redefining \tempurl on input line 170.
 LaTeX Info: Redefining \tempurl on input line 198.
 LaTeX Info: Redefining \tempurl on input line 214.
+LaTeX Info: Redefining \tempurl on input line 230.
+LaTeX Info: Redefining \tempurl on input line 245.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 [16.16]
-LaTeX Info: Redefining \tempurl on input line 230.
-LaTeX Info: Redefining \tempurl on input line 245.
 LaTeX Info: Redefining \tempurl on input line 269.
 LaTeX Info: Redefining \tempurl on input line 283.
 LaTeX Info: Redefining \tempurl on input line 298.
@@ -1399,7 +1402,7 @@ Class acmart Warning: Some images may lack descriptions.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 378.
+surrounding objects on input line 380.
 
 
 
@@ -1422,13 +1425,13 @@ Package rerunfilecheck Info: File `ETSU-WSbSC.out' has not changed.
 (rerunfilecheck)             Checksum: F063FE7C31FB3A61B1DA3996E034E4BD;2632.
  ) 
 Here is how much of TeX's memory you used:
- 22583 strings out of 473578
- 369639 string characters out of 5732241
- 839491 words of memory out of 5000000
+ 22586 strings out of 473578
+ 369714 string characters out of 5732241
+ 838731 words of memory out of 5000000
  44314 multiletter control sequences out of 15000+600000
- 769537 words of font info for 455 fonts, out of 8000000 for 9000
+ 769810 words of font info for 457 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,24n,131p,2488b,718s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,24n,131p,2488b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb><c:
 /texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI5.pfb><c:/texl
@@ -1443,7 +1446,7 @@ ype1/public/libertine/LinLibertineTI.pfb><c:/texlive/2024/texmf-dist/fonts/type
 1/public/newtx/NewTXMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx
 /txexs.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/
 texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on ETSU-WSbSC.pdf (17 pages, 797981 bytes).
+Output written on ETSU-WSbSC.pdf (17 pages, 797611 bytes).
 PDF statistics:
  593 PDF objects out of 1000 (max. 8388607)
  510 compressed objects within 6 object streams
